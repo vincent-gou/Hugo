@@ -1,0 +1,170 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 55px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+main {
+    margin: auto;
+    padding: 25px;
+    flex: 1 0 auto;
+    max-width: 750px;
+}
+
+/*footer*/
+
+.copyright {
+    margin: 15px 0;
+}
+
+/*home page*/
+
+.intro {
+    transform: translateY(22vh);
+}
+
+.intro > h1 {
+    color: #212121;
+    font-size: 12vh;
+}
+
+.intro > h2 {
+    color: #757575;
+    font-size: 3vmin;
+}
+
+.intro > .profile {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+}
+
+.page_info {
+    color: #212121;
+    text-align:left;
+    margin-top:1px;
+    margin-bottom:1px;
+}
+
+/*apply accent colour to links*/
+
+a:link, a:visited {
+    color: var(--accent);
+}
+
+a.icon:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent) !important;
+}
+
+/*paginator at bottom of list view*/
+
+.pages {
+    padding: 15px 0;
+}
+
+.pages-icon {
+    padding: 0 15px;
+}
+
+/*list item for posts and projects*/
+
+.item {
+    padding: 10px 0;
+}
+
+.item-tag {
+    background-color: var(--accent);
+}
+
+/*navigation bar icons*/
+
+.navbar-icon {
+    font-size: 125%;
+    display: inline-block !important;
+}
+
+/*coloured borders at top and bottom of the page*/
+
+.navbar.navbar-default {
+    border-top: var(--border-width) solid var(--accent);
+}
+
+footer {
+    border-bottom: var(--border-width) solid var(--accent);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* #section_2::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(to left,#8b86a3,#322e40);
+   background-color: var(--accent);
+   opacity: .3;
+} */
+#section_2 {
+    /* background-color: var(--accent); */
+    /* background: url(vincent.png); */
+    background-image: url("vincent.png");
+        /* background-position-x: 0%;
+        background-position-y: 0%;
+        background-attachment: scroll;
+        background-size: auto auto; */
+    /* background-size: cover;
+    background-attachment: fixed;
+    background-position: 10% 0%;
+    padding: 100px 0 180px;
+    position: relative; */
+}
+/* #section_2 {
+    background-color: var(--accent);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: scroll;
+    background-size: cover;
+    background-size: auto auto;
+background-attachment: fixed;
+background-position: 0% 0%;
+padding: 1px 0 1px;
+position: relative;
+} */
+#section_3 {
+    background-color: var(--accent);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: scroll;
+    background-size: auto auto;
+background-size: cover;
+background-attachment: fixed;
+background-position: 10% 0%;
+padding: 100px 0 180px;
+position: relative;
+}
+#section_4 {
+    background-color: var(--accent);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: scroll;
+    background-size: auto auto;
+background-size: cover;
+background-attachment: fixed;
+background-position: 10% 0%;
+padding: 100px 0 180px;
+position: relative;
+}

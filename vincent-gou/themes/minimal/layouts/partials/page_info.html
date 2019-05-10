@@ -1,0 +1,4 @@
+{{ if .WordCount }}
+<h4 class="page_info">{{ i18n "pageInfo" . }}</h4>
+<h6 class="page_info">  {{ i18n "wordCount" . }} </br>  {{ i18n "readingTime" .ReadingTime }}</h6>
+{{ end }}

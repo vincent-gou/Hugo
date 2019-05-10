@@ -1,0 +1,17 @@
+[readingTime]
+one = "Comptez une minute de temps de lecture"
+other = "Comptez {{.Count}} minutes de temps de lecture"
+
+[wordCount]
+#one = "Cet article contient {{ .WordCount }} mot."
+other = "Cet article contient {{ .WordCount }} mots."
+
+[related]
+other = "Voir aussi"
+
+[translations]
+#one = "Traduction disponible"
+other = "Traductions disponibles: "
+
+[pageInfo]
+other = "Informations sur la page: "

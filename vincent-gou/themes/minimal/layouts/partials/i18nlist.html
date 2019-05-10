@@ -1,0 +1,8 @@
+{{ if .IsTranslated }}
+<div class="page_info">
+<h4 class="page_info">{{ i18n "translations"}}</h4>
+    {{ range .Translations }}
+        <p class="page_info"><a href="{{ .Permalink }}" class="page_info">{{ .Lang }}: {{ .Title }}{{ if .IsPage }} {{ end }}</a></p>
+    {{ end}}
+</div>
+{{ end }}
