@@ -13,7 +13,7 @@
 
     {{ if $related }}
 
-        <h4 class="page-header">Voir aussi:</h4>
+        <h4 class="page-header">{{ i18n "related"}}:</h4>
 
         {{ range $related }} {{ partial "list-item" . }} {{ end }}
 

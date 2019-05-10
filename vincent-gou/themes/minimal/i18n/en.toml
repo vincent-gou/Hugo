@@ -3,7 +3,7 @@ one = "Une minute de temps de lecture"
 other = "{{.Count}} minutes de temps de lecture"
 
 [related]
-other = "See also"
+other = "See also:"
 
 [translations]
 other = "Translation available"

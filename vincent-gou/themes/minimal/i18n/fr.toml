@@ -7,7 +7,7 @@ other = "Comptez {{.Count}} minutes de temps de lecture"
 other = "Cet article contient {{ .WordCount }} mots."
 
 [related]
-other = "Voir aussi"
+other = "Voir aussi:"
 
 [translations]
 #one = "Traduction disponible"
