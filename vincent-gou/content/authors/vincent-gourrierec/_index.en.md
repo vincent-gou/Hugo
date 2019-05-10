@@ -1,6 +1,6 @@
 ---
 name: Vincent Gourrierec
-photo: 'vincent.png'
+photo: 'images/vincent.png'
 #twitter: @ursulaleguin
 ---
 
