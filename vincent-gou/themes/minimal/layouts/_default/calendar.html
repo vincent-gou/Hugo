@@ -1,10 +1,11 @@
 {{ partial "header" . }}
-{{ partial "i18nlist" . }}
-{{ partial "page_info" . }}
 
-<main>
+{{ define "main"}}
+    <main id="main">
+      <div>
+       <h1 id="title"><a href="{{ "/" | relURL }}">Go Home</a></h1>
+      </div>
+    </main>
+{{ end }}
 
-
-</main>
-
-{{ partial "footer.html" . }}
+{{ partial "footer" . }}
