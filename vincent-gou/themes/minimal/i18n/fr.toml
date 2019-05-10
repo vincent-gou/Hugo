@@ -15,3 +15,9 @@ other = "Traductions disponibles: "
 
 [pageInfo]
 other = "Informations sur la page: "
+
+[bio]
+other = "Biographie: "
+
+[author]
+other = "Auteur:"

@@ -8,3 +8,8 @@ other = "See also"
 [translations]
 other = "Translation available"
 
+[bio]
+other = "Biography: "
+
+[author]
+other = "Author:"

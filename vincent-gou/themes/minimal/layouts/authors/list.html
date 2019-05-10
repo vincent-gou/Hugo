@@ -4,7 +4,7 @@
 <h1>{{ .Params.name }}</h1>
 <img class="avatar" src="{{ .Params.photo }}" alt=""/>
 
-<h2>Bio</h2>
+<h2>{{ i18n "bio"}}</h2>
 {{ .Content }}
 {{ with .Params.twitter }}
   <p>
