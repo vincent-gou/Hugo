@@ -168,3 +168,10 @@ background-position: 10% 0%;
 padding: 100px 0 180px;
 position: relative;
 }
+
+.avatar {
+background-color: #F5F5F5;
+border: 1px solid #DDDDDD;
+border-radius: 50% 50% 50% 50%;
+padding: 4px;
+} 
