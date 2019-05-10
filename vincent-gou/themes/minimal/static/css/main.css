@@ -170,7 +170,7 @@ position: relative;
 }
 
 .avatar {
-background-color: #F5F5F5;
+background-color: var(--accent);
 border: 1px solid var(--accent);
 border-radius: 50% 50% 50% 50%;
 padding: 4px;
