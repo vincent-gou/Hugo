@@ -30,7 +30,7 @@
 
   {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
     <figure>
-      <img src="{{ .Params.photo }}" alt=""/>
+      <img class="avatar" src="{{ .Params.photo }}" alt=""/>
       <figcaption>
         <a href="{{ .Permalink }}">{{ .Params.name }}</a>
       </figcaption>
