@@ -1,0 +1,97 @@
+---
+title: "Update Nextcloud Docker instance"
+authors:
+  - Vincent Gourrierec
+date: 2019-03-18
+tags: ["nextcloud","docker"]
+categories: ["posts"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- linux
+- oracle
+- progress
+- openedge
+- nextcloud
+- docker 
+---
+
+# Update Nextcloud Docker instance steps
+
+This document may be used to update nextcloud instance.
+
+# Pre-requisities
+* Docker 
+* Nextcloud instance
+* Linux server
+* Nextcloud data and config files in external location 
+# Update steps
+
+## Update nextcloud Docker Image
+
+    [root@nas /opt/docker]# docker pull nextcloud
+
+```
+Using default tag: latest
+latest: Pulling from library/nextcloud
+f7e2b70d04ae: Pull complete
+744aedb7995c: Pull complete
+07afe22f8a58: Pull complete
+c7bf4f31c4a4: Pull complete
+b528e75732cc: Pull complete
+27e7d214ded2: Pull complete
+894549c23c16: Pull complete
+9aa6d55932b2: Pull complete
+1b27fd7479e6: Pull complete
+eacdac7d65c9: Pull complete
+66f1bd2ad7cf: Pull complete
+ee6444380c18: Pull complete
+1500f6dd9b69: Pull complete
+18560f19c8c4: Pull complete
+bddc5d1da8e7: Pull complete
+6e33450d197c: Pull complete
+6f195f51537c: Pull complete
+a8c28fabf19a: Pull complete
+ad044e6f6c56: Pull complete
+20144f3a754f: Pull complete
+Digest: sha256:4c3a690b1771ba414c0a347514baae52dae3ec34feb747d5db0c4188d8462562
+Status: Downloaded newer image for nextcloud:latest
+```
+
+## Stop Nextcloud docker instance
+
+    [root@nas ~]# docker stop nextcloud
+
+## Remove Nextcloud docker instance
+
+    [root@nas ~]# docker rm nextcloud
+
+## Start Nextcloud Docker instance
+
+    [root@nas ~]# docker start nextcloud
+
+```
+[root@nas docker]# ./docker_nextcloud.sh
+7174c3c3395473a01bea0ce38e828526f253772e1a98e4932134247e55427a45
+[root@nas docker]#
+```
+
+## Control Nextcloud Update Logs
+
+```
+[root@nas docker]# docker logs nextcloud
+Initializing nextcloud 15.0.5.3 ...
+Upgrading nextcloud from 15.0.2.0 ...
+```
+
+## Final setup
+
+Once update is finished, connect Nextcloud and check plugin app updates manually.
+
+Some apps may have been disabled during update process.
+
+You will have to activate them manually.
+
+Enjoy ! 

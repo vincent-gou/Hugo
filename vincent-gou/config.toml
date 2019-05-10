@@ -1,0 +1,136 @@
+baseURL = "https://vincent-gou.fr/"
+##languageCode = "en-us"
+languageCode = "fr"
+title = "vincent-gou"
+theme = "minimal"
+disqusShortname = "" # delete this to disable disqus comments
+googleAnalytics = "UA-135831429-1"
+
+DefaultContentLanguage = "fr"
+copyright = "Tous droits reserves: Vincent Gourrierec"
+
+[languages]
+  [languages.en]
+    title = "vincent-gou (en)"
+    weight = 1
+    description = "Welcome on my professional Web Site."
+    [languages.en.params]
+      linkedin = "https://linkedin.com/whoever"
+    [[languages.en.menu.main]]
+      url    = "/"
+      name   = "Home"
+      weight = 1
+    [[languages.en.menu.main]]
+      url = "/post/"
+      name = "Articles"
+      weight = 2
+    [[languages.en.menu.main]]
+      url = "/project/"
+      name = "Projects"
+      weight = 3
+    [[languages.en.menu.main]]
+      url = "/tags/"
+      name = "Tags"
+      weight = 4
+
+
+  [languages.fr]
+    title = "vincent-gou (fr)"
+    weight = 2
+    description = "Bienvenue sur mon site professionnel."
+    author = "Vincent Gourrierec"
+    [languages.fr.params]
+      linkedin = "https://linkedin.com/fr/whoever"
+    [languages.fr.params.navigation]
+      help = "Aide"
+    [[languages.fr.menu.main]]
+      url    = "/"
+      name   = "Accueil"
+      weight = 1
+    [[languages.fr.menu.main]]
+      url = "/post/"
+      name = "Articles"
+      weight = 2
+    [[languages.fr.menu.main]]
+      url = "/project/"
+      name = "Projets"
+      weight = 3
+    [[languages.fr.menu.main]]
+      url = "/tags/"
+      name = "Tags"
+      weight = 4
+    [[languages.fr.menu.main]]
+      url = "/calendar/"
+      name = "Calendar"
+      weight = 5
+    [[languages.fr.menu.icon]]
+          url = "mailto:contact@vincent-gou.fr"
+          name = "envelope-o"
+          weight = 1
+    [[languages.fr.menu.icon]]
+          url = "https://github.com/vincent-gou/"
+          name = "github"
+          weight = 2
+    [[languages.fr.menu.icon]]
+          url = "https://www.linkedin.com/in/vincent-gou/"
+          name = "linkedin"
+          weight = 3
+
+[params]
+    author = "Vincent Gourrierec"
+    description = "Bienvenue sur mon site professionnel."
+    githubUsername = "#vincent-gou"
+    accent = "#cc9933"
+    showBorder = true
+    backgroundColor = "#656565"
+    font = "Raleway" # should match the name on Google Fonts!
+    highlight = true
+    highlightStyle = "solarized-dark"
+    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+
+  [params.navigation]
+    help = "Help"
+
+[[menu.main]]
+    url = "/"
+    name = "Accueil"
+    weight = 1
+
+[[menu.main]]
+    url = "/post/"
+    name = "Articles"
+    weight = 2
+
+[[menu.main]]
+    url = "/project/"
+    name = "Projets"
+    weight = 3
+
+[[menu.main]]
+    url = "/tags/"
+    name = "Tags"
+    weight = 4
+
+# Social icons to be shown on the right-hand side of the navigation bar
+# The "name" field should match the name of the icon to be used
+# The list of available icons can be found at http://fontawesome.io/icons/
+
+[[menu.icon]]
+    url = "mailto:contact@vincent-gou.fr"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://github.com/vincent-gou/"
+    name = "github"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/vincent-gou/"
+    name = "linkedin"
+    weight = 3
+
+[taxonomies]
+  author = "authors"
+  tag = "tags"
+  category = "categories"

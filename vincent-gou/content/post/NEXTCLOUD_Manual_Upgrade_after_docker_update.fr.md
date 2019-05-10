@@ -1,0 +1,149 @@
+---
+title: "Upgrade manuel de Nextcloud après une mise à jour de l'instance Nextcloud sous Docker"
+authors:
+  - Vincent Gourrierec
+date: 2019-03-18
+tags: ["nextcloud","docker"]
+categories: ["posts"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- linux
+- oracle
+- progress
+- openedge
+- nextcloud
+- docker 
+---
+
+# Nextcloud Application Upgrade after Docker instance update steps
+
+This document may be used to upgrade nextcloud application after Nextcloud docker instance update.
+
+# Pré-requis
+* Docker 
+* Instance Nextcloud
+* Serveur Linux 
+* Les données et fichiers de configuration Nextcloud doivent être stockés dans stockage externe à Docker.
+
+# Etapes de mise à jour
+
+## Connect Nextcloud docker container 
+
+    [root@nas docker]# docker exec --user www-data -it nextcloud bash
+
+
+## Control Nextcloud version
+
+```
+www-data@e73fd289077c:~/html$ php occ status
+Nextcloud or one of the apps require upgrade - only a limited number of commands are available
+You may use your browser or the occ upgrade command to do the upgrade
+  - installed: true
+  - version: 15.0.5.3
+  - versionstring: 15.0.5
+  - edition:
+www-data@e73fd289077c:~/html$ 
+```
+
+## Update Nextcloud 
+
+    www-data@e73fd289077c:~/html$ php occ upgrade
+
+```
+Nextcloud or one of the apps require upgrade - only a limited number of commands are available
+You may use your browser or the occ upgrade command to do the upgrade
+Set log level to debug
+Updating database schema
+Updated database
+Checking for update of app accessibility in appstore
+Checked for update of app "accessibility" in appstore
+Checking for update of app activity in appstore
+Checked for update of app "activity" in appstore
+Checking for update of app cloud_federation_api in appstore
+Checked for update of app "cloud_federation_api" in appstore
+Checking for update of app comments in appstore
+Checked for update of app "comments" in appstore
+Checking for update of app dav in appstore
+Checked for update of app "dav" in appstore
+Checking for update of app federatedfilesharing in appstore
+Checked for update of app "federatedfilesharing" in appstore
+Checking for update of app federation in appstore
+Checked for update of app "federation" in appstore
+Checking for update of app files in appstore
+Checked for update of app "files" in appstore
+Checking for update of app files_pdfviewer in appstore
+Checked for update of app "files_pdfviewer" in appstore
+Checking for update of app files_sharing in appstore
+Checked for update of app "files_sharing" in appstore
+Checking for update of app files_texteditor in appstore
+Checked for update of app "files_texteditor" in appstore
+Checking for update of app files_trashbin in appstore
+Checked for update of app "files_trashbin" in appstore
+Checking for update of app files_versions in appstore
+Checked for update of app "files_versions" in appstore
+Checking for update of app files_videoplayer in appstore
+Checked for update of app "files_videoplayer" in appstore
+Checking for update of app firstrunwizard in appstore
+Checked for update of app "firstrunwizard" in appstore
+Checking for update of app gallery in appstore
+Checked for update of app "gallery" in appstore
+Checking for update of app logreader in appstore
+Checked for update of app "logreader" in appstore
+Checking for update of app lookup_server_connector in appstore
+Checked for update of app "lookup_server_connector" in appstore
+Checking for update of app nextcloud_announcements in appstore
+Checked for update of app "nextcloud_announcements" in appstore
+Checking for update of app notifications in appstore
+Checked for update of app "notifications" in appstore
+Checking for update of app oauth2 in appstore
+Checked for update of app "oauth2" in appstore
+Checking for update of app password_policy in appstore
+Checked for update of app "password_policy" in appstore
+Checking for update of app provisioning_api in appstore
+Checked for update of app "provisioning_api" in appstore
+Checking for update of app serverinfo in appstore
+Checked for update of app "serverinfo" in appstore
+Checking for update of app sharebymail in appstore
+Checked for update of app "sharebymail" in appstore
+Checking for update of app support in appstore
+Checked for update of app "support" in appstore
+Checking for update of app survey_client in appstore
+Checked for update of app "survey_client" in appstore
+Checking for update of app systemtags in appstore
+Checked for update of app "systemtags" in appstore
+Checking for update of app theming in appstore
+Checked for update of app "theming" in appstore
+Checking for update of app twofactor_backupcodes in appstore
+Checked for update of app "twofactor_backupcodes" in appstore
+Checking for update of app updatenotification in appstore
+Checked for update of app "updatenotification" in appstore
+Checking for update of app workflowengine in appstore
+Checked for update of app "workflowengine" in appstore
+Starting code integrity check...
+Finished code integrity check
+Update successful
+Maintenance mode is kept active
+Reset log level
+
+```
+
+## Deactivate maintenance mode
+
+```
+www-data@e73fd289077c:~/html$ php occ maintenance:mode --off
+Maintenance mode disabled
+www-data@e73fd289077c:~/html$ exit
+```
+
+## Final setup
+
+Once update is finished, connect Nextcloud and check plugin app updates manually.
+
+Some apps may have been disabled during update process.
+
+You will have to activate them manually.
+
+Enjoy ! 
