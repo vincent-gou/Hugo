@@ -171,9 +171,9 @@ position: relative;
 
 .avatar {
 background-color: #F5F5F5;
-border: 1px solid #DDDDDD;
+border: 1px solid var(--accent);
 border-radius: 50% 50% 50% 50%;
 padding: 4px;
-width:100px;
-height:100px;
+width:150px;
+height:150px;
 }
