@@ -7,7 +7,7 @@ calendar: https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw
 Vincent-gou Calendar: {{< calendar "B6zw6tcWsR5EA644" >}}
 
 If needed you can download my professional planning:
-[{{ i18n "calendar"}} (ICS)](https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw6tcWsR5EA644?export)
+[ICS](https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw6tcWsR5EA644?export)
 
 Or you can suscribe to it:
-[{{ i18n "calendar"}} (WEBCAL)](webcal://nextcloud.mediamaison.net/remote.php/dav/public-calendars/6twBojdEb7NKrNKK?export)
+[WEBCAL](webcal://nextcloud.mediamaison.net/remote.php/dav/public-calendars/6twBojdEb7NKrNKK?export)

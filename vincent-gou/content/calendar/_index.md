@@ -7,7 +7,7 @@ calendar: https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw
 Agenda de vincent-gou: {{< calendar "B6zw6tcWsR5EA644" >}}
 
 Vous pouvez télécharger mon planning si besoin:
-[{{ i18n "calendar"}} (ICS)](https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw6tcWsR5EA644?export)
+[ICS](https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw6tcWsR5EA644?export)
 
 Ou vous pouvez vous abonner à mon calendrier professionnel:
-[{{ i18n "calendar"}} (WEBCAL)](webcal://nextcloud.mediamaison.net/remote.php/dav/public-calendars/6twBojdEb7NKrNKK?export)
+[WEBCAL](webcal://nextcloud.mediamaison.net/remote.php/dav/public-calendars/6twBojdEb7NKrNKK?export)
