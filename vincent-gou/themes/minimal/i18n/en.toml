@@ -16,3 +16,7 @@ other = "Author:"
 
 [freebusy]
 other = "Free/Busy Calendar"
+
+[calendar]
+one = "Calendar"
+other = "Calendars"
