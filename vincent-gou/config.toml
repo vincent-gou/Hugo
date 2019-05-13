@@ -80,6 +80,33 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
           name = "linkedin"
           weight = 3
 
+  [languages.es]
+    title = "vincent-gou (es)"
+    weight = 3
+    description = "Bienvenido a mi sitio web profesional."
+    [languages.es.params]
+      linkedin = "https://www.linkedin.com/in/vincent-gou/"
+    [[languages.es.menu.main]]
+      url    = "/"
+      name   = "Inicio"
+      weight = 1
+    [[languages.es.menu.main]]
+        url = "/project/"
+        name = "Proyectos"
+        weight = 2
+    [[languages.es.menu.main]]
+      url = "/post/"
+      name = "Articulos"
+      weight = 3
+    [[languages.es.menu.main]]
+      url = "/tags/"
+      name = "Etiquetas"
+      weight = 4
+    [[languages.es.menu.main]]
+        url = "/calendar/"
+        name = "Calendario"
+        weight = 5
+
 [params]
     author = "Vincent Gourrierec"
     description = "Bienvenue sur mon site professionnel."
