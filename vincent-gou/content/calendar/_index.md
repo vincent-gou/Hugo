@@ -5,6 +5,8 @@ calendar: https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw
 ---
 
 Vous pouvez télécharger mon planning si besoin.
-<a href="https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw6tcWsR5EA644?export">
 
-[ICS Calendar](https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw6tcWsR5EA644?export)
+[Calendrier ICS](https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw6tcWsR5EA644?export)
+
+Ou vous pouvez vous abonner à mon calendrier professionnel:
+[Calendrier Webcal](webcal://nextcloud.mediamaison.net/remote.php/dav/public-calendars/6twBojdEb7NKrNKK?export)
