@@ -1,0 +1,22 @@
+[readingTime]
+one = "Un minuto de tiempo de lectura"
+other = "{{.Count}} minutos de tiempo de lectura"
+
+[related]
+other = "Ver también:"
+
+[translations]
+other = "Traducción disponible:"
+
+[bio]
+other = "Biografía: "
+
+[author]
+other = "Autor:"
+
+[freebusy]
+other = "Calendario de disponibilidad"
+
+[calendar]
+one = "Calendario"
+other = "Calendarios"
