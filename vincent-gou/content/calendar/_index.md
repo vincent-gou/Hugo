@@ -4,8 +4,8 @@ calendar: https://nextcloud.mediamaison.net/remote.php/dav/public-calendars/B6zw
 #twitter: @ursulaleguin
 ---
 
-Agenda de {{ .Params.name }}:
-Agenda de {{ $.Param "name" }}
+Agenda de vincent-gou:
+
 {{< calendar "B6zw6tcWsR5EA644" >}}
 
 Vous pouvez télécharger mon planning si besoin:
