@@ -1,6 +1,6 @@
 [readingTime]
-one = "Une minute de temps de lecture"
-other = "{{.Count}} minutes de temps de lecture"
+one = "One minute read time"
+other = "{{.Count}} minutes read time"
 
 [related]
 other = "See also:"
