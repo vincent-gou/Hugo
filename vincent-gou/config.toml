@@ -32,6 +32,10 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
       url = "/tags/"
       name = "Tags"
       weight = 4
+    [[languages.en.menu.main]]
+        url = "/calendar/"
+        name = "Calendar"
+        weight = 5
 
 
   [languages.fr]
@@ -61,7 +65,7 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
       weight = 4
     [[languages.fr.menu.main]]
       url = "/calendar/"
-      name = "Calendar"
+      name = "Calendrier"
       weight = 5
     [[languages.fr.menu.icon]]
           url = "mailto:contact@vincent-gou.fr"
@@ -111,6 +115,10 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
     name = "Tags"
     weight = 4
 
+[[menu.main]]
+    url = "/calendar/"
+    name = "Calendrier"
+    weight = 5
 # Social icons to be shown on the right-hand side of the navigation bar
 # The "name" field should match the name of the icon to be used
 # The list of available icons can be found at http://fontawesome.io/icons/
