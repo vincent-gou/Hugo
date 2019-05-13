@@ -6,7 +6,7 @@ other = "{{.Count}} minutes de temps de lecture"
 other = "See also:"
 
 [translations]
-other = "Translation available"
+other = "Translation available:"
 
 [bio]
 other = "Biography: "
