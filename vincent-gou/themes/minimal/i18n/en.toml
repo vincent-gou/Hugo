@@ -13,3 +13,6 @@ other = "Biography: "
 
 [author]
 other = "Author:"
+
+[freebusy]
+other = "Free/Busy Calendar"
