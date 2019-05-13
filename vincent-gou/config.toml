@@ -21,12 +21,12 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
       name   = "Home"
       weight = 1
     [[languages.en.menu.main]]
+        url = "/project/"
+        name = "Projects"
+        weight = 2
+    [[languages.en.menu.main]]
       url = "/post/"
       name = "Articles"
-      weight = 2
-    [[languages.en.menu.main]]
-      url = "/project/"
-      name = "Projects"
       weight = 3
     [[languages.en.menu.main]]
       url = "/tags/"
@@ -48,12 +48,12 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
       name   = "Accueil"
       weight = 1
     [[languages.fr.menu.main]]
+        url = "/project/"
+        name = "Projets"
+        weight = 2
+    [[languages.fr.menu.main]]
       url = "/post/"
       name = "Articles"
-      weight = 2
-    [[languages.fr.menu.main]]
-      url = "/project/"
-      name = "Projets"
       weight = 3
     [[languages.fr.menu.main]]
       url = "/tags/"
