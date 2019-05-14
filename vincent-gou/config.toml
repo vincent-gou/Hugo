@@ -80,12 +80,11 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
           name = "linkedin"
           weight = 3
 
-<<<<<<< HEAD
     [[languages.fr.menu.icon]]
-          url = "https://www.malt.fr/profile/vincentgourrierec"
+          url = "https://www.malt.fr/profile/vincentgourrierec/"
           name = "certificate"
           weight = 4
-=======
+
   [languages.es]
     title = "vincent-gou (es)"
     weight = 3
@@ -112,7 +111,6 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
         url = "/calendar/"
         name = "Calendario"
         weight = 5
->>>>>>> 19a90622544e9370dc846d43f8aa0e2d6eeeb3fc
 
 [params]
     author = "Vincent Gourrierec"
