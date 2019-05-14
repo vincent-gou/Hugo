@@ -2,7 +2,9 @@
 <div class="page_info">
 <h4 class="page_info">{{ i18n "translations"}}</h4>
     {{ range .Translations }}
-        <p class="page_info"><a href="{{ .Permalink }}" class="page_info">{{ .Lang }}: {{ .Title }}{{ if .IsPage }} {{ end }}</a></p>
+        <!-- <p class="page_info"><a href="{{ .Permalink }}" class="page_info">{{ .Lang }}: {{ .Title }}{{ if .IsPage }} {{ end }}</a></p> -->
+        <a href="{{ .Permalink }}" class="page_info"><b>{{ .Lang }}</b> {{ .Title }}{{ if .IsPage }} {{ end }} / </a> 
+
     {{ end}}
 </div>
 {{ end }}

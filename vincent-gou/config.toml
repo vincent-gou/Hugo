@@ -32,6 +32,10 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
       url = "/tags/"
       name = "Tags"
       weight = 4
+    [[languages.en.menu.main]]
+        url = "/calendar/"
+        name = "Calendar"
+        weight = 5
 
 
   [languages.fr]
@@ -61,7 +65,7 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
       weight = 4
     [[languages.fr.menu.main]]
       url = "/calendar/"
-      name = "Calendar"
+      name = "Calendrier"
       weight = 5
     [[languages.fr.menu.icon]]
           url = "mailto:contact@vincent-gou.fr"
@@ -76,10 +80,39 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
           name = "linkedin"
           weight = 3
 
+<<<<<<< HEAD
     [[languages.fr.menu.icon]]
           url = "https://www.malt.fr/profile/vincentgourrierec"
           name = "certificate"
           weight = 4
+=======
+  [languages.es]
+    title = "vincent-gou (es)"
+    weight = 3
+    description = "Bienvenido a mi sitio web profesional."
+    [languages.es.params]
+      linkedin = "https://www.linkedin.com/in/vincent-gou/"
+    [[languages.es.menu.main]]
+      url    = "/"
+      name   = "Inicio"
+      weight = 1
+    [[languages.es.menu.main]]
+        url = "/project/"
+        name = "Proyectos"
+        weight = 2
+    [[languages.es.menu.main]]
+      url = "/post/"
+      name = "Articulos"
+      weight = 3
+    [[languages.es.menu.main]]
+      url = "/tags/"
+      name = "Etiquetas"
+      weight = 4
+    [[languages.es.menu.main]]
+        url = "/calendar/"
+        name = "Calendario"
+        weight = 5
+>>>>>>> 19a90622544e9370dc846d43f8aa0e2d6eeeb3fc
 
 [params]
     author = "Vincent Gourrierec"
@@ -116,6 +149,10 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
     name = "Tags"
     weight = 4
 
+[[menu.main]]
+    url = "/calendar/"
+    name = "Calendrier"
+    weight = 5
 # Social icons to be shown on the right-hand side of the navigation bar
 # The "name" field should match the name of the icon to be used
 # The list of available icons can be found at http://fontawesome.io/icons/
