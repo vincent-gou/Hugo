@@ -6,5 +6,6 @@ repo: "drawio" # delete this line if you want blog-like posts for projects
 tags: ["draw.io", "diagrammes", "architecture"]
 weight: 1
 draft: false
+authors:
+  - Vincent Gourrierec
 ---
-
