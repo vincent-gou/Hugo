@@ -76,6 +76,11 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
           name = "linkedin"
           weight = 3
 
+    [[languages.fr.menu.icon]]
+          url = "https://www.malt.fr/profile/vincentgourrierec"
+          name = "certificate"
+          weight = 4
+
 [params]
     author = "Vincent Gourrierec"
     description = "Bienvenue sur mon site professionnel."
@@ -129,6 +134,11 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
     url = "https://www.linkedin.com/in/vincent-gou/"
     name = "linkedin"
     weight = 3
+
+[[menu.icon]]
+    url = "https://www.malt.fr/profile/vincentgourrierec"
+    name = "certificate"
+    weight = 4
 
 [taxonomies]
   author = "authors"
