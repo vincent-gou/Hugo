@@ -15,7 +15,7 @@ keywords:
 - openedge
 ---
 
-= Sample
+== Sample
 
 This is a sample from
 link:https://github.com/asciidoctor/docker-asciidoctor/issues/44#issue-265179207[]
