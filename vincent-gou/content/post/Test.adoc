@@ -1,4 +1,20 @@
 
+title: "Test Asciidoctor"
+authors:
+  - Vincent Gourrierec
+date: 2019-03-06
+tags: ["docker","asciidoctor"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- linux
+- oracle
+- progress
+- openedge
+---
+
 = Sample
 
 This is a sample from
