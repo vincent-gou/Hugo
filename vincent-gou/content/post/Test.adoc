@@ -52,11 +52,7 @@ digraph g {
 }
 ----
 
-== Plantuml from external file...
-[plantuml,activity,svg,align="center"]
-----
-include::activity_diagram.txt[]
-----
+
 
 
 == BlockDiagrams
