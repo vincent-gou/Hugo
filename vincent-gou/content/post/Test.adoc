@@ -14,7 +14,7 @@ keywords:
 - progress
 - openedge
 ---
-:imagesdir: ./content/post/
+:imagesdir: ./
 == Sample
 
 This is a sample from
