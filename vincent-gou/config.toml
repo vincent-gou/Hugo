@@ -80,6 +80,11 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
           name = "linkedin"
           weight = 3
 
+    [[languages.fr.menu.icon]]
+          url = "https://www.malt.fr/profile/vincentgourrierec/"
+          name = "certificate"
+          weight = 4
+
   [languages.es]
     title = "vincent-gou (es)"
     weight = 3
@@ -164,6 +169,11 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
     url = "https://www.linkedin.com/in/vincent-gou/"
     name = "linkedin"
     weight = 3
+
+[[menu.icon]]
+    url = "https://www.malt.fr/profile/vincentgourrierec"
+    name = "certificate"
+    weight = 4
 
 [taxonomies]
   author = "authors"

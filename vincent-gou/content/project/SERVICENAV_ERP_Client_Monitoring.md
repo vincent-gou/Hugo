@@ -6,5 +6,6 @@ description: "Tests, controles et déploiement de sondes de supervision autour d
 tags: ["servicenav", "sopra", "deploiement", "integration"]
 weight: 1
 draft: false
+authors:
+  - Vincent Gourrierec
 ---
-

@@ -6,5 +6,6 @@ description: "Tests, controles et déploiement de l'Extranet Locataire et de l'A
 tags: ["extranet", "sopra", "deploiement", "integration"]
 weight: 1
 draft: false
+authors:
+  - Vincent Gourrierec
 ---
-
