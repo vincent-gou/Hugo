@@ -14,7 +14,8 @@ keywords:
 - progress
 - openedge
 ---
-:imagesdir: ../
+:safe: unsafe
+:imagesdir: ../images/
 == Sample
 
 This is a sample from
