@@ -36,7 +36,7 @@ class Sample {
 Below some examples of working additional diagrams.
 
 == Dita Example
-[ditaa]
+[ditaa,dita-example,svg]
 ....
                    +-------------+
                    | Asciidoctor |-------+
