@@ -2,17 +2,17 @@
 
 <main>
 
-  <!--  <div class="intro">-->
-  <section id=section_1>
+  <div class="intro">
+  <!--<section id=section_1>-->
 
         {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
 
         <h1>{{ .Site.Title }}</h1>
         <h3>{{ markdownify .Site.Params.Description }}</h3>
+        <!--</section>-->
+    </div>
 
-    <!-- </div> -->
 
-  </section>
 
    {{ partial "accueil" . }}
 
