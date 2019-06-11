@@ -15,22 +15,22 @@ keywords:
 - progress
 - openedge
 - nextcloud
-- docker 
+- docker
 ---
 
-# Nextcloud Application Upgrade after Docker instance update steps
+# Etapes de mise à jour de Nextcloud après un upgrade de l'instance Docker Nextcloud
 
-This document may be used to upgrade nextcloud application after Nextcloud docker instance update.
+Ce document doit être utilisé après un upgrade de l'instance Docker Nextcloud.
 
 # Pré-requis
-* Docker 
+* Docker
 * Instance Nextcloud
-* Serveur Linux 
+* Serveur Linux
 * Les données et fichiers de configuration Nextcloud doivent être stockés dans stockage externe à Docker.
 
 # Etapes de mise à jour
 
-## Connect Nextcloud docker container 
+## Connect Nextcloud docker container
 
     [root@nas docker]# docker exec --user www-data -it nextcloud bash
 
@@ -45,10 +45,10 @@ You may use your browser or the occ upgrade command to do the upgrade
   - version: 15.0.5.3
   - versionstring: 15.0.5
   - edition:
-www-data@e73fd289077c:~/html$ 
+www-data@e73fd289077c:~/html$
 ```
 
-## Update Nextcloud 
+## Update Nextcloud
 
     www-data@e73fd289077c:~/html$ php occ upgrade
 
@@ -146,4 +146,4 @@ Some apps may have been disabled during update process.
 
 You will have to activate them manually.
 
-Enjoy ! 
+Enjoy !
