@@ -36,7 +36,7 @@ keywords:
 Subsystem      sftp    /usr/libexec/openssh/sftp-server
 ----
 
-<<<
+
 
 == Création de l'arborescence
 
@@ -54,7 +54,7 @@ Example:
 [root@server /]# chmod 700 /data
 ----
 
-<<<
+
 
 == Création du groupe et des users SFTP
 
@@ -96,7 +96,7 @@ USER3:x:1004:1002::/:/sbin/nologin
 USER4:x:1005:1002::/:/sbin/nologin
 ----
 
-<<<
+
 
 == Création de l'arborescence de stockage des Flux
 
@@ -128,7 +128,7 @@ chmod 770 /data/sftp/USER4/upload // <4>
 <3> Affectation des droits à *_$COMPTE$:sftp_users_* au répertoire dans lequel l'utilisateur associé à la société pourra lire et écrire.
 <4> Affectation des droits au répertoire à l'utilisateur et au groupe d'appartenance dans lequel l'utilisateur associé à la société pourra lire et écrire.
 
-<<<
+
 
 == Paramétrage compte SFTP ADM
 
@@ -142,7 +142,7 @@ SFTP_ADM:x:1006:1002::/:/sbin/nologin
 
 <1> -g : Groupe d'appartenance du compte SFTP_ADM / -d Chemin du profil / -s shell de connxion => aucun
 
-<<<
+
 
 == Paramétrage SSHD
 
@@ -197,5 +197,3 @@ ForceCommand internal-sftp -u 0007 -d /upload // <8>
 systemctl restart sshd
 systemctl status sshd
 ----
-
-<<<
