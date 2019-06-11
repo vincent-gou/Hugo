@@ -11,11 +11,11 @@ keywords:
 - vincent gourrierec
 - saint nazaire
 - linux
-- oracle
-- progress
-- openedge
-- nextcloud
-- docker
+- sftp
+- securite
+- sshd_config
+- sshd
+- chroot
 ---
 
 == Objectifs
