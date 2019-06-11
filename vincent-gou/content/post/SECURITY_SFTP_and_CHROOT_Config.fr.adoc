@@ -20,7 +20,9 @@ keywords:
 
 == Objectifs
 
-Fournir un accès sécurisé à des ressources sur un serveur Linux via SFTP.
+* Fournir un accès sécurisé à des ressources sur un serveur Linux via SFTP.
+* Les comptes SFTP n'auront accès qu'à la ressources autorisées.
+* Un compte d'administration pourra gérer les ressources des utilisateurs.
 
 == Contrôles
 
@@ -36,7 +38,7 @@ Subsystem      sftp    /usr/libexec/openssh/sftp-server
 
 <<<
 
-=== Création de l'arborescence
+== Création de l'arborescence
 
 [source,bash]
 ----
@@ -54,7 +56,7 @@ Example:
 
 <<<
 
-=== Création du groupe et des users SFTP
+== Création du groupe et des users SFTP
 
 [source,bash]
 ----
@@ -70,8 +72,19 @@ useradd -g sftp_users -d / -s /sbin/nologin USER4 // <5>
 <4> -g : Groupe d'appartenance du compte USER3 / -d Chemin du profil / -s shell de connxion => aucun
 <5> -g : Groupe d'appartenance du compte USER4 / -d Chemin du profil / -s shell de connxion => aucun
 
+== Paramétrage du mot de passe des utilisateurs crées
 
-Controle du fichier contenant les utilisateurs SFTP:
+[source,bash]
+----
+passwd USER1
+passwd USER2
+passwd USER3
+passwd USER4
+----
+
+
+
+== Controle du fichier contenant les utilisateurs SFTP
 
 [source,bash]
 ----
@@ -85,7 +98,7 @@ USER4:x:1005:1002::/:/sbin/nologin
 
 <<<
 
-=== Création de l'arborescence de stockage des Flux
+== Création de l'arborescence de stockage des Flux
 
 [source,bash]
 ----
@@ -117,7 +130,7 @@ chmod 770 /data/sftp/USER4/upload // <4>
 
 <<<
 
-=== Paramétrage compte SFTP ADM
+== Paramétrage compte SFTP ADM
 
 [source,bash]
 ----
@@ -131,7 +144,7 @@ SFTP_ADM:x:1006:1002::/:/sbin/nologin
 
 <<<
 
-=== Paramétrage SSHD
+== Paramétrage SSHD
 
 [source,bash]
 ----
@@ -178,7 +191,7 @@ ForceCommand internal-sftp -u 0007 -d /upload // <8>
 <7> Chroot des membres du groupe *_sftp_users_* vers /data/sftp/%u (%u est une variable pour le nom d'utilisateur)
 <8> Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770) et déplacement automatique dans le répertoire upload
 
-=== Redémarrage SSHD et controles
+== Redémarrage SSHD et controles
 [source,bash]
 ----
 systemctl restart sshd
