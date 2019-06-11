@@ -85,29 +85,6 @@ USER4:x:1005:1002::/:/sbin/nologin
 
 <<<
 
-==== Informations sur les compte SFTP crées
-
-.Tableau des informations utilisateurs SFTP
-[cols="1,3"]
-|===
-| Compte | Password
-
-| USER1
-| IARDNdpvzwBo
-
-| USER2
-| KDH9MEoIO5DF
-
-| USER3
-| msn6eg0QHxd3
-
-| USER4
-| 4ELVcihQrybK
-
-|===
-
-<<<
-
 === Création de l'arborescence de stockage des Flux
 
 [source,bash]
@@ -151,16 +128,6 @@ SFTP_ADM:x:1006:1002::/:/sbin/nologin
 ----
 
 <1> -g : Groupe d'appartenance du compte SFTP_ADM / -d Chemin du profil / -s shell de connxion => aucun
-
-.Tableau d'information de l'utilisateur SFTP_ADM
-[cols="1,3"]
-|===
-| Compte | Password
-
-| SFTP_ADM
-| zh5wACyrpMzM
-
-|===
 
 <<<
 
