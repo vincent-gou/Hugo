@@ -22,7 +22,7 @@ keywords:
 
 * Fournir un accès sécurisé à des ressources sur un serveur Linux via SFTP.
 * Les comptes SFTP n'auront accès qu'à la ressources autorisées.
-* Un compte d'administration pourra gérer les ressources des utilisateurs.
+* Un compte d'administration pourra gérer les ressources des autres comptes.
 
 == Contrôles
 
@@ -32,6 +32,7 @@ keywords:
 [source,bash]
 ----
 [root@server /]# cat /etc/ssh/sshd_config
+....
 # override default of no subsystems
 Subsystem      sftp    /usr/libexec/openssh/sftp-server
 ----
