@@ -65,7 +65,7 @@ blockdiag {
 
    // Set labels to nodes.
    A1 [shape = actor,label = "USER1", numbered = 1];
-   A2 [shape = actor,label = "USER1", numbered = 1];
+   A2 [shape = actor,label = "USER2", numbered = 1];
    B [label = "SSHD", numbered = 2];
    C [label = "SSHD_CONFIG", numbered = 3];
    D [label = "/data/sftp/%u" , numbered = 4];
@@ -74,6 +74,7 @@ blockdiag {
 
    // Set labels to edges. (short text only)
    A1 -> B [label = "SFTP"];
+   A2 -> B [label = "SFTP"];   
    B <- C [label = "read"];
    B -> D [label = "chroot"];
    B -> E [label = "set"];
