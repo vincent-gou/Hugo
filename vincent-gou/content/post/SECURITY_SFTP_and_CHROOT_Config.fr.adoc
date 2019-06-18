@@ -16,6 +16,7 @@ keywords:
 - sshd_config
 - sshd
 - chroot
+:imagesdir: ../../images
 ---
 
 [graphviz, dot-example3, svg]
