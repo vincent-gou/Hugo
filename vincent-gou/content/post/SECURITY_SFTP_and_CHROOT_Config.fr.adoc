@@ -48,7 +48,7 @@ blockdiag {
    B -> E [label = "set"];
    B -> F [label = "move"];
    group {
-     label = "SSHD Match Group section";
+     label = "SSHD Match Group";
      orientation = portrait
      D -> E -> F;
     }
