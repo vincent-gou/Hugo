@@ -35,7 +35,6 @@ blockdiag {
 
    // Set labels to nodes.
    A1 [label = "USER1"];
-   A2 [label = "USER2"];
    B [label = "SSHD"];
    C [label = "SSHD_CONFIG"];
    D [label = "/data/sftp/%u"];
@@ -44,11 +43,15 @@ blockdiag {
 
    // Set labels to edges. (short text only)
    A1 -> B [label = "SFTP"];
-   A2 -> B [label = "SFTP"];
    B <- C [label = "read"];
    B -> D [label = "chroot"];
    B -> E [label = "set"];
    B -> F [label = "move"];
+   group {
+     orientation = portrait
+
+     D -> E -> F;
+    }
 }
 
 ----
