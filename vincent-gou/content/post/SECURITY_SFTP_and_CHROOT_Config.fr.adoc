@@ -63,20 +63,20 @@ digraph block_diagram
      +-----------------------------------+
 ----
 
-[mermaid]
+[blockdiag]
 ----
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->John: Hello John, how are you?
-    loop Healthcheck
-        John->John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail...
-    John-->Alice: Great!
-    John->Bob: How about you?
-    Bob-->John: Jolly good!
+blockdiag {
+   // Set labels to nodes.
+   A [label = "foo"];
+   B [label = "bar"];
+   // And set text-color
+   C [label = "baz"];
 
+   // Set labels to edges. (short text only)
+   A -> B [label = "click bar", textcolor="red"];
+   B -> C [label = "click baz"];
+   C -> A;
+}
 
 ----
 
