@@ -19,7 +19,7 @@ keywords:
 ---
 
 
-[graphviz, ./dot-example3, svg]
+[graphviz, dot-example3, svg]
 ----
 digraph g {
     a -> b
