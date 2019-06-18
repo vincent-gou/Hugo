@@ -31,7 +31,7 @@ keywords:
 [blockdiag]
 ----
 blockdiag {
-
+  default_shape = roundedbox;
 
    // Set labels to nodes.
    A1 [label = "USER1"];
@@ -48,8 +48,8 @@ blockdiag {
    B -> E [label = "set"];
    B -> F [label = "move"];
    group {
+     label = "SSHD Match Group section";
      orientation = portrait
-
      D -> E -> F;
     }
 }
