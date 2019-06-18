@@ -26,9 +26,9 @@ keywords:
 * Les comptes SFTP n'auront accès qu'à la ressources autorisées.
 * Un compte d'administration pourra gérer les ressources des autres comptes.
 
-== Architecture Cible
+== Mode de fonctionnement Cible utilisateur
 
-[blockdiag]
+[blockdiag,sftp_user_mode]
 ----
 blockdiag {
   default_shape = roundedbox;
@@ -56,6 +56,35 @@ blockdiag {
 
 ----
 
+== Mode de fonctionnement Cible administrateur
+
+[blockdiag,sftp_admin_mode]
+----
+blockdiag {
+  default_shape = roundedbox;
+
+   // Set labels to nodes.
+   A1 [shape = actor,label = "USER1", numbered = 1];
+   B [label = "SSHD", numbered = 2];
+   C [label = "SSHD_CONFIG", numbered = 3];
+   D [label = "/data/sftp/USER1" , numbered = 4];
+   E [label = "UMASK 0007" , numbered = 5];
+   F [label = "Default Folder /upload under chroot", numbered = 6];
+
+   // Set labels to edges. (short text only)
+   A1 -> B [label = "SFTP"];
+   B <- C [label = "read"];
+   B -> D [label = "chroot"];
+   B -> E [label = "set"];
+   B -> F [label = "move"];
+   group {
+     label = "SSHD Match Group";
+     orientation = portrait
+     D -> E -> F;
+    }
+}
+
+----
 
 == Contrôles
 
