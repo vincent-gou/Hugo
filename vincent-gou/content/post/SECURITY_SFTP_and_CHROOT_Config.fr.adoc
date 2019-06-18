@@ -21,11 +21,25 @@ keywords:
 
 [graphviz, dot-example3, svg]
 ----
-digraph g {
-    a -> b
-    b -> c
-    c -> d
-    d -> a
+digraph block_diagram
+{
+  graph [ splines=ortho, rankdir=TB];
+  node [shape=box, style=filled, fontname=Arial];
+
+  layer_0 [style="rounded,filled", fillcolor="#99ccff", width=15, height=1, label="Layer 0"];
+
+  layer_1 [shape=box, width=5, height=1, label="Layer 1"];
+  //emptybox [shape=box,height=1, label=""];
+  layer_1_1 [shape=box, width=5, height=1, label="Layer 1_1"];
+  layer_2 [shape=box, width=5, height=1, label="Layer 2"];
+  layer_3 [shape=box, width=5, height=1, label="Layer 3"];
+  layer_4 [shape=box, width=5, height=1, label="Layer 4"];
+
+  application [shape=box, width=3, height=5, label="Application"];
+
+  layer_0 -> { layer_1 application };
+  layer_0 -> layer_1 -> layer_1_1 -> layer_2 -> layer_3 -> layer_4;
+  application -> { layer_2 layer_3 layer_4 };
 }
 ----
 
