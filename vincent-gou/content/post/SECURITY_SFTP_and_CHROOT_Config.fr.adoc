@@ -19,28 +19,36 @@ keywords:
 ---
 :imagesdir: /images
 
-[blockdiag]
-----
-blockdiag {
-   // Set labels to nodes.
-   A [label = "foo"];
-   B [label = "bar"];
-   // And set text-color
-   C [label = "baz"];
-
-   // Set labels to edges. (short text only)
-   A -> B [label = "click bar", textcolor="red"];
-   B -> C [label = "click baz"];
-   C -> A;
-}
-
-----
 
 == Objectifs
 
 * Fournir un accès sécurisé à des ressources sur un serveur Linux via SFTP.
 * Les comptes SFTP n'auront accès qu'à la ressources autorisées.
 * Un compte d'administration pourra gérer les ressources des autres comptes.
+
+== Architecture Cible
+
+[blockdiag]
+----
+blockdiag {
+
+
+   // Set labels to nodes.
+   A1 [label = "USER1"];
+   A2 [label = "USER2"];
+   B [label = "SSHD"];
+   C [label = "SSHD_CONFIG"];
+   D [label = "/data/sftp/%u"];   
+
+   // Set labels to edges. (short text only)
+   A1 -> B [label = "SFTP"];
+   A2 -> B [label = "SFTP"];
+   B <- C [label = "read"];
+   B -> D [label = "chroot"];
+}
+
+----
+
 
 == Contrôles
 
