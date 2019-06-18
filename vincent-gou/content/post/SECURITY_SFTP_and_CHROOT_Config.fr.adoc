@@ -34,7 +34,7 @@ blockdiag {
   default_shape = roundedbox;
 
    // Set labels to nodes.
-   A1 [label = "USER1"];
+   A1 [shape = actor,label = "USER1"];
    B [label = "SSHD"];
    C [label = "SSHD_CONFIG"];
    D [label = "/data/sftp/USER1"];
