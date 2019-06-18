@@ -37,7 +37,7 @@ blockdiag {
    A1 [label = "USER1"];
    B [label = "SSHD"];
    C [label = "SSHD_CONFIG"];
-   D [label = "/data/sftp/%u"];
+   D [label = "/data/sftp/USER1"];
    E [label = "UMASK 0007"];
    F [label = "Default Folder /upload under chroot"];
 
