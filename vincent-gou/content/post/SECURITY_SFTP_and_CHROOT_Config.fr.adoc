@@ -58,7 +58,7 @@ blockdiag {
 
 == Mode de fonctionnement Cible administrateur
 
-[blockdiag,sftp_admin_mode]
+[blockdiag,sftp_admin_mode_fr]
 ----
 blockdiag {
   default_shape = roundedbox;

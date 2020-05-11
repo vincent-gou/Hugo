@@ -58,7 +58,7 @@ blockdiag {
 
 == Target Admin mode diagram
 
-[blockdiag,sftp_admin_mode]
+[blockdiag,sftp_admin_mode_en]
 ----
 blockdiag {
   default_shape = roundedbox;
