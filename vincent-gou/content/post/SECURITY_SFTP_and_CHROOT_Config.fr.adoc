@@ -28,7 +28,7 @@ keywords:
 
 == Mode de fonctionnement Cible utilisateur
 
-[blockdiag,sftp_user_mode]
+[blockdiag,sftp_user_mode_fr]
 ----
 blockdiag {
   default_shape = roundedbox;
@@ -74,7 +74,7 @@ blockdiag {
 
    // Set labels to edges. (short text only)
    A1 -> B [label = "SFTP"];
-   A2 -> B [label = "SFTP"];   
+   A2 -> B [label = "SFTP"];
    B <- C [label = "read"];
    B -> D [label = "chroot"];
    B -> E [label = "set"];

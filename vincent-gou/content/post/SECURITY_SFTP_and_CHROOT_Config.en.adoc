@@ -28,7 +28,7 @@ keywords:
 
 == Target User mode diagram
 
-[blockdiag,sftp_user_mode]
+[blockdiag,sftp_user_mode_en]
 ----
 blockdiag {
   default_shape = roundedbox;
