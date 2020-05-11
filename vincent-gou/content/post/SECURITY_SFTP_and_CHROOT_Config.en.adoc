@@ -1,0 +1,264 @@
+---
+title: "Paramétrage SFTP sécurisé complet"
+authors:
+  - Vincent Gourrierec
+date: 2019-06-11
+tags: ["sftp","linux","securite"]
+categories: ["posts"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- linux
+- sftp
+- securite
+- sshd_config
+- sshd
+- chroot
+---
+:imagesdir: /images
+
+
+== Objectifs
+
+* Fournir un accès sécurisé à des ressources sur un serveur Linux via SFTP.
+* Les comptes SFTP n'auront accès qu'à la ressources autorisées.
+* Un compte d'administration pourra gérer les ressources des autres comptes.
+
+== Mode de fonctionnement Cible utilisateur
+
+[blockdiag,sftp_user_mode]
+----
+blockdiag {
+  default_shape = roundedbox;
+
+   // Set labels to nodes.
+   A1 [shape = actor,label = "USER1", numbered = 1];
+   B [label = "SSHD", numbered = 2];
+   C [label = "SSHD_CONFIG", numbered = 3];
+   D [label = "/data/sftp/USER1" , numbered = 4];
+   E [label = "UMASK 0007" , numbered = 5];
+   F [label = "Default Folder /upload under chroot", numbered = 6];
+
+   // Set labels to edges. (short text only)
+   A1 -> B [label = "SFTP"];
+   B <- C [label = "read"];
+   B -> D [label = "chroot"];
+   B -> E [label = "set"];
+   B -> F [label = "move"];
+   group {
+     label = "SSHD Match Group";
+     orientation = portrait
+     D -> E -> F;
+    }
+}
+
+----
+
+== Mode de fonctionnement Cible administrateur
+
+[blockdiag,sftp_admin_mode]
+----
+blockdiag {
+  default_shape = roundedbox;
+
+   // Set labels to nodes.
+   A1 [shape = actor,label = "USER1", numbered = 1];
+   A2 [shape = actor,label = "USER2", numbered = 1];
+   B [label = "SSHD", numbered = 2];
+   C [label = "SSHD_CONFIG", numbered = 3];
+   D [label = "/data/sftp/%u" , numbered = 4];
+   E [label = "UMASK 0007" , numbered = 5];
+   F [label = "Default Folder /upload under chroot", numbered = 6];
+
+   // Set labels to edges. (short text only)
+   A1 -> B [label = "SFTP"];
+   A2 -> B [label = "SFTP"];
+   B <- C [label = "read"];
+   B -> D [label = "chroot"];
+   B -> E [label = "set"];
+   B -> F [label = "move"];
+   group {
+     label = "SSHD Match Group";
+     orientation = portrait
+     D -> E -> F;
+    }
+}
+
+----
+
+== Contrôles
+
+=== Contrôle activation SFTP dans SSHD
+
+
+[source,bash]
+----
+[root@server /]# cat /etc/ssh/sshd_config
+....
+# override default of no subsystems
+Subsystem      sftp    /usr/libexec/openssh/sftp-server
+----
+
+
+
+== Création de l'arborescence
+
+[source,bash]
+----
+mkdir -p /directory
+chmod 700 /directory
+----
+
+Example:
+
+[source,bash]
+----
+[root@server /]# mkdir -p /data/sftp
+[root@server /]# chmod 700 /data
+----
+
+
+
+== Création du groupe et des users SFTP
+
+[source,bash]
+----
+groupadd sftp_users // <1>
+useradd -g sftp_users -d / -s /sbin/nologin USER1 // <2>
+useradd -g sftp_users -d / -s /sbin/nologin USER2 // <3>
+useradd -g sftp_users -d / -s /sbin/nologin USER3 // <4>
+useradd -g sftp_users -d / -s /sbin/nologin USER4 // <5>
+----
+<1> Nom du groupe auquel appartiendront tous les utilisateurs SFTP crées.
+<2> -g : Groupe d'appartenance du compte USER1 / -d Chemin du profil / -s shell de connxion => aucun
+<3> -g : Groupe d'appartenance du compte USER2 / -d Chemin du profil / -s shell de connxion => aucun
+<4> -g : Groupe d'appartenance du compte USER3 / -d Chemin du profil / -s shell de connxion => aucun
+<5> -g : Groupe d'appartenance du compte USER4 / -d Chemin du profil / -s shell de connxion => aucun
+
+== Paramétrage du mot de passe des utilisateurs crées
+
+[source,bash]
+----
+passwd USER1
+passwd USER2
+passwd USER3
+passwd USER4
+----
+
+
+
+== Controle du fichier contenant les utilisateurs SFTP
+
+[source,bash]
+----
+cat /etc/passwd
+....
+USER1:x:1002:1002::/:/sbin/nologin
+USER2:x:1003:1002::/:/sbin/nologin
+USER3:x:1004:1002::/:/sbin/nologin
+USER4:x:1005:1002::/:/sbin/nologin
+----
+
+
+
+== Création de l'arborescence de stockage des Flux
+
+[source,bash]
+----
+mkdir -p /data/sftp/USER2/upload // <1>
+chown -R root:root /data/sftp/USER2 // <2>
+chown -R USER2:sftp_users /data/sftp/USER2/upload // <3>
+chmod 770 /data/sftp/USER2/upload // <4>
+
+mkdir -p /data/sftp/USER1/upload // <1>
+chown -R root:root /data/sftp/USER1 // <2>
+chown -R USER1:sftp_users /data/sftp/USER1/upload // <3>
+chmod 770 /data/sftp/USER1/upload // <4>
+
+mkdir -p /data/sftp/USER3/upload // <1>
+chown -R root:root /data/sftp/USER3 // <2>
+chown -R USER3:sftp_users /data/sftp/USER3/upload // <3>
+chmod 770 /data/sftp/USER3/upload // <4>
+
+mkdir -p /data/sftp/USER4/upload // <1>
+chown -R root:root /data/sftp/USER4 // <2>
+chown -R USER4:sftp_users /data/sftp/USER4/upload // <3>
+chmod 770 /data/sftp/USER4/upload // <4>
+
+----
+<1> Création du répertoire personnel de l'utilisateur associé à la société, accessible en R/W pour l'utilisateur.
+<2> Affectation des droits à *_root:root_* au répertoire dans lequel sera chrooté de l'utilisateur associé à la société.
+<3> Affectation des droits à *_$COMPTE$:sftp_users_* au répertoire dans lequel l'utilisateur associé à la société pourra lire et écrire.
+<4> Affectation des droits au répertoire à l'utilisateur et au groupe d'appartenance dans lequel l'utilisateur associé à la société pourra lire et écrire.
+
+
+
+== Paramétrage compte SFTP ADM
+
+[source,bash]
+----
+[root@server sftp]# useradd -g sftp_users -d / -s /sbin/nologin SFTP_ADM // <1>
+[root@server sftp]# cat /etc/passwd
+...
+SFTP_ADM:x:1006:1002::/:/sbin/nologin
+----
+
+<1> -g : Groupe d'appartenance du compte SFTP_ADM / -d Chemin du profil / -s shell de connxion => aucun
+
+
+
+== Paramétrage SSHD
+
+[source,bash]
+----
+[root@server sftp]# cp -p /etc/ssh/sshd_config /etc/ssh/sshd_config.sav
+[root@server sftp]# vi /etc/ssh/sshd_config
+# override default of no subsystems
+#Subsystem      sftp    /usr/libexec/openssh/sftp-server // <1>
+## Add umask to U+G none to Others
+Subsystem sftp internal-sftp -u 0007 // <2>
+IgnoreRhosts yes
+IgnoreUserKnownHosts no
+PrintMotd yes
+StrictModes yes
+PubkeyAuthentication yes
+#RSAAuthentication yes
+PermitRootLogin no
+PermitEmptyPasswords no
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#       X11Forwarding no
+#       AllowTcpForwarding no
+#       PermitTTY no
+#       ForceCommand cvs server
+
+# A placer avant le test sur le groupe si le user appartient au groupe sftp_users
+# SSHD lit la config dans l'ordre d apparition....
+Match User SFTP_ADM // <3>
+ChrootDirectory /data/sftp // <4>
+## Add umask to U+G none to Others
+ForceCommand internal-sftp -u 0007 // <5>
+
+Match Group sftp_users // <6>
+ChrootDirectory /data/sftp/%u // <7>
+## Add umask to U+G none to Others
+ForceCommand internal-sftp -u 0007 -d /upload // <8>
+----
+<1> Désactivation server SFTP par défaut
+<2> Activation serveur SFTP intégré à sshd
+<3> Bloc concernant le compte SFTP_ADM
+<4> Chroot du compte *_SFTP_ADM_* vers /data/sftp
+<5> Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770)
+<6> Bloc concernant les membres du groupe *_sftp_users_*
+<7> Chroot des membres du groupe *_sftp_users_* vers /data/sftp/%u (%u est une variable pour le nom d'utilisateur)
+<8> Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770) et déplacement automatique dans le répertoire upload
+
+== Redémarrage SSHD et controles
+[source,bash]
+----
+systemctl restart sshd
+systemctl status sshd
+----
