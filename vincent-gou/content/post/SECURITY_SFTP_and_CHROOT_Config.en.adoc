@@ -1,8 +1,8 @@
 ---
-title: "Paramétrage SFTP sécurisé complet"
+title: "Secured SFTP setup"
 authors:
   - Vincent Gourrierec
-date: 2019-06-11
+date: 2020-05-11
 tags: ["sftp","linux","securite"]
 categories: ["posts"]
 draft: false
@@ -20,13 +20,13 @@ keywords:
 :imagesdir: /images
 
 
-== Objectifs
+== Objectives
 
-* Fournir un accès sécurisé à des ressources sur un serveur Linux via SFTP.
-* Les comptes SFTP n'auront accès qu'à la ressources autorisées.
-* Un compte d'administration pourra gérer les ressources des autres comptes.
+* Deliver secured resources access to a Linux server through SFTP.
+* SFTP accounts will only have access to allowed resource.
+* An administrator account will be able to manage user accounts.
 
-== Mode de fonctionnement Cible utilisateur
+== Target User mode diagram
 
 [blockdiag,sftp_user_mode]
 ----
@@ -37,7 +37,7 @@ blockdiag {
    A1 [shape = actor,label = "USER1", numbered = 1];
    B [label = "SSHD", numbered = 2];
    C [label = "SSHD_CONFIG", numbered = 3];
-   D [label = "/data/sftp/USER1" , numbered = 4];
+   D [label = "/data/sftp_group_1/USER1" , numbered = 4];
    E [label = "UMASK 0007" , numbered = 5];
    F [label = "Default Folder /upload under chroot", numbered = 6];
 
@@ -56,7 +56,7 @@ blockdiag {
 
 ----
 
-== Mode de fonctionnement Cible administrateur
+== Target Admin mode diagram
 
 [blockdiag,sftp_admin_mode]
 ----
@@ -68,7 +68,7 @@ blockdiag {
    A2 [shape = actor,label = "USER2", numbered = 1];
    B [label = "SSHD", numbered = 2];
    C [label = "SSHD_CONFIG", numbered = 3];
-   D [label = "/data/sftp/%u" , numbered = 4];
+   D [label = "/data/sftp_group_1/%u" , numbered = 4];
    E [label = "UMASK 0007" , numbered = 5];
    F [label = "Default Folder /upload under chroot", numbered = 6];
 
@@ -88,9 +88,9 @@ blockdiag {
 
 ----
 
-== Contrôles
+== Controls
 
-=== Contrôle activation SFTP dans SSHD
+=== SFTP activation in SSHD control
 
 
 [source,bash]
@@ -103,7 +103,7 @@ Subsystem      sftp    /usr/libexec/openssh/sftp-server
 
 
 
-== Création de l'arborescence
+== Directory tree creation
 
 [source,bash]
 ----
@@ -115,29 +115,29 @@ Example:
 
 [source,bash]
 ----
-[root@server /]# mkdir -p /data/sftp
+[root@server /]# mkdir -p /data/sftp_group_1
 [root@server /]# chmod 700 /data
 ----
 
 
 
-== Création du groupe et des users SFTP
+== SFTP user and group creation
 
 [source,bash]
 ----
-groupadd sftp_users // <1>
-useradd -g sftp_users -d / -s /sbin/nologin USER1 // <2>
-useradd -g sftp_users -d / -s /sbin/nologin USER2 // <3>
-useradd -g sftp_users -d / -s /sbin/nologin USER3 // <4>
-useradd -g sftp_users -d / -s /sbin/nologin USER4 // <5>
+groupadd sftp_group_1 // <1>
+useradd -g sftp_group_1 -d / -s /sbin/nologin USER1 // <2>
+useradd -g sftp_group_1 -d / -s /sbin/nologin USER2 // <3>
+useradd -g sftp_group_1 -d / -s /sbin/nologin USER3 // <4>
+useradd -g sftp_group_1 -d / -s /sbin/nologin USER4 // <5>
 ----
-<1> Nom du groupe auquel appartiendront tous les utilisateurs SFTP crées.
-<2> -g : Groupe d'appartenance du compte USER1 / -d Chemin du profil / -s shell de connxion => aucun
-<3> -g : Groupe d'appartenance du compte USER2 / -d Chemin du profil / -s shell de connxion => aucun
-<4> -g : Groupe d'appartenance du compte USER3 / -d Chemin du profil / -s shell de connxion => aucun
-<5> -g : Groupe d'appartenance du compte USER4 / -d Chemin du profil / -s shell de connxion => aucun
+<1> User created group name ownership.
+<2> -g : Ownership group for user USER1 / -d Profil path / -s connxion shell => none
+<3> -g : Ownership group for user USER2 / -d Profil path / -s connxion shell => none
+<4> -g : Ownership group for user USER3 / -d Profil path / -s connxion shell => none
+<5> -g : Ownership group for user USER4 / -d Profil path / -s connxion shell => none
 
-== Paramétrage du mot de passe des utilisateurs crées
+== Created user password setup
 
 [source,bash]
 ----
@@ -149,7 +149,7 @@ passwd USER4
 
 
 
-== Controle du fichier contenant les utilisateurs SFTP
+== SFTP user config file check-up
 
 [source,bash]
 ----
@@ -163,39 +163,39 @@ USER4:x:1005:1002::/:/sbin/nologin
 
 
 
-== Création de l'arborescence de stockage des Flux
+== User defauklt directory tree creation
 
 [source,bash]
 ----
-mkdir -p /data/sftp/USER2/upload // <1>
-chown -R root:root /data/sftp/USER2 // <2>
-chown -R USER2:sftp_users /data/sftp/USER2/upload // <3>
-chmod 770 /data/sftp/USER2/upload // <4>
+mkdir -p /data/sftp_group_1/USER2/upload // <1>
+chown -R root:root /data/sftp_group_1/USER2 // <2>
+chown -R USER2:sftp_users /data/sftp_group_1/USER2/upload // <3>
+chmod 770 /data/sftp_group_1/USER2/upload // <4>
 
-mkdir -p /data/sftp/USER1/upload // <1>
-chown -R root:root /data/sftp/USER1 // <2>
-chown -R USER1:sftp_users /data/sftp/USER1/upload // <3>
-chmod 770 /data/sftp/USER1/upload // <4>
+mkdir -p /data/sftp_group_1/USER1/upload // <1>
+chown -R root:root /data/sftp_group_1/USER1 // <2>
+chown -R USER1:sftp_users /data/sftp_group_1/USER1/upload // <3>
+chmod 770 /data/sftp_group_1/USER1/upload // <4>
 
-mkdir -p /data/sftp/USER3/upload // <1>
-chown -R root:root /data/sftp/USER3 // <2>
-chown -R USER3:sftp_users /data/sftp/USER3/upload // <3>
-chmod 770 /data/sftp/USER3/upload // <4>
+mkdir -p /data/sftp_group_1/USER3/upload // <1>
+chown -R root:root /data/sftp_group_1/USER3 // <2>
+chown -R USER3:sftp_users /data/sftp_group_1/USER3/upload // <3>
+chmod 770 /data/sftp_group_1/USER3/upload // <4>
 
-mkdir -p /data/sftp/USER4/upload // <1>
-chown -R root:root /data/sftp/USER4 // <2>
-chown -R USER4:sftp_users /data/sftp/USER4/upload // <3>
-chmod 770 /data/sftp/USER4/upload // <4>
+mkdir -p /data/sftp_group_1/USER4/upload // <1>
+chown -R root:root /data/sftp_group_1/USER4 // <2>
+chown -R USER4:sftp_users /data/sftp_group_1/USER4/upload // <3>
+chmod 770 /data/sftp_group_1/USER4/upload // <4>
 
 ----
-<1> Création du répertoire personnel de l'utilisateur associé à la société, accessible en R/W pour l'utilisateur.
-<2> Affectation des droits à *_root:root_* au répertoire dans lequel sera chrooté de l'utilisateur associé à la société.
-<3> Affectation des droits à *_$COMPTE$:sftp_users_* au répertoire dans lequel l'utilisateur associé à la société pourra lire et écrire.
+<1> User home directory creation, accessibilty R/W.
+<2> Rights setup to *_root:root_* on chrooted user root folder.
+<3> Rights setup to *_$COMPTE$:sftp_users_* on chrooted user folder.
 <4> Affectation des droits au répertoire à l'utilisateur et au groupe d'appartenance dans lequel l'utilisateur associé à la société pourra lire et écrire.
 
 
 
-== Paramétrage compte SFTP ADM
+== SFTP Admin account setup
 
 [source,bash]
 ----
@@ -209,7 +209,7 @@ SFTP_ADM:x:1006:1002::/:/sbin/nologin
 
 
 
-== Paramétrage SSHD
+== SSHD setup
 
 [source,bash]
 ----
@@ -238,7 +238,7 @@ PermitEmptyPasswords no
 # A placer avant le test sur le groupe si le user appartient au groupe sftp_users
 # SSHD lit la config dans l'ordre d apparition....
 Match User SFTP_ADM // <3>
-ChrootDirectory /data/sftp // <4>
+ChrootDirectory /data/sftp_group_1 // <4>
 ## Add umask to U+G none to Others
 ForceCommand internal-sftp -u 0007 // <5>
 
@@ -250,13 +250,13 @@ ForceCommand internal-sftp -u 0007 -d /upload // <8>
 <1> Désactivation server SFTP par défaut
 <2> Activation serveur SFTP intégré à sshd
 <3> Bloc concernant le compte SFTP_ADM
-<4> Chroot du compte *_SFTP_ADM_* vers /data/sftp
+<4> Chroot du compte *_SFTP_ADM_* vers /data/sftp_group_1
 <5> Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770)
 <6> Bloc concernant les membres du groupe *_sftp_users_*
 <7> Chroot des membres du groupe *_sftp_users_* vers /data/sftp/%u (%u est une variable pour le nom d'utilisateur)
 <8> Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770) et déplacement automatique dans le répertoire upload
 
-== Redémarrage SSHD et controles
+== SSHD restart and controls
 [source,bash]
 ----
 systemctl restart sshd
