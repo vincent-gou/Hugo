@@ -26,7 +26,7 @@ keywords:
 * Les comptes SFTP n'auront accès qu'à la ressources autorisées.
 * Un compte d'administration pourra gérer les ressources des autres comptes.
 
-== Mode de fonctionnement Cible utilisateur
+== Mode de fonctionnement cible utilisateur
 
 [blockdiag,sftp_user_mode_fr,format="svg",opts="inline"]
 ----
@@ -56,7 +56,7 @@ blockdiag {
 
 ----
 
-== Mode de fonctionnement Cible administrateur
+== Mode de fonctionnement cible administrateur
 
 [blockdiag,sftp_admin_mode_fr,format="svg",opts="inline"]
 ----
@@ -131,11 +131,11 @@ useradd -g sftp_users -d / -s /sbin/nologin USER2 // <3>
 useradd -g sftp_users -d / -s /sbin/nologin USER3 // <4>
 useradd -g sftp_users -d / -s /sbin/nologin USER4 // <5>
 ----
-<1> Nom du groupe auquel appartiendront tous les utilisateurs SFTP crées.
-<2> -g : Groupe d'appartenance du compte USER1 / -d Chemin du profil / -s shell de connxion => aucun
-<3> -g : Groupe d'appartenance du compte USER2 / -d Chemin du profil / -s shell de connxion => aucun
-<4> -g : Groupe d'appartenance du compte USER3 / -d Chemin du profil / -s shell de connxion => aucun
-<5> -g : Groupe d'appartenance du compte USER4 / -d Chemin du profil / -s shell de connxion => aucun
+<1>  Nom du groupe auquel appartiendront tous les utilisateurs SFTP crées.
+<2>  -g : Groupe d'appartenance du compte USER1 / -d Chemin du profil / -s shell de connxion => aucun
+<3>  -g : Groupe d'appartenance du compte USER2 / -d Chemin du profil / -s shell de connxion => aucun
+<4>  -g : Groupe d'appartenance du compte USER3 / -d Chemin du profil / -s shell de connxion => aucun
+<5>  -g : Groupe d'appartenance du compte USER4 / -d Chemin du profil / -s shell de connxion => aucun
 
 == Paramétrage du mot de passe des utilisateurs crées
 
@@ -188,10 +188,10 @@ chown -R USER4:sftp_users /data/sftp/USER4/upload // <3>
 chmod 770 /data/sftp/USER4/upload // <4>
 
 ----
-<1> Création du répertoire personnel de l'utilisateur associé à la société, accessible en R/W pour l'utilisateur.
-<2> Affectation des droits à *_root:root_* au répertoire dans lequel sera chrooté de l'utilisateur associé à la société.
-<3> Affectation des droits à *_$COMPTE$:sftp_users_* au répertoire dans lequel l'utilisateur associé à la société pourra lire et écrire.
-<4> Affectation des droits au répertoire à l'utilisateur et au groupe d'appartenance dans lequel l'utilisateur associé à la société pourra lire et écrire.
+<1>  Création du répertoire personnel de l'utilisateur associé à la société, accessible en R/W pour l'utilisateur.
+<2>  Affectation des droits à *_root:root_* au répertoire dans lequel sera chrooté de l'utilisateur associé à la société.
+<3>  Affectation des droits à *_$COMPTE$:sftp_users_* au répertoire dans lequel l'utilisateur associé à la société pourra lire et écrire.
+<4>  Affectation des droits au répertoire à l'utilisateur et au groupe d'appartenance dans lequel l'utilisateur associé à la société pourra lire et écrire.
 
 
 
@@ -205,7 +205,7 @@ chmod 770 /data/sftp/USER4/upload // <4>
 SFTP_ADM:x:1006:1002::/:/sbin/nologin
 ----
 
-<1> -g : Groupe d'appartenance du compte SFTP_ADM / -d Chemin du profil / -s shell de connxion => aucun
+<1>  -g : Groupe d'appartenance du compte SFTP_ADM / -d Chemin du profil / -s shell de connxion => aucun
 
 
 
@@ -247,14 +247,14 @@ ChrootDirectory /data/sftp/%u // <7>
 ## Add umask to U+G none to Others
 ForceCommand internal-sftp -u 0007 -d /upload // <8>
 ----
-<1> Désactivation server SFTP par défaut
-<2> Activation serveur SFTP intégré à sshd
-<3> Bloc concernant le compte SFTP_ADM
-<4> Chroot du compte *_SFTP_ADM_* vers /data/sftp
-<5> Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770)
-<6> Bloc concernant les membres du groupe *_sftp_users_*
-<7> Chroot des membres du groupe *_sftp_users_* vers /data/sftp/%u (%u est une variable pour le nom d'utilisateur)
-<8> Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770) et déplacement automatique dans le répertoire upload
+<1>  Désactivation server SFTP par défaut
+<2>  Activation serveur SFTP intégré à sshd
+<3>  Bloc concernant le compte SFTP_ADM
+<4>  Chroot du compte *_SFTP_ADM_* vers /data/sftp
+<5>  Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770)
+<6>  Bloc concernant les membres du groupe *_sftp_users_*
+<7>  Chroot des membres du groupe *_sftp_users_* vers /data/sftp/%u (%u est une variable pour le nom d'utilisateur)
+<8>  Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770) et déplacement automatique dans le répertoire upload
 
 == Redémarrage SSHD et controles
 [source,bash]
