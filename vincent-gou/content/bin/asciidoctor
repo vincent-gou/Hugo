@@ -1,0 +1,16 @@
+#!/bin/sh
+
+ad="/usr/bin/asciidoctor"
+
+$ad --trace --verbose \
+  --base-dir ./content \                        #
+  --no-header-footer \                          #
+  --attribute nofooter \
+  --attribute docinfo=shared \
+  --attribute icons=font \                      #
+  --attribute source-highlighter=highlightjs \  #
+  --attribute sectlinks \                       #
+  --attribute sectanchors \
+  --attribute figure-caption! \
+  --attribute toc-title! \
+  -                                             #
