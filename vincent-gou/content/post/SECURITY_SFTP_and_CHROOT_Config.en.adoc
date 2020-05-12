@@ -28,7 +28,7 @@ keywords:
 
 == Target User mode diagram
 
-[blockdiag,sftp_user_mode_en]
+[blockdiag,sftp_user_mode_en,format="svg",opts="inline"]
 ----
 blockdiag {
   default_shape = roundedbox;
@@ -58,7 +58,7 @@ blockdiag {
 
 == Target Admin mode diagram
 
-[blockdiag,sftp_admin_mode_en]
+[blockdiag,sftp_admin_mode_en,format="svg",opts="inline"]
 ----
 blockdiag {
   default_shape = roundedbox;

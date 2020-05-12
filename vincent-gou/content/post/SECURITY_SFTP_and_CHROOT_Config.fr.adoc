@@ -28,7 +28,7 @@ keywords:
 
 == Mode de fonctionnement Cible utilisateur
 
-[blockdiag,sftp_user_mode_fr]
+[blockdiag,sftp_user_mode_fr,format="svg",opts="inline"]
 ----
 blockdiag {
   default_shape = roundedbox;
@@ -58,7 +58,7 @@ blockdiag {
 
 == Mode de fonctionnement Cible administrateur
 
-[blockdiag,sftp_admin_mode_fr]
+[blockdiag,sftp_admin_mode_fr,format="svg",opts="inline"]
 ----
 blockdiag {
   default_shape = roundedbox;
