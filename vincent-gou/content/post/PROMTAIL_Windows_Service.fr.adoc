@@ -44,30 +44,30 @@ Lancez une commande Windows, puis tapez les commandes suivantes:
 
 [source,bash]
 ----
-"C:\Program Files\telegraf\nssm.exe" install promtail_agent "c:\Program Files\telegraf\promtail.exe" <1>
+c:\users\vgourrierec>"C:\Program Files\telegraf\nssm.exe" install promtail_agent "c:\Program Files\telegraf\promtail.exe" <1>
 Le service "promtail_agent" a été installé avec succès!
 
-"C:\Program Files\telegraf\nssm.exe" set promtail_agent DisplayName "Promtail Agent" <2>
+c:\users\vgourrierec>"C:\Program Files\telegraf\nssm.exe" set promtail_agent DisplayName "Promtail Agent" <2>
 Configuration de la valeur du paramètre "DisplayName" du service "promtail_agent".
 
-"C:\Program Files\telegraf\nssm.exe" set promtail_agent Description "Log centralization with Promtail Agent" <3>
+c:\users\vgourrierec>"C:\Program Files\telegraf\nssm.exe" set promtail_agent Description "Log centralization with Promtail Agent" <3>
 Configuration de la valeur du paramètre "Description" du service "promtail_agent".
 
-"C:\Program Files\telegraf\nssm.exe" set promtail_agentAppParameters "-config.file config_promtail.yml" <4>
+c:\users\vgourrierec>"C:\Program Files\telegraf\nssm.exe" set promtail_agentAppParameters "-config.file config_promtail.yml" <4>
 Configuration de la valeur du paramètre "AppParameters" du service "promtail_agent"
 
-"C:\Program Files\telegraf\nssm.exe" set promtail_agent AppStdout "c:\Program Files\telegraf\promtail.log" <5>
+c:\users\vgourrierec>"C:\Program Files\telegraf\nssm.exe" set promtail_agent AppStdout "c:\Program Files\telegraf\promtail.log" <5>
 Configuration de la valeur du paramètre "AppStdout" du service "promtail_agent".
 
-"C:\Program Files\telegraf\nssm.exe" set promtail_agent AppStderr "c:\Program Files\telegraf\promtail.log" <6>
+c:\users\vgourrierec>"C:\Program Files\telegraf\nssm.exe" set promtail_agent AppStderr "c:\Program Files\telegraf\promtail.log" <6>
 Configuration de la valeur du paramètre "AppStderr" du service "promtail_agent".
 ----
-<1> Création du service avec les options par défaut. Le service n'est pas démarré lors de la création.
-<2> Configuration du nom affiché dans services.msc
-<3> Configuration de la description affichée dans services.msc
-<4> Configuration du paramètre de lancement du process promtail vers le fichier de config placé dans le même répertoire que l'exécutable promtail.exe.
-<5> Ajout de la redirection vers le fichier de log
-<6> Ajout de la redirection vers le fichier de log
+<1>  Création du service avec les options par défaut. Le service n'est pas démarré lors de la création.
+<2>  Configuration du nom affiché dans services.msc
+<3>  Configuration de la description affichée dans services.msc
+<4>  Configuration du paramètre de lancement du process promtail vers le fichier de config placé dans le même répertoire que l'exécutable promtail.exe.
+<5>  Ajout de la redirection vers le fichier de log
+<6>  Ajout de la redirection vers le fichier de log
 
 == Compléments
 
