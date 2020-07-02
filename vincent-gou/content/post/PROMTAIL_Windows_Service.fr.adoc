@@ -70,3 +70,7 @@ Configuration de la valeur du paramètre "AppStderr" du service "promtail_agent"
 <6> Ajout de la redirection vers le fichier de log
 
 == Compléments
+
+Le service promtail est maintenant pilotable via le gestionnaire de services Windows.
+
+Par défaut le service démarrera en automatique.
