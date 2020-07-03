@@ -80,7 +80,7 @@ enp0s9: 08:00:27:66:62:47
 
 Script tout en un:
 
-WARNING: Backup your config files before.
+WARNING: Sauvegardez vos fichiers de configuration réseau.
 
 [source,bash]
 ----
