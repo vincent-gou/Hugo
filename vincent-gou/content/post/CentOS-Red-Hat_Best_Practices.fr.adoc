@@ -24,13 +24,12 @@ keywords:
 
 * Lister les bonnes pratiques d'installation et déploiement des systèmes d'exploitation CentOS / Red-Hat
 
-[NOTE]
-Those best practices were tested on CentOS 7 and Red-Hat 7.
+NOTE:Ces bonnes pratiques ont étées testées sur CentOS 7 and Red-Hat 7.
 
 == YUM
 === Kernels
 
-Remove manually or automatically old kernels:
+Supprimer manuellement ou automatiquement les anciens kernels:
 https://linuxconfig.org/how-to-remove-old-unused-kernels-on-centos-linux
 
 

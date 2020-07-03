@@ -24,8 +24,7 @@ keywords:
 
 * List CentOS / Red-Hat OS installation and deployment best practices
 
-[NOTE]
-Those best practices were tested on CentOS 7 and Red-Hat 7.
+NOTE:Those best practices were tested on CentOS 7 and Red-Hat 7.
 
 == YUM
 === Kernels
