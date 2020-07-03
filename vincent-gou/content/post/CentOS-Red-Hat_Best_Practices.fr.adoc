@@ -1,0 +1,78 @@
+---
+title: "Bonnes pratiques CentOS et Red Hat"
+authors:
+  - Vincent Gourrierec
+date: 2020-07-03
+tags: ["CentOS","Red-Hat","best-pratices"]
+categories: ["posts"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- linux
+- centOS
+- red-hat
+- best-pratice
+- kernel
+- ipv6
+---
+:imagesdir: /images
+
+
+== Objectifs
+
+* Lister les bonnes pratiques d'installation et déploiement des systèmes d'exploitation CentOS / Red-Hat
+
+[NOTE]
+Those best practices were tested on CentOS 7 and Red-Hat 7.
+
+== YUM
+=== Kernels
+
+Remove manually or automatically old kernels:
+https://linuxconfig.org/how-to-remove-old-unused-kernels-on-centos-linux
+
+
+== Réseau
+=== Désactivation IPV6
+
+[source,bash]
+----
+echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/01-disable_IPV6.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.d/01-disable_IPV6.conf
+sysctl -p
+echo "AddressFamily inet" >> /etc/ssh/sshd_config
+service sshd restart
+----
+
+=== Désactivation NetworkManager
+
+Network Manager est installé et actif par défaut.
+Vous pouvez controlez la configuration réseau en gérant les fichiers de configuration sous /etc/sysconfig/network-scripts.
+
+
+[source,bash]
+----
+systemctl disable NetworkManager
+systemctl stop NetworkManager
+----
+
+=== Corrélation carte réseau et adresse MAC
+
+Cette commande vous permettra d'afficher pour chaque carte réseau physique son adresse MAC.
+
+[source,bash]
+----
+for i in $(find /sys/class/net/* -not -lname "*virtual*" | sed -e "s/\// /g" | awk '{print $4}' ); do MAC=$(cat /sys/class/net/$i/address);echo $i: $MAC; done
+----
+
+Retour affiché de la commande: (Machine virtuelle avec 4 cartes réseau):
+
+[source,bash]
+----
+enp0s10: 08:00:27:34:a7:5b
+enp0s3: 08:00:27:22:1d:03
+enp0s8: 08:00:27:35:a8:74
+enp0s9: 08:00:27:66:62:47
+----
