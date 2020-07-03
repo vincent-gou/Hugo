@@ -136,7 +136,7 @@ Pour les machines virtuelles il est nécessaire de procéder à un petit hack af
 Par ce que le mode promiscuité n'est pas géré depuis CentOS / RedHat 7 il faudra également ajouter un service systemd pour prise en compte à chaque redémarrage.
 Pour VirtualBox par exemple, configurez tel que le screenshot ci-dessous:
 
-image::images\Best_Pratices_CentOS-RedHat-d690f.png[]
+image::Best_Pratices_CentOS-RedHat-d690f.png[]
 
 Script tout en un:
 
