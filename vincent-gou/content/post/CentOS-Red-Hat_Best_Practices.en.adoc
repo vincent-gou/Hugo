@@ -73,3 +73,23 @@ enp0s3: 08:00:27:22:1d:03
 enp0s8: 08:00:27:35:a8:74
 enp0s9: 08:00:27:66:62:47
 ----
+
+=== Rename default physical enpXsY Interface Name to ethX
+
+All in one script:
+
+WARNING: Sauvegardez vos fichiers de configuration réseau.
+
+[source,bash]
+----
+inc="0";for i in $(find /sys/class/net/* -not -lname "*virtual*" | \
+sed -e "s/\// /g" | \
+awk '{print $4}' ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo "HWADDR=$MAC" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+cat /etc/sysconfig/network-scripts/ifcfg-$i >> /etc/sysconfig/network-scripts/ifcfg-eth$inc; \
+sed -i "s/$i/eth$inc/g" /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+mv /etc/sysconfig/network-scripts/ifcfg-$i /etc/sysconfig/network-scripts/ifcfg-$i.old.bkp;\
+done
+----
