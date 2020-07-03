@@ -133,6 +133,9 @@ ifup team0;
 For Vms there is a little hack to add in order to permit correct network card balancing in team, you must add extra parameters and add an extra systemd service.
 Since promiscuous mode is not correctly handled since CentOS / Red-Hat 7 we must add a promisc service to activate it after reboot.
 
+For example, Virtualbox has to be setup like below screenshot:
+image::Best_Pratices_CentOS-RedHat-d690f.png[]
+
 All in one script:
 
 WARNING: Backup your config files before.
