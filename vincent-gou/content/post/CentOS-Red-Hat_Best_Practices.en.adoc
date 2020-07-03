@@ -37,11 +37,11 @@ https://linuxconfig.org/how-to-remove-old-unused-kernels-on-centos-linux
 
 [source,bash]
 ----
-echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/01-disable_IPV6.conf
-echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.d/01-disable_IPV6.conf
-sysctl -p
-echo "AddressFamily inet" >> /etc/ssh/sshd_config
-service sshd restart
+[root@test-server:] echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/01-disable_IPV6.conf
+[root@test-server:] echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.d/01-disable_IPV6.conf
+[root@test-server:] sysctl -p
+[root@test-server:] echo "AddressFamily inet" >> /etc/ssh/sshd_config
+[root@test-server:] service sshd restart
 ----
 
 === Disable NetworkManager
@@ -51,8 +51,8 @@ You can manage directly network config by editing /etc/sysconfig/network-scripts
 
 [source,bash]
 ----
-systemctl disable NetworkManager
-systemctl stop NetworkManager
+[root@test-server:] systemctl disable NetworkManager
+[root@test-server:] systemctl stop NetworkManager
 ----
 
 === Network card MAC address
@@ -61,7 +61,7 @@ This command will display MAC address for each physical network card on the syst
 
 [source,bash]
 ----
-for i in $(find /sys/class/net/* -not -lname "*virtual*" | sed -e "s/\// /g" | awk '{print $4}' ); do MAC=$(cat /sys/class/net/$i/address);echo $i: $MAC; done
+[root@test-server:] for i in $(find /sys/class/net/* -not -lname "*virtual*" | sed -e "s/\// /g" | awk '{print $4}' ); do MAC=$(cat /sys/class/net/$i/address);echo $i: $MAC; done
 ----
 
 This command may result in (Virtual Machine with four network cards):
@@ -82,7 +82,7 @@ WARNING: Backup your config files before.
 
 [source,bash]
 ----
-inc="0";for i in $(find /sys/class/net/* -not -lname "*virtual*" | \
+[root@test-server:] inc="0";for i in $(find /sys/class/net/* -not -lname "*virtual*" | \
 sed -e "s/\// /g" | \
 awk '{print $4}' ); do inc=$((inc+1));\
 MAC=$(cat /sys/class/net/$i/address) ; \
@@ -92,4 +92,123 @@ cat /etc/sysconfig/network-scripts/ifcfg-$i >> /etc/sysconfig/network-scripts/if
 sed -i "s/$i/eth$inc/g" /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
 mv /etc/sysconfig/network-scripts/ifcfg-$i /etc/sysconfig/network-scripts/ifcfg-$i.old.bkp;\
 done
+----
+
+=== Team creation script (Physical Servers):
+
+All in one script:
+
+WARNING: Backup your config files before.
+
+[source,bash]
+----
+[root@test-server:] inc="0";for i in $(find /sys/class/net/* -not -lname "*virtual*" | \
+sed -e "s/\// /g" | \
+awk '{print $4}' ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo "HWADDR=$MAC" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "DEVICE=eth$inc" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "NAME=eth$inc" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "DEVICETYPE=TeamPort" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "ONBOOT=yes" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "TEAM_MASTER=team0" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "NM_CONTROLLED=no" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+done;\
+rm -f /etc/sysconfig/network-scripts/ifcfg-team0;\
+echo "DEVICE=team0" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "DEVICETYPE=Team" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "ONBOOT=yes" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "BOOTPROTO=none" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "NM_CONTROLLED=no" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "IPADDR=192.168.1.120" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "GATEWAY=192.168.1.254" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "PREFIX=24" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "TEAM_CONFIG='{\"runner\": {\"name\": \"loadbalance\"}, \"link_watch\": {\"name\": \"ethtool\"} }'" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+ifup team0;
+----
+
+=== Team creation script (VM Servers):
+
+For Vms there is a little hack to add in order to permit correct network card balancing in team, you must add extra parameters and add an extra systemd service.
+Since promiscuous mode is not correctly handled since CentOS / Red-Hat 7 we must add a promisc service to activate it after reboot.
+
+All in one script:
+
+WARNING: Backup your config files before.
+
+[source,bash]
+----
+[root@test-server:] inc="0";for i in $(find /sys/class/net/* -not -lname "*virtual*" | \
+sed -e "s/\// /g" | \
+awk '{print $4}' ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo "HWADDR=$MAC" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "DEVICE=eth$inc" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "NAME=eth$inc" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "DEVICETYPE=TeamPort" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "ONBOOT=yes" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "PROMISC=yes" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "TEAM_MASTER=team0" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo "NM_CONTROLLED=no" >> /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+done;\
+rm -f /etc/sysconfig/network-scripts/ifcfg-team0;\
+echo "DEVICE=team0" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "DEVICETYPE=Team" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "ONBOOT=yes" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "BOOTPROTO=none" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "NM_CONTROLLED=no" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "IPADDR=192.168.1.120" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "GATEWAY=192.168.1.254" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "PREFIX=24" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "TEAM_CONFIG='{\"runner\": {\"name\": \"loadbalance\"}, \"link_watch\": {\"name\": \"ethtool\"} }'" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+ifup team0;
+----
+
+Generate Promisc systemd script
+
+[source,bash]
+----
+[root@test-server:] inc="0";
+echo "[Unit]" > /etc/systemd/system/promisc.service ;\
+echo "Description=Makes an interface run in promiscuous mode at boot" >> /etc/systemd/system/promisc.service ;\
+echo "After=network.target"  >> /etc/systemd/system/promisc.service ;\
+echo "[Service]"  >> /etc/systemd/system/promisc.service ;\
+echo "Type=oneshot" >> /etc/systemd/system/promisc.service ;\
+echo "TimeoutStartSec=0" >> /etc/systemd/system/promisc.service ;\
+echo "RemainAfterExit=yes" >> /etc/systemd/system/promisc.service ;\
+for i in $(find /sys/class/net/* -not -lname "*virtual*" | \
+sed -e "s/\// /g" | \
+awk '{print $4}' ); do inc=$((inc+1));\
+echo "ExecStart=/usr/sbin/ip link set dev eth$inc promisc on" >> /etc/systemd/system/promisc.service ;\
+done;\
+echo "[Install]" >> /etc/systemd/system/promisc.service ;\
+echo "WantedBy=default.target" >> /etc/systemd/system/promisc.service ;\
+systemctl daemon-reload;\
+systemctl enable promisc;\
+systemctl start promisc
+----
+
+Network Card config should contains PROMISC info (even after a reboot):
+
+[source,bash]
+----
+[root@test-server:] ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth1: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+3: eth2: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+4: eth3: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+5: eth4: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+6: team0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.120/24 brd 192.168.1.255 scope global team0
+       valid_lft forever preferred_lft forever
 ----
