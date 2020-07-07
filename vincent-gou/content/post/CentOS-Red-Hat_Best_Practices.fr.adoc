@@ -32,8 +32,168 @@ NOTE:Ces bonnes pratiques ont étées testées sur CentOS 7 and Red-Hat 7.
 Supprimer manuellement ou automatiquement les anciens kernels:
 https://linuxconfig.org/how-to-remove-old-unused-kernels-on-centos-linux
 
+== Partitionnement
+
+=== Principes de partitionnement LVM
+
+[blockdiag,Partitionnement_LVM,format="svg",opts="inline"]
+----
+blockdiag {
+   default_node_color = grey;
+   default_textcolor = white;
+   group physical_disk {
+     textcolor = black;
+     fontsize = 18;
+     label = "Physical disk";
+     // Set group shape to 'line group' (default is box)
+     shape = line;
+     orientation = landscape
+     DISK1[shape = flowchart.database];
+     DISK2[shape = flowchart.database];
+     DISK3[shape = flowchart.database];
+     DISK4[shape = flowchart.database];
+     DISK5[shape = flowchart.database];
+     DISK6[shape = flowchart.database];
+    }
+     group pv {
+     textcolor = black;
+     fontsize = 18;
+     label = "Physical volume";
+     // Set group shape to 'line group' (default is box)
+     shape = line;
+     orientation = landscape
+     PV1[shape = flowchart.database];
+     PV2[shape = flowchart.database];
+     PV3[shape = flowchart.database];
+     PV4[shape = flowchart.database];
+     PV5[shape = flowchart.database];
+     PV6[shape = flowchart.database];
+      }
+     group vg1 {
+     textcolor = black;
+     fontsize = 18;
+     label = "Volume Group";
+     // Set group shape to 'line group' (default is box)
+     shape = line;
+     orientation = landscape
+     VG1[shape = flowchart.database];
+      }
+     group vg2 {
+     textcolor = black;
+     fontsize = 18;
+     label = "Volume Group";
+     // Set group shape to 'line group' (default is box)
+     shape = line;
+     orientation = landscape
+     VG2[shape = flowchart.database];
+      }
+     group fs {
+     textcolor = black;
+     fontsize = 18;
+     label = "File Systems";
+     // Set group shape to 'line group' (default is box)
+     shape = line;
+     orientation = landscape
+     FS1[shape = note];
+     FS2[shape = note];
+     FS3[shape = note];
+     FS4[shape = note];
+     FS5[shape = note];
+     FS6[shape = note];
+      }
+    DISK1 <- PV1;
+    DISK2 <- PV2;
+    DISK3 <- PV3;
+    DISK4 <- PV4;
+    DISK5 <- PV5;
+    DISK6 <- PV6;
+    PV1 -> VG1;
+    PV2 -> VG1;
+    PV3 -> VG2;
+    PV4 -> VG2;
+    PV5 -> VG2;
+    PV6 -> VG2;
+    VG1 -> FS1;
+    VG1 -> FS2;
+    VG2 -> FS3;
+    VG2 -> FS4;
+    VG2 -> FS5;
+    VG2 -> FS6;
+}
+----
+
+Le partitionnement correct de votre système est dépendant de l'utilisation que vous en ferez et des spécificités des services qui y seront déployés.
+Il faut prévoir dans tous les cas le partitionnement minimum suivant:
+
+/       ==>   2048 Mio voire moins (LVM et FS formatté en XFS ou EXT4)
+/usr    ==>   4096 Mio (LVM et FS formatté en XFS ou EXT4)
+/var    ==> 2048 à 4096 Mio (LVM et FS formatté en XFS ou EXT4)
+/tmp    ==> 512 à 2048 Mio (LVM et FS formatté en XFS ou EXT4)
+/boot   ==> 512 à 1024 Mio en (LVM et FS formatté en XFS ou EXT4)
+
 
 == Réseau
+
+=== Serveur de temps NTP
+
+Lors de l'installation de l'OS vous avez du spécifier le fuseau horaire. S'il n'est pas correct ou si vous souhaitez connaitre la valeur actuelle, saisissez la commande suivante:
+
+==== Valeur actuelle
+
+[source,bash]
+----
+[root@test-server:] # timedatectl
+----
+
+[source,bash]
+----
+[root@test-server:] # timedatectl
+      Local time: Mon 2020-07-06 16:08:16 CEST
+  Universal time: Mon 2020-07-06 14:08:16 UTC
+        RTC time: Mon 2020-07-06 14:08:16
+       Time zone: Europe/Paris (CEST, +0200)
+     NTP enabled: yes
+NTP synchronized: yes
+ RTC in local TZ: no
+      DST active: yes
+ Last DST change: DST began at
+                  Sun 2020-03-29 01:59:59 CET
+                  Sun 2020-03-29 03:00:00 CEST
+ Next DST change: DST ends (the clock jumps one hour backwards) at
+                  Sun 2020-10-25 02:59:59 CEST
+                  Sun 2020-10-25 02:00:00 CET
+[root@test-server:] #
+----
+
+==== Modification du fuseau horaire
+
+[source,bash]
+----
+[root@test-server:] # sudo imedatectl set-timezone Europe/Paris
+----
+
+Vérifiez le changement de fuseau horaire
+
+[source,bash]
+----
+[root@test-server:] # timedatectl
+      Local time: Mon 2020-07-06 16:08:16 CEST
+  Universal time: Mon 2020-07-06 14:08:16 UTC
+        RTC time: Mon 2020-07-06 14:08:16
+       Time zone: Europe/Paris (CEST, +0200)
+     NTP enabled: yes
+NTP synchronized: yes
+ RTC in local TZ: no
+      DST active: yes
+ Last DST change: DST began at
+                  Sun 2020-03-29 01:59:59 CET
+                  Sun 2020-03-29 03:00:00 CEST
+ Next DST change: DST ends (the clock jumps one hour backwards) at
+                  Sun 2020-10-25 02:59:59 CEST
+                  Sun 2020-10-25 02:00:00 CET
+[root@test-server:] #
+----
+
 === Désactivation IPV6
 
 [source,bash]
