@@ -283,9 +283,9 @@ echo "DEVICETYPE=Team" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
 echo "ONBOOT=yes" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
 echo "BOOTPROTO=none" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
 echo "NM_CONTROLLED=no" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
-echo "IPADDR=192.168.1.120" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
-echo "GATEWAY=192.168.1.254" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
-echo "PREFIX=24" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "IPADDR=10.99.0.51" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "GATEWAY=10.99.2.254" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo "PREFIX=16" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
 echo "TEAM_CONFIG='{\"runner\": {\"name\": \"loadbalance\"}, \"link_watch\": {\"name\": \"ethtool\"} }'" >> /etc/sysconfig/network-scripts/ifcfg-team0 ;\
 ifup team0;
 ----
