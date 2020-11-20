@@ -15,7 +15,7 @@ main {
     flex: 1 0 auto;
     max-width: 900px; /*change the widh page*/
     font-size: 16px;  /*change size to fonts*/
-    font-color: white; /*change fonts color*/
+    color: white; /*change fonts color*/
 }
 
 /*footer*/
