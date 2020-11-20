@@ -37,7 +37,7 @@ jobs:
     - name: Build
       run: |
           alias asciidoctor="asciidoctor -r asciidoctor-diagram --attribute=experimental=true --attribute=icons=font"
-          hugo
+          hugo --destination /github/workspace
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
