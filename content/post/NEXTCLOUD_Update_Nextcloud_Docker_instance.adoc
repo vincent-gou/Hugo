@@ -23,7 +23,7 @@ keywords:
 
 This document may be used to update nextcloud instance.
 
-# Pre-requisities
+== Pre-requisities
 * Docker
 * Nextcloud instance
 * Linux server
