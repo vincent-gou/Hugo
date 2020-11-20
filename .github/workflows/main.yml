@@ -23,14 +23,21 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
-
+        
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+      
+    - run: pip3 install --no-cache-dir actdiag blockdiag nwdiag seqdiag
+    - run: gem install asciidoc
     - run: gem install asciidoctor
     - run: gem install asciidoctor-diagram
 
     - name: Build
       run: |
-          alias asciidoctor="asciidoctor --attribute=experimental=true --attribute=icons=font"
-          hugo --minify
+          alias asciidoctor="asciidoctor -r asciidoctor-diagram --attribute=experimental=true --attribute=icons=font"
+          hugo --destination /github/workspace
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
