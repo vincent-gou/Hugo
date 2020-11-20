@@ -24,6 +24,7 @@ jobs:
       with:
         ruby-version: 2.7
 
+    - run: pip3 install --no-cache-dir actdiag blockdiag nwdiag seqdiag
     - run: gem install asciidoc
     - run: gem install asciidoctor
     - run: gem install asciidoctor-diagram
