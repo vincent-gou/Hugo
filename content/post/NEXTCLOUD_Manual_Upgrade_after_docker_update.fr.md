@@ -18,24 +18,24 @@ keywords:
 - docker
 ---
 
-# Etapes de mise à jour de Nextcloud après un upgrade de l'instance Docker Nextcloud
+== Etapes de mise à jour de Nextcloud après un upgrade de l'instance Docker Nextcloud
 
 Ce document doit être utilisé après un upgrade de l'instance Docker Nextcloud.
 
-# Pré-requis
+== Pré-requis
 * Docker
 * Instance Nextcloud
 * Serveur Linux
 * Les données et fichiers de configuration Nextcloud doivent être stockés dans stockage externe à Docker.
 
-# Etapes de mise à jour
+== Etapes de mise à jour
 
-## Connect Nextcloud docker container
+=== Connect Nextcloud docker container
 
     [root@nas docker]# docker exec --user www-data -it nextcloud bash
 
 
-## Control Nextcloud version
+=== Control Nextcloud version
 
 ```
 www-data@e73fd289077c:~/html$ php occ status
@@ -48,7 +48,7 @@ You may use your browser or the occ upgrade command to do the upgrade
 www-data@e73fd289077c:~/html$
 ```
 
-## Update Nextcloud
+=== Update Nextcloud
 
     www-data@e73fd289077c:~/html$ php occ upgrade
 
@@ -130,7 +130,7 @@ Reset log level
 
 ```
 
-## Deactivate maintenance mode
+=== Deactivate maintenance mode
 
 ```
 www-data@e73fd289077c:~/html$ php occ maintenance:mode --off
@@ -138,7 +138,7 @@ Maintenance mode disabled
 www-data@e73fd289077c:~/html$ exit
 ```
 
-## Final setup
+=== Final setup
 
 Once update is finished, connect Nextcloud and check plugin app updates manually.
 

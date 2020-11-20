@@ -15,21 +15,21 @@ keywords:
 - progress
 - openedge
 - nextcloud
-- docker 
+- docker
 ---
 
-# Update Nextcloud Docker instance steps
+== Update Nextcloud Docker instance steps
 
 This document may be used to update nextcloud instance.
 
 # Pre-requisities
-* Docker 
+* Docker
 * Nextcloud instance
 * Linux server
-* Nextcloud data and config files in external location 
-# Update steps
+* Nextcloud data and config files in external location
+== Update steps
 
-## Update nextcloud Docker Image
+=== Update nextcloud Docker Image
 
     [root@nas /opt/docker]# docker pull nextcloud
 
@@ -60,15 +60,15 @@ Digest: sha256:4c3a690b1771ba414c0a347514baae52dae3ec34feb747d5db0c4188d8462562
 Status: Downloaded newer image for nextcloud:latest
 ```
 
-## Stop Nextcloud docker instance
+=== Stop Nextcloud docker instance
 
     [root@nas ~]# docker stop nextcloud
 
-## Remove Nextcloud docker instance
+=== Remove Nextcloud docker instance
 
     [root@nas ~]# docker rm nextcloud
 
-## Start Nextcloud Docker instance
+=== Start Nextcloud Docker instance
 
     [root@nas ~]# docker start nextcloud
 
@@ -78,7 +78,7 @@ Status: Downloaded newer image for nextcloud:latest
 [root@nas docker]#
 ```
 
-## Control Nextcloud Update Logs
+=== Control Nextcloud Update Logs
 
 ```
 [root@nas docker]# docker logs nextcloud
@@ -86,7 +86,7 @@ Initializing nextcloud 15.0.5.3 ...
 Upgrading nextcloud from 15.0.2.0 ...
 ```
 
-## Final setup
+=== Final setup
 
 Once update is finished, connect Nextcloud and check plugin app updates manually.
 
@@ -94,4 +94,4 @@ Some apps may have been disabled during update process.
 
 You will have to activate them manually.
 
-Enjoy ! 
+Enjoy !
