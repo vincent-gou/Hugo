@@ -30,7 +30,7 @@ jobs:
 
     - name: Build
       run: |
-          alias asciidoctor="asciidoctor --attribute=experimental=true --attribute=icons=font"
+          alias asciidoctor="asciidoctor -r asciidoctor-diagram --attribute=experimental=true --attribute=icons=font"
           hugo --minify
 
     - name: Deploy
