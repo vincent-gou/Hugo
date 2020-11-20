@@ -24,7 +24,11 @@ jobs:
       with:
         ruby-version: 2.7
         
-    - run: apt-get install python3-setuptools
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+      
     - run: pip3 install --no-cache-dir actdiag blockdiag nwdiag seqdiag
     - run: gem install asciidoc
     - run: gem install asciidoctor
