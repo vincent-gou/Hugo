@@ -14,7 +14,7 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
   [markup.asciidocExt]
     backend = "html5"
     extensions = []
-    failureLevel = "fatal"
+    #failureLevel = "fatal"
     noHeaderOrFooter = true
     preserveTOC = false
     safeMode = "unsafe"
