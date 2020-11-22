@@ -2,9 +2,9 @@ name: hugo publish
 
 #on: workflow_dispatch
 on:
-push:
+  push:
     branches:
-    - master
+      - master  # Set a branch to deploy
 
 jobs:
   build-deploy:
