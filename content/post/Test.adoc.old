@@ -15,7 +15,7 @@ keywords:
 - openedge
 ---
 :safe: unsafe
-:imagesdir: ../images/
+:imagesdir: images/
 == Sample
 
 This is a sample from
