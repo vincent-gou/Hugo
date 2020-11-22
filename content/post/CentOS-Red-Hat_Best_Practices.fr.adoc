@@ -42,7 +42,7 @@ blockdiag {
    default_node_color = grey;
    default_textcolor = white;
    group physical_disk {
-     textcolor = black;
+     textcolor = white;
      fontsize = 18;
      label = "Physical disk";
      // Set group shape to 'line group' (default is box)
@@ -56,7 +56,7 @@ blockdiag {
      DISK6[shape = flowchart.database];
     }
      group pv {
-     textcolor = black;
+     textcolor = white;
      fontsize = 18;
      label = "Physical volume";
      // Set group shape to 'line group' (default is box)
@@ -70,7 +70,7 @@ blockdiag {
      PV6[shape = flowchart.database];
       }
      group vg1 {
-     textcolor = black;
+     textcolor = white;
      fontsize = 18;
      label = "Volume Group";
      // Set group shape to 'line group' (default is box)
@@ -79,7 +79,7 @@ blockdiag {
      VG1[shape = flowchart.database];
       }
      group vg2 {
-     textcolor = black;
+     textcolor = white;
      fontsize = 18;
      label = "Volume Group";
      // Set group shape to 'line group' (default is box)
@@ -88,7 +88,7 @@ blockdiag {
      VG2[shape = flowchart.database];
       }
      group fs {
-     textcolor = black;
+     textcolor = white;
      fontsize = 18;
      label = "File Systems";
      // Set group shape to 'line group' (default is box)
@@ -125,11 +125,11 @@ blockdiag {
 Le partitionnement correct de votre système est dépendant de l'utilisation que vous en ferez et des spécificités des services qui y seront déployés.
 Il faut prévoir dans tous les cas le partitionnement minimum suivant:
 
-/       ==>   2048 Mio voire moins (LVM et FS formatté en XFS ou EXT4)
-/usr    ==>   4096 Mio (LVM et FS formatté en XFS ou EXT4)
-/var    ==> 2048 à 4096 Mio (LVM et FS formatté en XFS ou EXT4)
-/tmp    ==> 512 à 2048 Mio (LVM et FS formatté en XFS ou EXT4)
-/boot   ==> 512 à 1024 Mio en (LVM et FS formatté en XFS ou EXT4)
+* /       ==>   2048 Mio voire moins (LVM et FS formatté en XFS ou EXT4)
+* /usr    ==>   4096 Mio (LVM et FS formatté en XFS ou EXT4)
+* /var    ==> 2048 à 4096 Mio (LVM et FS formatté en XFS ou EXT4)
+* /tmp    ==> 512 à 2048 Mio (LVM et FS formatté en XFS ou EXT4)
+* /boot   ==> 512 à 1024 Mio en (LVM et FS formatté en XFS ou EXT4)
 
 
 == Réseau
