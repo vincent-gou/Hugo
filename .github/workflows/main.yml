@@ -33,7 +33,7 @@ jobs:
            pip3 install --no-cache-dir actdiag blockdiag nwdiag seqdiag
            gem install asciidoc
            gem install asciidoctor
-           gem install asciidoc-diagram
+           gem install asciidoctor-diagram
 
     - name: Build
       run: |
