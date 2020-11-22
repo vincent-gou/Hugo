@@ -24,7 +24,7 @@ keywords:
 
 * Lister les bonnes pratiques d'installation et déploiement des systèmes d'exploitation CentOS / Red-Hat
 
-NOTE:Ces bonnes pratiques ont étées testées sur CentOS 7 and Red-Hat 7.
+NOTE: Ces bonnes pratiques ont étées testées sur CentOS 7 and Red-Hat 7.
 
 == YUM
 === Kernels

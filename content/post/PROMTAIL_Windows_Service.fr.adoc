@@ -34,7 +34,7 @@ keywords:
 
 * Décompressez les sources NSSM et placez les dans le répertoire ou se trouve promtail
 
-NOTE:Pour les besoins de cet exemple, l'emplacement commun à promtail et nssm sera "c:\Program Files\telegraf\"
+NOTE: Pour les besoins de cet exemple, l'emplacement commun à promtail et nssm sera "c:\Program Files\telegraf\"
 
 
 == Création du service promtail
