@@ -28,11 +28,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-      
-    - run: pip3 install --no-cache-dir actdiag blockdiag nwdiag seqdiag asciidoctor asciidoctor-diagram
-  #  - run: gem install asciidoc
-  #  - run: gem install asciidoctor
-  #  - run: gem install asciidoctor-diagram
+    - name: Setup Asciidoctor      
+    - run: |
+           pip3 install --no-cache-dir actdiag blockdiag nwdiag seqdiag
+           gem install asciidoc
+           gem install asciidoctor
+           gem install asciidoc-diagram
 
     - name: Build
       run: |
