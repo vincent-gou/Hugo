@@ -34,9 +34,11 @@ jobs:
            gem install asciidoc
            gem install asciidoctor
            gem install asciidoctor-diagram
+           gem install asciidoctor-html5s
 
     - name: Build
       run: |
+          which asciidoctor
           alias asciidoctor="asciidoctor --require asciidoctor-diagram --attribute=experimental=true --attribute=icons=font"
           alias
           hugo --minify -v
