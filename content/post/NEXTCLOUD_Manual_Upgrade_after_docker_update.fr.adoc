@@ -17,7 +17,7 @@ keywords:
 - nextcloud
 - docker
 ---
-:imagesdir: /images
+:imagesdir: images
 
 == Etapes de mise à jour de Nextcloud après un upgrade de l'instance Docker Nextcloud
 

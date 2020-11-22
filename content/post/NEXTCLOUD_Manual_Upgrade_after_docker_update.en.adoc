@@ -17,7 +17,7 @@ keywords:
 - nextcloud
 - docker
 ---
-:imagesdir: /images
+:imagesdir: images
 
 == Nextcloud Application Upgrade after Docker instance update steps
 
