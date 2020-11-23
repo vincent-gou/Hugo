@@ -17,7 +17,7 @@ keywords:
 - kernel
 - ipv6
 ---
-:imagesdir: images
+:imagesdir: ../images
 
 
 == Objectifs

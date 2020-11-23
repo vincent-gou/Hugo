@@ -9,6 +9,11 @@ disqusShortname = "" # delete this to disable disqus comments
 DefaultContentLanguage = "fr"
 copyright = "Tous droits reserves: Vincent Gourrierec"
 
+
+removePathAccents = true
+
+
+
 [markup]
   [markup.asciidocExt]
     backend = "html5"
