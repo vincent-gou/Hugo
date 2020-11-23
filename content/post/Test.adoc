@@ -37,7 +37,7 @@ class Sample {
 Below some examples of working additional diagrams.
 
 == Dita Example
-[ditaa,dita-example,svg]
+[ditaa,dita-example,format="svg",opts="inline"]
 ....
                    +-------------+
                    | Asciidoctor |-------+
@@ -67,7 +67,7 @@ Below some examples of working additional diagrams.
 
 === Example nwdiag
 You can find a lot of examples here http://blockdiag.com/en/nwdiag/nwdiag-examples.html
-[nwdiag, nwdiag-dmz, svg]
+[nwdiag, nwdiag-dmz,format="svg",opts="inline"]
 ----
 nwdiag {
   network dmz {
@@ -90,7 +90,7 @@ nwdiag {
 === Exampled blockdiag
 http://blockdiag.com/en/blockdiag/examples.html
 
-[blockdiag, blockdiag-1, svg]
+[blockdiag, blockdiag-1,format="svg",opts="inline"]
 ----
 blockdiag {
    A -> B -> C -> D;
@@ -102,7 +102,7 @@ blockdiag {
 === Multiple Racks
 http://blockdiag.com/en/nwdiag/rackdiag-examples.html
 
-[rackdiag, rackdiag-1, svg]
+[rackdiag, rackdiag-1,format="svg",opts="inline"]
 ----
 rackdiag {
   // define 1st rack
