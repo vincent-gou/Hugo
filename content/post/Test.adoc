@@ -27,39 +27,10 @@ link:https://github.com/asciidoctor/docker-asciidoctor/issues/44#issue-265179207
 Thanks to link:https://github.com/ryosms[]!
 ====
 
-[plantuml,sample-diagram,svg]
-----
-class Sample {
-}
-----
 
 
 == Additional Diagrams
 Below some examples of working additional diagrams.
-
-== Dita Example
-
-[ditaa,dita-example,format="svg",opts="inline"]
-....
-                   +-------------+
-                   | Asciidoctor |-------+
-                   |   diagram   |       |
-                   +-------------+       | PNG out
-                       ^                 |
-                       | ditaa in        |
-                       |                 v
- +--------+   +--------+----+    /---------------\
- |        | --+ Asciidoctor +--> |               |
- |  Text  |   +-------------+    |   Beautiful   |
- |Document|   |   !magic!   |    |    Output     |
- |     {d}|   |             |    |               |
- +---+----+   +-------------+    \---------------/
-     :                                   ^
-     |          Lots of work             |
-     +-----------------------------------+
-....
-
-
 
 
 == BlockDiagrams

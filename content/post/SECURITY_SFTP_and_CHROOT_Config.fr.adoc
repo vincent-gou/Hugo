@@ -39,7 +39,7 @@ blockdiag {
    C [label = "SSHD_CONFIG", numbered = 3];
    D [label = "/data/sftp/USER1" , numbered = 4];
    E [label = "UMASK 0007" , numbered = 5];
-   F [label = "Default Folder /upload under chroot", numbered = 6];
+   F [label = "Dossier chroot par défaut: /upload", numbered = 6];
 
    // Set labels to edges. (short text only)
    A1 -> B [label = "SFTP"];
@@ -70,7 +70,7 @@ blockdiag {
    C [label = "SSHD_CONFIG", numbered = 3];
    D [label = "/data/sftp/%u" , numbered = 4];
    E [label = "UMASK 0007" , numbered = 5];
-   F [label = "Default Folder /upload under chroot", numbered = 6];
+   F [label = "Dossier chroot par défaut: /upload", numbered = 6];
 
    // Set labels to edges. (short text only)
    A1 -> B [label = "SFTP"];
