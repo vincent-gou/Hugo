@@ -16,6 +16,7 @@ keywords:
 ---
 :safe: unsafe
 :imagesdir: images/
+
 == Sample
 
 This is a sample from
@@ -37,6 +38,7 @@ class Sample {
 Below some examples of working additional diagrams.
 
 == Dita Example
+
 [ditaa,dita-example,format="svg",opts="inline"]
 ....
                    +-------------+
@@ -61,6 +63,7 @@ Below some examples of working additional diagrams.
 
 
 == BlockDiagrams
+
  * http://blockdiag.com/en/index.html
 
 
