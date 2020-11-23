@@ -17,7 +17,7 @@ keywords:
 - windows
 - nssm
 ---
-:imagesdir: images
+:imagesdir: ../../images
 
 
 == Objectifs

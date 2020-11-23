@@ -15,7 +15,7 @@ keywords:
 - openedge
 ---
 
-:imagesdir: images
+:imagesdir: ../../images
 
 == Sample
 
