@@ -14,8 +14,8 @@ keywords:
 - progress
 - openedge
 ---
-:safe: unsafe
-:imagesdir: images/
+
+:imagesdir: images
 
 == Sample
 
@@ -93,7 +93,7 @@ nwdiag {
 === Exampled blockdiag
 http://blockdiag.com/en/blockdiag/examples.html
 
-[blockdiag, blockdiag-1,format="svg",opts="inline"]
+[blockdiag,test,format="svg",opts="inline"]
 ----
 blockdiag {
    A -> B -> C -> D;
