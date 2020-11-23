@@ -11,9 +11,9 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
 
 [markup]
   [markup.asciidocExt]
-    backend = "html5"
-##    extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
-    extensions = ["asciidoctor-diagram"]
+    backend = "html5s"
+    extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
+    ##extensions = ["asciidoctor-diagram"]
 
 [languages]
   [languages.en]
