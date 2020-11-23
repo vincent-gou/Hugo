@@ -58,18 +58,6 @@ Below some examples of working additional diagrams.
 ....
 
 
-== Graphviz ( Digraph)
-[graphviz, dot-example, svg]
-----
-digraph g {
-    a -> b
-    b -> c
-    c -> d
-    d -> a
-}
-----
-
-
 
 
 == BlockDiagrams
