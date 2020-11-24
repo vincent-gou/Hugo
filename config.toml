@@ -13,7 +13,7 @@ removePathAccents = true
 
 [markup]
   [markup.asciidocExt]
-    backend = "html5s"
+    backend = "html5"
     extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
     ##extensions = ["asciidoctor-diagram"]
 
@@ -98,33 +98,6 @@ removePathAccents = true
           url = "https://www.malt.fr/profile/vincentgourrierec/"
           name = "certificate"
           weight = 4
-
-  [languages.es]
-    title = "vincent-gou (es)"
-    weight = 3
-    description = "Bienvenido a mi sitio web profesional."
-    [languages.es.params]
-      linkedin = "https://www.linkedin.com/in/vincent-gou/"
-    [[languages.es.menu.main]]
-      url    = "/"
-      name   = "Inicio"
-      weight = 1
-    [[languages.es.menu.main]]
-        url = "/project/"
-        name = "Proyectos"
-        weight = 2
-    [[languages.es.menu.main]]
-      url = "/post/"
-      name = "Articulos"
-      weight = 3
-    [[languages.es.menu.main]]
-      url = "/tags/"
-      name = "Etiquetas"
-      weight = 4
-    [[languages.es.menu.main]]
-        url = "/calendar/"
-        name = "Calendario"
-        weight = 5
 
 [params]
     author = "Vincent Gourrierec"
