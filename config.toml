@@ -16,7 +16,7 @@ removePathAccents = true
 
 [markup]
   [markup.asciidocExt]
-    backend = "html5"
+    backend = "html5s"
     extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
     ##extensions = ["asciidoctor-diagram"]
 

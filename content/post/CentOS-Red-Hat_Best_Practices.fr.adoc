@@ -219,7 +219,7 @@ Vous pouvez controlez la configuration réseau en gérant les fichiers de config
 
 === Corrélation carte réseau et adresse MAC
 
-Cette commande vous permettra d'afficher pour chaque carte réseau physique son adresse MAC.
+Cette commande vous permettra d'afficher pour chaque carte réseau physique, son adresse MAC.
 
 [source,bash]
 ----
