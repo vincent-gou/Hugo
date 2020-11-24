@@ -11,8 +11,6 @@ copyright = "Tous droits reserves: Vincent Gourrierec"
 
 removePathAccents = true
 
-
-
 [markup]
   [markup.asciidocExt]
     backend = "html5s"
