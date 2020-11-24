@@ -40,9 +40,9 @@ jobs:
 
     - name: Build
       run: |
-          which asciidoctor
-          alias asciidoctor="asciidoctor --require asciidoctor-diagram --attribute=experimental=true --attribute=icons=font"
-          alias
+          ##which asciidoctor
+          ##alias asciidoctor="asciidoctor --require asciidoctor-diagram --attribute=experimental=true --attribute=icons=font"
+          ##alias
           hugo --minify -v
 
     - name: Deploy
