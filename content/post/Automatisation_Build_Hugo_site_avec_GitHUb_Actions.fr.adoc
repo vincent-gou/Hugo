@@ -39,8 +39,14 @@ keywords:
 blockdiag {
    default_node_color = grey;
    default_textcolor = white;
-   Dev[shape = actor];
-   GH_Hugo_Repo[shape = cloud,numbered = "1"];
+   Dev[shape = actor, label="Dev"];
+   Visiteur[shape = actor, label = "Visiteur"];
+   group GitHub_Repositories{
+     label = "GitHub Repositories";
+     shape = line;
+     GH_Hugo_Repo[shape = cloud,numbered = "1"];
+     GH_Pages_Repo[shape = cloud,numbered = "9"];
+   }
    GH_Actions[shape = circle,numbered = "2"];
    GH_Actions_Repo[shape = square,numbered = "3"];
    Hugo_Actions_Repo[shape = square,numbered = "4"];
@@ -48,7 +54,7 @@ blockdiag {
    Python_Setup[shape = square,numbered = "6"];
    Asciidoctor_Setup[shape = square,numbered = "7"];
    Build_Hugo[shape = box,numbered = "8"];
-   GH_Pages_Repo[shape = cloud,numbered = "9"];
+
    Deploy_Hugo[shape = box,numbered = "10"];
 
    Dev -> GH_Hugo_Repo[label = "git push", textcolor="black"];
@@ -62,5 +68,6 @@ blockdiag {
    Build_Hugo -> GH_Hugo_Repo[label = "pull", textcolor="black"];
    GH_Actions -> Deploy_Hugo;
    Deploy_Hugo -> GH_Pages_Repo[label = "push", textcolor="black"];
+   Visiteur -> GH_Pages_Repo;
 }
 ----
