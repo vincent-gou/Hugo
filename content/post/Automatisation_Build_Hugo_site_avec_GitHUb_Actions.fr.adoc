@@ -38,7 +38,7 @@ keywords:
 ----
 blockdiag {
    default_node_color = grey;
-   default_textcolor = white;
+   default_textcolor = black;
    Dev[shape = actor];
    GH_Hugo_Repo[shape = cloud,numbered = "1"];
    GH_Actions[shape = circle,numbered = "2"];
@@ -51,8 +51,8 @@ blockdiag {
    GH_Pages_Repo[shape = cloud,numbered = "9"];
    Deploy_Hugo[shape = box,numbered = "10"];
 
-   Dev -> GH_Hugo_Repo[label = "git push",textcolor="black"];
-   GH_Hugo_Repo <- GH_Actions[label = "on push on master",textcolor="black"];
+   Dev -> GH_Hugo_Repo[label = "git push"];
+   GH_Hugo_Repo <- GH_Actions[label = "on push on master"];
    GH_Actions -> GH_Actions_Repo[label = "pull"];
    GH_Actions -> Hugo_Actions_Repo[label = "pull"];
    GH_Actions -> Ruby_Setup[label = "pull"];
