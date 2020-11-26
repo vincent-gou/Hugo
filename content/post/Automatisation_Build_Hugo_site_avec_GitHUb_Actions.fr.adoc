@@ -81,6 +81,42 @@ blockdiag {
 
 == Paramétrage DNS
 
+== Paramétrage de votre nom de domaine customisé
+
+=== Cas avec fichier CNAME
+
+Si vous utilisez un repository pour les sources Hugo, il suffit de créer un fichier CNAME sous votre dossier "content".
+
+Le fichier ne doit contenir que votre nom de domaine customisé:
+
+[source,bash]
+----
+www.custom_domain.xy
+----
+
+=== Cas avec l'interface d'administration de GitHub Pages
+
+WARNING: Ne pas utiliser car le fichier CNAME sera supprimé à chaque push après le build "hugo_deploy" p^rovenant de GitHub Actions.
+
+=== cas avec GitHub Actions et le paramètre cname
+
+Si vous utilisez le repo peaceiris/actions-gh-pages, vous pouvez ajouter le paramètre suivant dans fichier GitHub Actions:
+
+[source,bash]
+----
+- name: Deploy
+  uses: peaceiris/actions-gh-pages@v2
+  env:
+    ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+    EXTERNAL_REPOSITORY: username/username.github.io
+    PUBLISH_BRANCH: master
+    PUBLISH_DIR: ./public
+    cname: www.custom_domain.xy
+  with:
+    emptyCommits: false
+    commitMessage: ${{ github.event.head_commit.message }}
+----
+
 === Paramétrage DNS dans l'interface de votre provider DNS
 
 WARNING: Les copies d'écran concernent un panel d'administration DNS chez OVH.
@@ -88,20 +124,22 @@ WARNING: Les copies d'écran concernent un panel d'administration DNS chez OVH.
 * Connectez vous à votre interface d'administration de votre DNS
 * Sélectionnez votre domaine si vous en gérez plusieurs
 
-image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f4820.png[]
+image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f4820.png[200,200,float="right",align="center"]
 
 * Sélectionner "Zone DNS"
 
-image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f7562.png[]
+image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f7562.png[200,200,float="right",align="center"]
 
 * Puis sélectionnez ajoutez une entrée, sélectionnez "CNAME"
 
-image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-414c6.png[]
+image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-414c6.png[200,200,float="right",align="center"]
 
 * Ensuite remplissez le formulaire permettant de rediriger votre site vers le site GitHub pages de la forme: username.github.io
 
-NOTE: il faudra peut-etre ajoueter un "." au domaine de ridrection, par exemple: username.github.io.
+NOTE: il faudra peut-etre ajouter un "." au domaine de ridrection, par exemple: username.github.io.
 
-image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-d56e1.png[]
+image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-eee79.png[200,200,float="right",align="center"]
 
-*
+* Puis validez votre entrée
+
+NOTE: Quelques minutes voire plus peuvent être nécessaire pour répliquer votre nouvelle entrée vers les différents serveurs DNS.
