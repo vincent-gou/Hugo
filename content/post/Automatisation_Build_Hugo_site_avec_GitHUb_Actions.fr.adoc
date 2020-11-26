@@ -21,7 +21,7 @@ keywords:
 
 == Objectifs
 
-* Déployer automatiquement un site avec Hugo et GitHub Actions
+* Déployer automatiquement un site avec Hugo, le backend Asciidoctor et GitHub Actions
 * Utiliser un nom de domaine personnel pour son site sous GitHub Pages
 
 
@@ -31,6 +31,7 @@ keywords:
 * Git repository pour les fichiers générés par Hugo
 * Un nom de domaine personnel
 * Accès à votre console d'administration DNS pour créer un sous-domaine et ajouter une nouvelle entrée de type CNAME
+
 
 == Architecture générale
 
@@ -77,3 +78,30 @@ blockdiag {
    Domain_Name_Provider -> DNS_Server[label = "CNAME", textcolor="black"];
 }
 ----
+
+== Paramétrage DNS
+
+=== Paramétrage DNS dans l'interface de votre provider DNS
+
+WARNING: Les copies d'écran concernent un panel d'administration DNS chez OVH.
+
+* Connectez vous à votre interface d'administration de votre DNS
+* Sélectionnez votre domaine si vous en gérez plusieurs
+
+image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f4820.png[]
+
+* Sélectionner "Zone DNS"
+
+image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f7562.png[]
+
+* Puis sélectionnez ajoutez une entrée, sélectionnez "CNAME"
+
+image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-414c6.png[]
+
+* Ensuite remplissez le formulaire permettant de rediriger votre site vers le site GitHub pages de la forme: username.github.io
+
+NOTE: il faudra peut-etre ajoueter un "." au domaine de ridrection, par exemple: username.github.io.
+
+image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-d56e1.png[]
+
+*
