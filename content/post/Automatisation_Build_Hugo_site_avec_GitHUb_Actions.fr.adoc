@@ -1,5 +1,5 @@
 ---
-title: "Bonnes pratiques CentOS et Red Hat"
+title: "Automatisation deploiement Hugo avec GitHub Actions et GitHub Pages"
 authors:
   - Vincent Gourrierec
 date: 2020-11-26
