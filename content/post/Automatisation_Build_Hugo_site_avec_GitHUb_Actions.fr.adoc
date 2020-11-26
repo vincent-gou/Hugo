@@ -96,9 +96,9 @@ www.custom_domain.xy
 
 === Cas avec l'interface d'administration de GitHub Pages
 
-WARNING: Ne pas utiliser car le fichier CNAME sera supprimé à chaque push après le build "hugo_deploy" p^rovenant de GitHub Actions.
+WARNING: Ne pas utiliser car le fichier CNAME sera supprimé à chaque push après le build "hugo_deploy" provenant de GitHub Actions.
 
-=== cas avec GitHub Actions et le paramètre cname
+=== Cas avec GitHub Actions et le paramètre cname
 
 Si vous utilisez le repo peaceiris/actions-gh-pages, vous pouvez ajouter le paramètre suivant dans fichier GitHub Actions:
 
