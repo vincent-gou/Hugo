@@ -1,0 +1,33 @@
+---
+title: "Bonnes pratiques CentOS et Red Hat"
+authors:
+  - Vincent Gourrierec
+date: 2020-11-26
+tags: ["GitHub","Hugo","Asciidoctor","diagram"]
+categories: ["posts"]
+draft: true
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- github
+- hugo
+- asciidoctor
+- devops
+- build
+---
+:imagesdir: ../../images
+
+
+== Objectifs
+
+* Déployer automatiquement un site avec Hugo et GitHub Actions
+* Utiliser un nom de domaine personnel pour son site sous GitHub Pages
+
+
+== Pré-requis
+
+* Git repository pour votre site Hugo
+* Git repository pour les fichiers générés par Hugo
+* Un nom de domaine personnel
+* Accès à votre console d'administration DNS pour créer un sous-domaine et ajouter une nouvelle entrée de type CNAME
