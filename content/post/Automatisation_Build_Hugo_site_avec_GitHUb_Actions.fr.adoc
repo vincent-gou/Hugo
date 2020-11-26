@@ -67,7 +67,7 @@ blockdiag {
    GH_Actions -> Build_Hugo;
    Build_Hugo -> GH_Hugo_Repo[label = "pull", textcolor="black"];
    GH_Actions -> Deploy_Hugo;
-   Deploy_Hugo -> GH_Pages_Repo[label = "push", textcolor="black"];
+   Deploy_Hugo -> GH_Pages_Repo[label = "push", textcolor="red", color = "red"];
    Visiteur -> GH_Pages_Repo;
 }
 ----
