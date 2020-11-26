@@ -54,9 +54,13 @@ blockdiag {
    Python_Setup[shape = square,numbered = "6"];
    Asciidoctor_Setup[shape = square,numbered = "7"];
    Build_Hugo[shape = box,numbered = "8"];
-
    Deploy_Hugo[shape = box,numbered = "10"];
-
+   group DNS{
+     label = "DNS Infrastructure";
+     shape = line;
+   DNS_Server[shape = box,numbered = "12"];
+   Domain_Name_Provider[shape = box,numbered = "11"];
+}
    Dev -> GH_Hugo_Repo[label = "git push", textcolor="black"];
    GH_Hugo_Repo <- GH_Actions[label = "on push on master", textcolor="black"];
    GH_Actions -> GH_Actions_Repo[label = "pull", textcolor="black"];
@@ -68,6 +72,8 @@ blockdiag {
    Build_Hugo -> GH_Hugo_Repo[label = "pull", textcolor="black"];
    GH_Actions -> Deploy_Hugo;
    Deploy_Hugo -> GH_Pages_Repo[label = "push", textcolor="red", color = "red"];
+   Visiteur -> DNS_Server [label = "IP ?", textcolor="black"];
    Visiteur -> GH_Pages_Repo;
+   Domain_Name_Provider -> DNS_Server[label = "CNAME", textcolor="black"];
 }
 ----
