@@ -5,7 +5,7 @@ authors:
 date: 2020-11-26
 tags: ["GitHub","Hugo","Asciidoctor","diagram"]
 categories: ["posts"]
-draft: true
+draft: false
 keywords:
 - vincent-gou.fr
 - vincent gourrierec
@@ -31,3 +31,36 @@ keywords:
 * Git repository pour les fichiers générés par Hugo
 * Un nom de domaine personnel
 * Accès à votre console d'administration DNS pour créer un sous-domaine et ajouter une nouvelle entrée de type CNAME
+
+== Architecture générale
+
+[blockdiag,Partitionnement_LVM,format="svg",opts="inline"]
+----
+blockdiag {
+   default_node_color = grey;
+   default_textcolor = white;
+   Dev[shape = actor];
+   GH_Hugo_Repo[shape = cloud,numbered = "1"];
+   GH_Actions[shape = circle,numbered = "2"];
+   GH_Actions_Repo[shape = square,numbered = "3"];
+   Hugo_Actions_Repo[shape = square,numbered = "4"];
+   Ruby_Setup[shape = square,numbered = "5"];
+   Python_Setup[shape = square,numbered = "6"];
+   Asciidoctor_Setup[shape = square,numbered = "7"];
+   Build_Hugo[shape = box,numbered = "8"];
+   GH_Pages_Repo[shape = cloud,numbered = "9"];
+   Deploy_Hugo[shape = box,numbered = "10"];
+
+   Dev -> GH_Hugo_Repo[label = "git push",textcolor="black"];
+   GH_Hugo_Repo <- GH_Actions[label = "on push on master",textcolor="black"];
+   GH_Actions -> GH_Actions_Repo[label = "pull"];
+   GH_Actions -> Hugo_Actions_Repo[label = "pull"];
+   GH_Actions -> Ruby_Setup[label = "pull"];
+   GH_Actions -> Python_Setup[label = "pull"];
+   GH_Actions -> Asciidoctor_Setup[label = "run"];
+   GH_Actions -> Build_Hugo;
+   Build_Hugo -> GH_Hugo_Repo[label = "pull"];
+   GH_Actions -> Deploy_Hugo;
+   Deploy_Hugo -> GH_Pages_Repo[label = "push"];
+}
+----
