@@ -38,7 +38,7 @@ keywords:
 ----
 blockdiag {
    default_node_color = grey;
-   default_textcolor = black;
+   default_textcolor = white;
    Dev[shape = actor];
    GH_Hugo_Repo[shape = cloud,numbered = "1"];
    GH_Actions[shape = circle,numbered = "2"];
@@ -51,16 +51,16 @@ blockdiag {
    GH_Pages_Repo[shape = cloud,numbered = "9"];
    Deploy_Hugo[shape = box,numbered = "10"];
 
-   Dev -> GH_Hugo_Repo[label = "git push"];
-   GH_Hugo_Repo <- GH_Actions[label = "on push on master"];
-   GH_Actions -> GH_Actions_Repo[label = "pull"];
-   GH_Actions -> Hugo_Actions_Repo[label = "pull"];
-   GH_Actions -> Ruby_Setup[label = "pull"];
-   GH_Actions -> Python_Setup[label = "pull"];
-   GH_Actions -> Asciidoctor_Setup[label = "run"];
+   Dev -> GH_Hugo_Repo[label = "git push", textcolor="black"];
+   GH_Hugo_Repo <- GH_Actions[label = "on push on master", textcolor="black"];
+   GH_Actions -> GH_Actions_Repo[label = "pull", textcolor="black"];
+   GH_Actions -> Hugo_Actions_Repo[label = "pull", textcolor="black"];
+   GH_Actions -> Ruby_Setup[label = "pull", textcolor="black"];
+   GH_Actions -> Python_Setup[label = "pull", textcolor="black"];
+   GH_Actions -> Asciidoctor_Setup[label = "run", textcolor="black"];
    GH_Actions -> Build_Hugo;
-   Build_Hugo -> GH_Hugo_Repo[label = "pull"];
+   Build_Hugo -> GH_Hugo_Repo[label = "pull", textcolor="black"];
    GH_Actions -> Deploy_Hugo;
-   Deploy_Hugo -> GH_Pages_Repo[label = "push"];
+   Deploy_Hugo -> GH_Pages_Repo[label = "push", textcolor="black"];
 }
 ----
