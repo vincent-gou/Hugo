@@ -17,7 +17,7 @@ keywords:
 - build
 ---
 :imagesdir: ../../images
-
+:toc: right
 
 == Objectifs
 
@@ -150,6 +150,8 @@ WARNING: Le contenu de ce dossier est purgé à chaque déploiement.
 
 12 directories, 6 files
 ----
+
+== Paramétrage GitHub Actions
 
 
 
