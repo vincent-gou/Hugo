@@ -86,9 +86,9 @@ blockdiag {
 === Repository Hugo
 
 Ce repository contiendra le contenu source de votre site, la configuration, le theme et les pages qui seront générées par Hugo.
-Le resultat du build Hiugo sera déployé dans le repository dédié à GitHub Pages.
+Le resultat du build Hugo sera déployé dans le repository dédié à GitHub Pages.
 
-Example de structure du dossier dédié aux sources Hugo:
+Exemple de structure du dossier dédié aux sources Hugo:
 
 [source,bash]
 ----
@@ -121,13 +121,13 @@ Example de structure du dossier dédié aux sources Hugo:
 
 Ce repository contiendra le contenu de votre site généré par Hugo et déployé par GitHub Actions.
 
-Example de structure du dossier:
+Exemple de structure du dossier:
 
 WARNING: Le contenu de ce dossier est purgé à chaque déploiement.
 
 [source,bash]
 ----
-[root@sd-113165:vincent-gou.github.io] # tree -L 1
+[someone@server:someone.github.io] # tree -L 1
 .
 |-- 404.html
 |-- authors
@@ -150,6 +150,8 @@ WARNING: Le contenu de ce dossier est purgé à chaque déploiement.
 
 12 directories, 6 files
 ----
+
+
 
 == Paramétrage DNS
 
