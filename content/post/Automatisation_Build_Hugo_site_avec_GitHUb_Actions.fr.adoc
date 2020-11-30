@@ -22,7 +22,9 @@ keywords:
 == Objectifs
 
 * Déployer automatiquement un site avec Hugo, le backend Asciidoctor et GitHub Actions
+* Customiser certaines fonctionnalités asciidoctor non intégrées par Hugo
 * Utiliser un nom de domaine personnel pour son site sous GitHub Pages
+
 
 
 == Pré-requis
@@ -78,6 +80,75 @@ blockdiag {
    Domain_Name_Provider -> DNS_Server[label = "CNAME", textcolor="black"];
    DNS_Server -> Visiteur[label = "CNAME resolution", textcolor="yellow", color = "yellow"];
 }
+----
+
+== Repository GitHub
+=== Repository Hugo
+
+Ce repository contiendra le contenu source de votre site, la configuration, le theme et les pages qui seront générées par Hugo.
+Le resultat du build Hiugo sera déployé dans le repository dédié à GitHub Pages.
+
+Example de structure du dossier dédié aux sources Hugo:
+
+[source,bash]
+----
+[someone@server:Hugo] # tree -L 2
+.
+|-- archetypes
+|   `-- default.md
+|-- config.toml
+|-- content
+|   |-- authors
+|   |-- bin
+|   |-- calendar
+|   |-- images
+|   |-- post
+|   `-- project
+|-- static
+|   |-- CNAME
+|   |-- css
+|   |-- js
+|   `-- README.md
+`-- themes
+    `-- minimal
+
+13 directories, 4 files
+----
+
+
+
+=== Repository GitHub Pages
+
+Ce repository contiendra le contenu de votre site généré par Hugo et déployé par GitHub Actions.
+
+Example de structure du dossier:
+
+WARNING: Le contenu de ce dossier est purgé à chaque déploiement.
+
+[source,bash]
+----
+[root@sd-113165:vincent-gou.github.io] # tree -L 1
+.
+|-- 404.html
+|-- authors
+|-- bin
+|-- calendar
+|-- categories
+|-- CNAME
+|-- css
+|-- en
+|-- fr
+|-- images
+|-- index.html
+|-- index.xml
+|-- js
+|-- post
+|-- project
+|-- README.md
+|-- sitemap.xml
+`-- tags
+
+12 directories, 6 files
 ----
 
 == Paramétrage DNS
@@ -137,7 +208,7 @@ image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-414c6.png[200,200,f
 
 * Ensuite remplissez le formulaire permettant de rediriger votre site vers le site GitHub pages de la forme: username.github.io
 
-NOTE: il faudra peut-etre ajouter un "." au domaine de ridrection, par exemple: username.github.io.
+NOTE: il faudra peut-etre ajouter un "." au domaine de redirection, par exemple: username.github.io.
 
 image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-eee79.png[200,200,float="right",align="center"]
 
