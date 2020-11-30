@@ -35,7 +35,7 @@ keywords:
 
 == Architecture générale
 
-[blockdiag,Partitionnement_LVM,format="svg",opts="inline"]
+[blockdiag,Hugo_asciidoctor_github_actions_workflow,format="svg",opts="inline"]
 ----
 blockdiag {
    default_node_color = grey;
