@@ -76,6 +76,7 @@ blockdiag {
    Visiteur -> DNS_Server [label = "IP ?", textcolor="black"];
    Visiteur -> GH_Pages_Repo;
    Domain_Name_Provider -> DNS_Server[label = "CNAME", textcolor="black"];
+   DNS_Server -> GH_Pages_Repo[label = "CNAME redirection", textcolor="green", color = "green"];
 }
 ----
 
