@@ -197,7 +197,7 @@ Si vous utilisez le repo peaceiris/actions-gh-pages, vous pouvez ajouter le para
 
 WARNING: Les copies d'écran concernent un panel d'administration DNS chez OVH.
 
-* Connectez vous à votre interface d'administration de votre DNS
+* Connectez vous à votre interface d'administration DNS
 * Sélectionnez votre domaine si vous en gérez plusieurs
 
 image::Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f4820.png[200,200,float="right",align="center"]
