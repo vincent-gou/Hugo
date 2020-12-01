@@ -17,7 +17,7 @@ keywords:
 - build
 ---
 :imagesdir: ../../images
-:toc: right
+
 
 == Objectifs
 
@@ -25,7 +25,7 @@ keywords:
 * Customiser certaines fonctionnalités asciidoctor non intégrées par Hugo
 * Utiliser un nom de domaine personnel pour son site sous GitHub Pages
 
-
+:toc:
 
 == Pré-requis
 
@@ -161,7 +161,7 @@ WARNING: Le contenu de ce dossier est purgé à chaque déploiement.
 
 === Cas avec fichier CNAME
 
-Si vous utilisez un repository pour les sources Hugo, il suffit de créer un fichier CNAME sous votre dossier "content".
+Si vous utilisez un repository pour les sources Hugo, il suffit de créer un fichier CNAME sous votre dossier "static".
 
 Le fichier ne doit contenir que votre nom de domaine customisé:
 
