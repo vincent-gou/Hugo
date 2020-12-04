@@ -14,7 +14,6 @@ removePathAccents = true
     backend = "html5"
     extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
     ##extensions = ["asciidoctor-diagram"]
-    attributes = {allow-uri-read}
     safeMode = "unsafe"
 
 [languages]
