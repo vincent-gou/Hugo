@@ -1,5 +1,5 @@
 ---
-title: "Dagrammes d'Architectures"
+title: "Diagrammes d'Architectures"
 date: 2019-01-22
 authors:
   - Vincent Gourrierec

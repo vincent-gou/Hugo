@@ -153,6 +153,7 @@ WARNING: Le contenu de ce dossier est purgé à chaque déploiement.
 
 == Paramétrage GitHub Actions
 
+Afin d'activer les
 
 
 == Paramétrage DNS
@@ -163,7 +164,7 @@ WARNING: Le contenu de ce dossier est purgé à chaque déploiement.
 
 Si vous utilisez un repository pour les sources Hugo, il suffit de créer un fichier CNAME sous votre dossier "static".
 
-Le fichier ne doit contenir que votre nom de domaine customisé:
+Le fichier ne doit contenir que votre nom de domaine customisé. Exemple:
 
 [source,bash]
 ----
