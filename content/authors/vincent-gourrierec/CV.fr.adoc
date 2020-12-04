@@ -1,3 +1,23 @@
+---
+title: "CV"
+authors:
+  - Vincent Gourrierec
+date: 2020-12-04
+tags: ["CV"]
+categories: ["CV"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- github
+- hugo
+- asciidoctor
+- devops
+- build
+---
+:imagesdir: ../../images
+
 :toc: left
 
 == Expérience Professionnelle Freelance
