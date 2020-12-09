@@ -1,0 +1,53 @@
+---
+title: "Varaiablisation des annotations dans Grafana"
+authors:
+  - Vincent Gourrierec
+date: 2020-12-09
+tags: ["grafana","influxdb"]
+categories: ["posts"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- loki
+- promtail
+- grafana
+- influxdb
+- windows
+- nssm
+---
+:imagesdir: ../../images
+
+
+== Objectifs
+
+* Permettre d'afficher les annotations liées à une variable sur un dashboard
+
+== Pré-requis
+
+* Disposer d'un dashboard par client
+* Disposer d'un dashboard d'administration de tous les clients
+
+== Préparation
+
+=== Dashboard client
+
+Dans le menu "Dashboard settings" / Annotations, sélectionnez la ligne par défaut : "Annotations & Alerts (Built-in)" ou créez une nouvelle annotation.
+
+image::GRAFANA_Annotation_Variables.fr-00423.png[200,200,float="right",align="center"]
+
+Le principe ici étant de définir les tags qui seront utilisés pour afficher les annotations crées dans l'API Grafana et affichées dans ce Dashboard.
+
+Vous pouvez donc définir plusieurs tags "générique"et au moins un spécifique.
+
+WARNING: Si vous cochez "Match any", la présence de n'importe lequel des tags affichera l'annotation.
+
+Par exemple:
+
+[source,bash]
+----
+extranet
+editeur
+client:client_xyz
+---
