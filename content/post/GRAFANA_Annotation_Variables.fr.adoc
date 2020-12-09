@@ -27,7 +27,7 @@ keywords:
 == Pré-requis
 
 * Disposer d'un dashboard par client
-* Disposer d'un dashboard d'administration de tous les clients
+* Disposer d'un dashboard d'administration de tous les clients avec une variable permettant de cibler le critère de sélection.
 
 == Préparation
 
@@ -35,13 +35,17 @@ keywords:
 
 Dans le menu "Dashboard settings" / Annotations, sélectionnez la ligne par défaut : "Annotations & Alerts (Built-in)" ou créez une nouvelle annotation.
 
-image::GRAFANA_Annotation_Variables.fr-00423.png[200,200,float="right",align="center"]
+image::GRAFANA_Annotation_Variables.fr-00423.png[500,400,float="right",align="center"]
 
 Le principe ici étant de définir les tags qui seront utilisés pour afficher les annotations crées dans l'API Grafana et affichées dans ce Dashboard.
 
 Vous pouvez donc définir plusieurs tags "générique"et au moins un spécifique.
 
-WARNING: Si vous cochez "Match any", la présence de n'importe lequel des tags affichera l'annotation.
+NOTE: Pensez à cliquer sur "Update" puis à sauvegarder le dashboard.
+
+
+WARNING: Si vous cochez "Match any", la présence de n'importe lequel des tags affichera l'annotation. Ce n'est l'effet désiré, donc ne cochez cette option que si nécessaire.
+
 
 Par exemple:
 
@@ -50,4 +54,43 @@ Par exemple:
 extranet
 editeur
 client:client_xyz
+----
+
+=== Dashboard d'administration
+
+==== Création d'une variable
+
+Si vous n'avez pas de variable permettant de filter votre dashboard, créez en une.
+
+==== Création d'une annotation utilisant une partie des tags des dashboard client
+
+Dans le menu "Dashboard settings" / Annotations, sélectionnez la ligne par défaut : "Annotations & Alerts (Built-in)" ou créez une nouvelle annotation.
+
+image::GRAFANA_Annotation_Variables.fr-9044a.png[500,400,float="right",align="center"]
+
+Le principe ici étant de définir une annotation utilisant les tags des dashboard client sans le tag spécifique du client.
+
+Par exemple:
+
+[source,bash]
+----
+extranet
+editeur
+----
+
+==== Création d'une annotation utilisant une variable définie dans le dashboard d'administration
+
+Dans le menu "Dashboard settings" / Annotations, sélectionnez la ligne par défaut : "Annotations & Alerts (Built-in)" ou créez une nouvelle annotation.
+
+image::GRAFANA_Annotation_Variables.fr-9044a.png[500,400,float="right",align="center"]
+
+Le principe ici étant de définir une annotation utilisant les tags des dashboard client sans le tag spécifique du client.
+
+Par exemple:
+
+[source,bash]
+----
+extranet
+editeur
+client:$client
 ----
