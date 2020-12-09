@@ -43,7 +43,7 @@ jobs:
           ##which asciidoctor
           ##alias asciidoctor="asciidoctor --require asciidoctor-diagram --attribute=experimental=true --attribute=icons=font"
           ##alias
-          hugo --minify -v --debug
+          hugo --minify
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
