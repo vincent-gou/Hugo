@@ -41,7 +41,10 @@ Le principe ici étant de définir les tags qui seront utilisés pour afficher l
 
 Vous pouvez donc définir plusieurs tags "générique"et au moins un spécifique.
 
+
 NOTE: Pensez à cliquer sur "Update" puis à sauvegarder le dashboard.
+
+
 
 
 WARNING: Si vous cochez "Match any", la présence de n'importe lequel des tags affichera l'annotation. Ce n'est l'effet désiré, donc ne cochez cette option que si nécessaire.
@@ -82,9 +85,9 @@ editeur
 
 Dans le menu "Dashboard settings" / Annotations, sélectionnez la ligne par défaut : "Annotations & Alerts (Built-in)" ou créez une nouvelle annotation.
 
-image::GRAFANA_Annotation_Variables.fr-9044a.png[500,400,float="right",align="center"]
+image::GRAFANA_Annotation_Variables.fr-fc253.png[500,400,float="right",align="center"]
 
-Le principe ici étant de définir une annotation utilisant les tags des dashboard client sans le tag spécifique du client.
+Le principe ici étant de définir une annotation utilisant les tags des dashboard client avec le tag spécifique du client spécifié.
 
 Par exemple:
 
