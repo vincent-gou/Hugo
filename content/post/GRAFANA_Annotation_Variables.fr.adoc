@@ -62,7 +62,7 @@ client:client_xyz
 
 Si vous n'avez pas de variable permettant de filter votre dashboard, créez en une.
 
-Dans le menu "Dashboard settings" / Variables, ajoutez une nouvelle varaible.
+Dans le menu "Dashboard settings" / Variables, ajoutez une nouvelle variable.
 
 Renseignez les informations d'affichage et la requete de sélection:
 
@@ -72,13 +72,12 @@ Puis cliquez sur "Update" et "Save Dashboard"
 
 Un bouton contenant la liste des valeurs issues de la requête sera disponible sur votre Dashboard:
 
-[.bordered]
 image::GRAFANA_Annotation_Variables.fr-0bb4d.png[500,400,float="right",align="center"]
 
-[.bordered]
+
 image::GRAFANA_Annotation_Variables.fr-270ca.png[500,400,float="right",align="center"]
 
-==== Création d'une annotation utilisant une partie des tags des dashboard client
+==== Création d'un bouton de sélection des annotations utilisant une partie des tags des dashboard client
 
 Dans le menu "Dashboard settings" / Annotations, sélectionnez la ligne par défaut : "Annotations & Alerts (Built-in)" ou créez une nouvelle annotation.
 
@@ -94,7 +93,7 @@ extranet
 editeur
 ----
 
-==== Création d'une annotation utilisant une variable définie dans le dashboard d'administration
+==== Création d'un bouton de sélection des annotations utilisant les tags et une variable définie dans le dashboard d'administration
 
 Dans le menu "Dashboard settings" / Annotations, sélectionnez la ligne par défaut : "Annotations & Alerts (Built-in)" ou créez une nouvelle annotation.
 
