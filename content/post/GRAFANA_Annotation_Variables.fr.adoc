@@ -110,6 +110,21 @@ editeur
 client:$client
 ----
 
+=== Rendu sur le dashboard d'administration
+
+Affichage des annotations pour tous les clients:
+
+image::GRAFANA_Annotation_Variables.fr-5188d.png[700,500,float="right",align="center"]
+
+Affichage des annotation pour un client en particulier:
+
+image::GRAFANA_Annotation_Variables.fr-1d057.png[700,500,float="right",align="center"]
+
+ou pour un autre client:
+
+image::GRAFANA_Annotation_Variables.fr-5205d.png[700,500,float="right",align="center"]
+
+
 == Processus de création d'un annotation
 
 === Création d'une annotation sur Dashboard client
