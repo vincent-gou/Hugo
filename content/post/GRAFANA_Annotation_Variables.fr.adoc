@@ -74,8 +74,7 @@ Un bouton contenant la liste des valeurs issues de la requête sera disponible s
 
 image::GRAFANA_Annotation_Variables.fr-0bb4d.png[500,400,float="right",align="center"]
 
-
-image::GRAFANA_Annotation_Variables.fr-270ca.png[500,400,float="right",align="center"]
+image::GRAFANA_Annotation_Variables.fr-bfefa.png[500,400,float="right",align="center"]
 
 ==== Création d'un bouton de sélection des annotations utilisant une partie des tags des dashboard client
 
