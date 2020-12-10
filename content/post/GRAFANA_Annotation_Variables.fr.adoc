@@ -18,7 +18,10 @@ keywords:
 - nssm
 ---
 :imagesdir: ../../images
+:toc2:
+:numbered:
 
+Si vous avez essayer d'afficher des annotations selon une variable définie sur un dashboard sans succès, cette page est faite pour vous.
 
 == Objectifs
 
@@ -60,7 +63,7 @@ client:client_xyz
 
 ==== Création d'une variable
 
-Si vous n'avez pas de variable permettant de filter votre dashboard, créez en une.
+Si vous n'avez pas de variable permettant de filtrer votre dashboard, créez en une.
 
 Dans le menu "Dashboard settings" / Variables, ajoutez une nouvelle variable.
 
@@ -144,7 +147,7 @@ editeur
 client:client_xyz
 ----
 
-L'annotation devrait etre visible sur le graphique et les autres graphiques du Dashboard s'il y en a:
+L'annotation devrait etre visible sur le graphique et les autres graphiques du dashboard s'il y en a:
 
 image::GRAFANA_Annotation_Variables.fr-eba4c.png[700,500,float="right",align="center"]
 
@@ -155,7 +158,7 @@ image::GRAFANA_Annotation_Variables.fr-2287a.png[700,500,float="right",align="ce
 === Création d'une annotation sur Dashboard d'administration des clients
 
 *Cas exemple:* Vous avez effectué un changement ou un problème est survenu sur l'infrastructure de monitoring.
-Il est souhaitable que vous ajoutiez une annotation pour qu'elle soit visible dans le Dashboard du client et le votre afin de tracer cette action et pouvoir ainsi la corréler à un problème ou incident éventuel.
+Il est souhaitable que vous ajoutiez une annotation pour qu'elle soit visible dans le dashboard du client et le votre afin de tracer cette action et pouvoir ainsi la corréler à un problème ou incident éventuel.
 
 Depuis le dashboard d'administration, cliquez sur une zone d'un graphique puis cliquez:
 
