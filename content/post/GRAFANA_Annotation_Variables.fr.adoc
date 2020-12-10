@@ -47,7 +47,7 @@ Vous pouvez donc définir plusieurs tags "générique"et au moins un spécifique
 
 NOTE: Pensez à cliquer sur "Update" puis à sauvegarder le dashboard.
 
-WARNING: Si vous cochez "Match any", la présence de n'importe lequel des tags affichera l'annotation. Ce n'est l'effet désiré, donc ne cochez cette option que si nécessaire.
+WARNING: Si vous cochez "Match any", la présence de n'importe lequel des tags affichera l'annotation. Ce n'est pas l'effet désiré, donc ne cochez cette option que si nécessaire.
 
 
 Par exemple:
