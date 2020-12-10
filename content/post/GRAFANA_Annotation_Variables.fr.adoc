@@ -44,9 +44,6 @@ Vous pouvez donc définir plusieurs tags "générique"et au moins un spécifique
 
 NOTE: Pensez à cliquer sur "Update" puis à sauvegarder le dashboard.
 
-
-
-
 WARNING: Si vous cochez "Match any", la présence de n'importe lequel des tags affichera l'annotation. Ce n'est l'effet désiré, donc ne cochez cette option que si nécessaire.
 
 
@@ -64,6 +61,20 @@ client:client_xyz
 ==== Création d'une variable
 
 Si vous n'avez pas de variable permettant de filter votre dashboard, créez en une.
+
+Dans le menu "Dashboard settings" / Variables, ajoutez une nouvelle varaible.
+
+Renseignez les informations d'affichage et la requete de sélection:
+
+image::GRAFANA_Annotation_Variables.fr-ae422.png[500,400,float="right",align="center"]
+
+Puis cliquez sur "Update" et "Save Dashboard"
+
+Un bouton contenant la liste des valeurs issues de la requête sera disponible sur votre Dashboard:
+
+image::GRAFANA_Annotation_Variables.fr-0bb4d.png[500,400,float="right",align="center"]
+
+image::GRAFANA_Annotation_Variables.fr-270ca.png[500,400,float="right",align="center"]
 
 ==== Création d'une annotation utilisant une partie des tags des dashboard client
 
