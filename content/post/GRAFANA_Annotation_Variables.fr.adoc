@@ -72,8 +72,10 @@ Puis cliquez sur "Update" et "Save Dashboard"
 
 Un bouton contenant la liste des valeurs issues de la requête sera disponible sur votre Dashboard:
 
+[.bordered]
 image::GRAFANA_Annotation_Variables.fr-0bb4d.png[500,400,float="right",align="center"]
 
+[.bordered]
 image::GRAFANA_Annotation_Variables.fr-270ca.png[500,400,float="right",align="center"]
 
 ==== Création d'une annotation utilisant une partie des tags des dashboard client
