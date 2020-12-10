@@ -114,13 +114,12 @@ client:$client
 
 === Création d'une annotation sur Dashboard client
 
-*Cas exemple:* Le client a procédé à une campagne de communcation SMS. 
+*Cas exemple:* Le client a procédé à une campagne de communcation SMS.
 Il est souhaitable qu'il ajoute une annotation dans son Dashboard afin de tracer cette action et pouvoir ainsi la corréler à un problème ou incident éventuel.
-
 
 Depuis le dashboard client, cliquez sur une zone d'un graphique puis cliquez:
 
-image::GRAFANA_Annotation_Variables.fr-588b0.png[500,400,float="right",align="center"]
+image::GRAFANA_Annotation_Variables.fr-588b0.png[300,200,float="right",align="center"]
 
 Ensuite renseignez le message ainsi que les tags propre au client, par exemple:
 
@@ -133,12 +132,33 @@ client:client_xyz
 
 L'annotation devrait etre visible sur le graphique et les autres graphiques du Dashboard s'il y en a:
 
-image::GRAFANA_Annotation_Variables.fr-ef2cd.png[500,400,float="right",align="center"]
+image::GRAFANA_Annotation_Variables.fr-eba4c.png[700,500,float="right",align="center"]
 
 Contenu de l'annotation lorsque la souris pointe sur celle-ci:
 
-image::GRAFANA_Annotation_Variables.fr-2287a.png[500,400,float="right",align="center"]
-
-
+image::GRAFANA_Annotation_Variables.fr-2287a.png[700,500,float="right",align="center"]
 
 === Création d'une annotation sur Dashboard d'administration des clients
+
+*Cas exemple:* Vous avez effectué un changement ou un problème est survenu sur l'infrastructure de monitoring.
+Il est souhaitable que vous ajoutiez une annotation pour qu'elle soit visible dans le Dashboard du client et le votre afin de tracer cette action et pouvoir ainsi la corréler à un problème ou incident éventuel.
+
+Depuis le dashboard d'administration, cliquez sur une zone d'un graphique puis cliquez:
+
+image::GRAFANA_Annotation_Variables.fr-588b0.png[300,200,float="right",align="center"]
+
+Saisissez les informations et les tags génériques ainsi le tag tag spécifique au client:
+
+image::GRAFANA_Annotation_Variables.fr-e2b09.png[700,500,float="right",align="center"]
+
+Puis sauvegardez l'annotation.
+
+L'annotation devrait etre visible dans votre Dashboard d'administration, ainsi que sur le dashboard du client.
+
+Vue Dashboard Administration:
+
+image::GRAFANA_Annotation_Variables.fr-1b98c.png[700,500,float="right",align="center"]
+
+Vue Dashboard client:
+
+image::GRAFANA_Annotation_Variables.fr-95d4f.png[700,500,float="right",align="center"]
