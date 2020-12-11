@@ -1,5 +1,5 @@
 ---
-title: "Varaiablisation des annotations dans Grafana"
+title: "Variablisation des annotations dans Grafana"
 authors:
   - Vincent Gourrierec
 date: 2020-12-09
@@ -21,7 +21,7 @@ keywords:
 :toc2:
 :numbered:
 
-Si vous avez essayer d'afficher des annotations selon une variable définie sur un dashboard sans succès, cette page est faite pour vous.
+Si vous avez essayé d'afficher des annotations selon une variable définie sur un dashboard sans succès, cette page est faite pour vous.
 
 == Objectifs
 

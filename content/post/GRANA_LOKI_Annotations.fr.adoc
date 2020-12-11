@@ -1,0 +1,60 @@
+---
+title: "Affichage des logs LOKI dans une annotation GRAFANA"
+authors:
+  - Vincent Gourrierec
+date: 2020-12-11
+tags: ["grafana","influxdb","loki"]
+categories: ["posts"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- loki
+- promtail
+- grafana
+- influxdb
+- windows
+- nssm
+---
+:imagesdir: ../../images
+:toc2:
+:numbered:
+
+Il est possible d'afficher certaines logs provenant de LOKI en tant qu'annotations dans Grafana.
+
+== Objectifs
+
+* Permettre d'afficher les logs LOKI en tant qu'annotations dans un dashboard Grafana.
+
+Exemple d'un bouton permettant d'afficher les erreurs d'authentification détectées dans les fichiers de logs et tracés dans LOKI, en tant qu'annotations dans les graphiques.
+
+image::GRANA_LOKI_Annotations.fr-b10dd.png[700,500,float="right",align="center"]
+
+== Pré-requis
+
+* Disposer d'une datasource LOKI configurée dans GRAFANA
+* Possibilité d'utiliser une variable du dashboard pour effectuer la recherche des entrées dans LOKI.
+
+== Création du bouton d'affichage des annotations
+
+Dans le menu "Dashboard settings" / Annotations, créez une nouvelle annotation.
+
+image::GRANA_LOKI_Annotations.fr-ebf80.png[700,500,float="right",align="center"]
+
+Ensuite renseignez les différentes options tel que:
+
+image::GRANA_LOKI_Annotations.fr-b63ef.png[700,500,float="right",align="center"]
+
+Puis ajoutez l'annotation et sauvegardez le dashboard.
+
+Ici la requete LOKI est la suivante:
+
+[source,bash]
+----
+{client="$Client"} |= "ERROR" |= "Authentication"
+----
+
+* {client="$Client"}: recherche dans toutes les logs avec la valeur du label client correspondant à la variable sélectionnée dans le dashboard.
+* |= "ERROR": doit contenir la valeur "ERROR"
+* |= "Authentication": doit contenir la valeur "Authentication" en plus de la valeur "ERROR"
