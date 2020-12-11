@@ -168,6 +168,15 @@ Saisissez les informations et les tags génériques ainsi le tag tag spécifique
 
 image::GRAFANA_Annotation_Variables.fr-e2b09.png[700,500,float="right",align="center"]
 
+Exemple:
+
+[source,bash]
+----
+extranet
+editeur
+client:client_xyz
+----
+
 Puis sauvegardez l'annotation.
 
 L'annotation devrait etre visible dans votre Dashboard d'administration, ainsi que sur le dashboard du client.
