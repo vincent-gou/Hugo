@@ -87,6 +87,20 @@ blockdiag {
      orientation = landscape
      VG2[shape = flowchart.database];
       }
+    group lv {
+    textcolor = white;
+    fontsize = 18;
+    label = "Logical Volumes";
+    // Set group shape to 'line group' (default is box)
+    shape = line;
+    orientation = landscape
+    LV1[shape = flowchart.database];
+    LV2[shape = flowchart.database];
+    LV3[shape = flowchart.database];
+    LV4[shape = flowchart.database];
+    LV5[shape = flowchart.database];
+    LV6[shape = flowchart.database];
+     }
      group fs {
      textcolor = white;
      fontsize = 18;
@@ -113,12 +127,18 @@ blockdiag {
     PV4 -> VG2;
     PV5 -> VG2;
     PV6 -> VG2;
-    VG1 -> FS1;
-    VG1 -> FS2;
-    VG2 -> FS3;
-    VG2 -> FS4;
-    VG2 -> FS5;
-    VG2 -> FS6;
+    VG1 -> LV1;
+    VG1 -> LV2;
+    VG2 -> LV3;
+    VG2 -> LV4;
+    VG2 -> LV5;
+    VG2 -> LV6;
+    LV1 -> FS1;
+    LV2 -> FS2;
+    LV3 -> FS3;
+    LV4 -> FS4;
+    LV5 -> FS5;
+    LV6 -> FS6;
 }
 ----
 
