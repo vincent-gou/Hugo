@@ -108,12 +108,12 @@ blockdiag {
      // Set group shape to 'line group' (default is box)
      shape = line;
      orientation = landscape
-     FS1[shape = note];
-     FS2[shape = note];
-     FS3[shape = note];
-     FS4[shape = note];
-     FS5[shape = note];
-     FS6[shape = note];
+     FS1[shape = note, label = "FS1 Ext4"];
+     FS2[shape = note, label = "FS2 Ext4"];
+     FS3[shape = note, label = "FS3 XFS"];
+     FS4[shape = note, label = "FS4 XFS"];
+     FS5[shape = note, label = "FS5 XFS"];
+     FS6[shape = note, label = "FS6 Ext4"];
       }
     DISK1 <- PV1;
     DISK2 <- PV2;
