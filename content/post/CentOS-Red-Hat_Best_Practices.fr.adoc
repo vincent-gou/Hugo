@@ -133,12 +133,12 @@ blockdiag {
     VG2 -> LV4;
     VG2 -> LV5;
     VG2 -> LV6;
-    LV1 -> FS1 Ext4;
-    LV2 -> FS2 Ext4;
-    LV3 -> FS3 XFS;
-    LV4 -> FS4 XFS;
-    LV5 -> FS5 XFS;
-    LV6 -> FS6 Ext4;
+    LV1 -> "FS1 Ext4";
+    LV2 -> "FS2 Ext4";
+    LV3 -> "FS3 XFS";
+    LV4 -> "FS4 XFS";
+    LV5 -> "FS5 XFS";
+    LV6 -> "FS6 Ext4";
 }
 ----
 
