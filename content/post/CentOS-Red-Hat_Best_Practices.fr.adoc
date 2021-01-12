@@ -48,12 +48,12 @@ blockdiag {
      // Set group shape to 'line group' (default is box)
      shape = line;
      orientation = landscape
-     DISK1[shape = flowchart.database];
-     DISK2[shape = flowchart.database];
-     DISK3[shape = flowchart.database];
-     DISK4[shape = flowchart.database];
-     DISK5[shape = flowchart.database];
-     DISK6[shape = flowchart.database];
+     DISK1[shape = flowchart.database, label = "/dev/sda1 Type: 8e"];
+     DISK2[shape = flowchart.database, label = "/dev/sda2 Type: 8e"];
+     DISK3[shape = flowchart.database, label = "/dev/sdb1 Type: 8e"];
+     DISK4[shape = flowchart.database, label = "/dev/sdc1 Type: 8e"];
+     DISK5[shape = flowchart.database, label = "/dev/sdd1 Type: 8e"];
+     DISK6[shape = flowchart.database, label = "/dev/sdd2 Type: 8e"];
     }
      group pv {
      textcolor = white;
