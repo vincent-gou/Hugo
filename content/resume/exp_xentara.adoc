@@ -1,0 +1,10 @@
+~Avril~ 2022:: **Grafana designer**
+__Xentara, Munich (Allemagne), Télétravail total__
+****
+* Analyse de données Industrie ( PLC / COBOT )
+* Design Dashboard Grafana avec besoins  EOO / Andon 
+* Développement requêtes InfluxDB Flux
+* Gestion dashops dashboard multi clients / machine / template et variablisation
+[TIP]
+InfluxDB | Grafana | InfluxDB Flux | DashOps | Design
+****

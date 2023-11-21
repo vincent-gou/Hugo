@@ -1,0 +1,81 @@
+:doctype: book
+:imagesdir: ../images
+:iconsdir: ../icons
+:nofooter:
+:icons: font
+:source-highlighter: pygments
+:pygments-style: fruity
+:pygments-linenums-mode: inline
+:pdf-theme: ../themes/resume_pdf_theme.yml
+:tip-caption: 💡
+
+image::vincent_photo_resized.png[Tiger,150,150,float="right",align="top"]
+
+
+Vincent Gourrierec:: 21 rue Pierre Curie + 
+44600 Saint Nazaire +
+image:cell_phone.png[20,20] | +33 6 45 55 94 31 +
+image:mail.png[20,20] | mailto:contact@vincent-gou.fr[contact@vincent-gou.fr] +
+image:baby.png[20,20] 14/09/1979 | image:car.png[20,20] | Permis B +
+
+//[link=https://github.com/vincent-gou]
+//image::github.png[Github,20,20]
+//[link=https://github.com/vincent-gou]
+//image::github.png[Github,20,20]
+
+[.text-center]
+= Ingénieur Systèmes Linux / SysOps
+
+
+[#work-experience]
+=== Expérience Professionnelle Freelance (Missions en cours)
+'''
+[horizontal]
+include::exp_xentara.adoc[]
+
+<<<
+=== Expérience Professionnelle Freelance (Missions terminées)
+'''
+[horizontal]
+include::exp_innexa.adoc[]
+include::exp_vecteur-plus.adoc[]
+
+
+
+[#academic-record]
+=== Academic Record
+'''
+[horizontal]
+2009–2014:: **__University of Vienna, Bachelor of Computer Science. Vienna, Austria__** +
+__Computer Science Society Vice-President 2013-2014__ +
+__Chess Club President 2012-2013__ 
+
+[#it-skills]
+=== IT Skills
+'''
+[horizontal]
+Core Skills: :: 
+Software Development:::
+Programming languages: Rust, Golang, Python, C++, Haskell +
+
+Operating Systems: :: 
+Linux:::
+CentOS 7, Debian 9, Arch Linux +
+Others:::
+Microsoft Windows 98 - 10 +
+Mac OS X, MacOS Sierra - Catalina +
+
+<<<
+
+[#language-skills]
+=== Language Skills
+'''
+[horizontal]
+Fluent: :: English
+Advanced: :: French
+Mother Tongue: :: German
+
+[#personal-interests]
+=== Personal Interests
+'''
+Hiking, swimming, robotics, popular science books 

@@ -1,0 +1,14 @@
+extends: default
+title-page:
+  font-color: #868686
+toc:
+  font-color: #cf012b
+  h1-font-color: #cf012b
+  h2-font-color: #cf012b
+heading:
+  h2-font-color: #cf012b
+footer:
+  border-color: dddddd
+  background-color: #cf012b
+  font-color: 0d1120
+  #border-width: 0.25
