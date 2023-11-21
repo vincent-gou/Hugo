@@ -9,6 +9,10 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v3
@@ -49,11 +53,13 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       env:
         #ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        EXTERNAL_REPOSITORY: vincent-gou/vincent-gou.github.io
-        PUBLISH_BRANCH: master
+        #EXTERNAL_REPOSITORY: vincent-gou/vincent-gou.github.io
+        #PUBLISH_BRANCH: master
         #PUBLISH_DIR: ./public
       with:
         emptyCommits: false
         commitMessage: ${{ github.event.head_commit.message }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
+        publish_branch: master
+        external_repository: vincent-gou/vincent-gou.github.io
