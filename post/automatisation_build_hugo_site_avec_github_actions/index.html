@@ -1,0 +1,102 @@
+<!doctype html><html lang=fr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Automatisation deploiement Hugo avec GitHub Actions et GitHub Pages</title><style>html body{font-family:raleway,sans-serif;background-color:#656565}:root{--accent:#cc9933;--border-width:5px}</style><link rel=stylesheet href=https://www.vincent-gou.fr/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Raleway"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script><script>hljs.initHighlightingOnLoad()</script><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script><script>$(document).on("click",function(){$(".collapse").collapse("hide")})</script><meta name=generator content="Hugo 0.120.4"></head><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><body><a class=flagselect href=/post/automatisation_build_hugo_site_avec_github_actions/>fr🇫🇷</a><nav class="navbar navbar-default navbar-fixed-top"><div class=container><div class=navbar-header><a class="navbar-brand visible-xs" href=#>Automatisation deploiement Hugo avec GitHub Actions et GitHub Pages</a>
+<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span></button></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href=/>Accueil</a></li><li><a href=/project/>Projets</a></li><li><a href=/post/>Articles</a></li><li><a href=/tags/>Tags</a></li><li><a href=/calendar/>Calendrier</a></li></ul><ul class="nav navbar-nav navbar-right"><li class=navbar-icon><a href=mailto:contact@vincent-gou.fr><i class="fa fa-envelope-o"></i></a></li><li class=navbar-icon><a href=https://github.com/vincent-gou/><i class="fa fa-github"></i></a></li><li class=navbar-icon><a href=https://www.linkedin.com/in/vincent-gou/><i class="fa fa-linkedin"></i></a></li><li class=navbar-icon><a href=https://www.malt.fr/profile/vincentgourrierec/><i class="fa fa-certificate"></i></a></li></ul></div></div></nav><h4 class=page_info>Informations sur la page:</h4><h6 class=page_info>Cet article contient 690 mots.</br>Comptez 4 minutes de temps de lecture</h6><main><div class=item><h4><a href=/post/automatisation_build_hugo_site_avec_github_actions/>Automatisation deploiement Hugo avec GitHub Actions et GitHub Pages</a></h4><h5>November 26, 2020</h5><a href=https://www.vincent-gou.fr/tags/github><kbd class=item-tag>GitHub</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/hugo><kbd class=item-tag>Hugo</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/asciidoctor><kbd class=item-tag>Asciidoctor</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/diagram><kbd class=item-tag>diagram</kbd></a></div><br><div class=text-justify><div class=sect1><h2 id=_objectifs>Objectifs</h2><div class=sectionbody><div class=ulist><ul><li><p>Déployer automatiquement un site avec Hugo, le backend Asciidoctor et GitHub Actions</p></li><li><p>Customiser certaines fonctionnalités asciidoctor non intégrées par Hugo</p></li><li><p>Utiliser un nom de domaine personnel pour son site sous GitHub Pages</p></li></ul></div></div></div><div class=sect1><h2 id=_pré_requis>Pré-requis</h2><div class=sectionbody><div class=ulist><ul><li><p>Git repository pour votre site Hugo</p></li><li><p>Git repository pour les fichiers générés par Hugo</p></li><li><p>Un nom de domaine personnel</p></li><li><p>Accès à votre console d’administration DNS pour créer un sous-domaine et ajouter une nouvelle entrée de type CNAME</p></li></ul></div></div></div><div class=sect1><h2 id=_architecture_générale>Architecture générale</h2><div class=sectionbody><div class=listingblock><div class=content><pre>Failed to generate image: blockdiag failed: ERROR: &#39;ImageDraw&#39; object has no attribute &#39;textsize&#39;
+
+blockdiag {
+   default_node_color = grey;
+   default_textcolor = white;
+   Dev[shape = actor, label=&#34;Dev&#34;];
+   Visiteur[shape = actor, label = &#34;Visiteur&#34;];
+   group GitHub_Repositories{
+     label = &#34;GitHub Repositories&#34;;
+     shape = line;
+     GH_Hugo_Repo[shape = cloud,numbered = &#34;1&#34;];
+     GH_Pages_Repo[shape = cloud,numbered = &#34;9&#34;];
+   }
+   GH_Actions[shape = circle,numbered = &#34;2&#34;];
+   GH_Actions_Repo[shape = square,numbered = &#34;3&#34;];
+   Hugo_Actions_Repo[shape = square,numbered = &#34;4&#34;];
+   Ruby_Setup[shape = square,numbered = &#34;5&#34;];
+   Python_Setup[shape = square,numbered = &#34;6&#34;];
+   Asciidoctor_Setup[shape = square,numbered = &#34;7&#34;];
+   Build_Hugo[shape = box,numbered = &#34;8&#34;];
+   Deploy_Hugo[shape = box,numbered = &#34;10&#34;];
+   group DNS{
+     label = &#34;DNS Infrastructure&#34;;
+     shape = line;
+   DNS_Server[shape = box,numbered = &#34;12&#34;];
+   Domain_Name_Provider[shape = box,numbered = &#34;11&#34;];
+}
+   Dev -&gt; GH_Hugo_Repo[label = &#34;git push&#34;, textcolor=&#34;black&#34;];
+   GH_Hugo_Repo &lt;- GH_Actions[label = &#34;on push on master&#34;, textcolor=&#34;black&#34;];
+   GH_Actions -&gt; GH_Actions_Repo[label = &#34;pull&#34;, textcolor=&#34;black&#34;];
+   GH_Actions -&gt; Hugo_Actions_Repo[label = &#34;pull&#34;, textcolor=&#34;black&#34;];
+   GH_Actions -&gt; Ruby_Setup[label = &#34;pull&#34;, textcolor=&#34;black&#34;];
+   GH_Actions -&gt; Python_Setup[label = &#34;pull&#34;, textcolor=&#34;black&#34;];
+   GH_Actions -&gt; Asciidoctor_Setup[label = &#34;run&#34;, textcolor=&#34;black&#34;];
+   GH_Actions -&gt; Build_Hugo;
+   Build_Hugo -&gt; GH_Hugo_Repo[label = &#34;pull&#34;, textcolor=&#34;black&#34;];
+   GH_Actions -&gt; Deploy_Hugo;
+   Deploy_Hugo -&gt; GH_Pages_Repo[label = &#34;push&#34;, textcolor=&#34;red&#34;, color = &#34;red&#34;];
+   Visiteur -&gt; DNS_Server [label = &#34;IP ?&#34;, textcolor=&#34;black&#34;];
+   Visiteur -&gt; GH_Pages_Repo;
+   Domain_Name_Provider -&gt; DNS_Server[label = &#34;CNAME&#34;, textcolor=&#34;black&#34;];
+   DNS_Server -&gt; Visiteur[label = &#34;CNAME resolution&#34;, textcolor=&#34;yellow&#34;, color = &#34;yellow&#34;];
+}</pre></div></div></div></div><div class=sect1><h2 id=_repository_github>Repository GitHub</h2><div class=sectionbody><div class=sect2><h3 id=_repository_hugo>Repository Hugo</h3><div class=paragraph><p>Ce repository contiendra le contenu source de votre site, la configuration, le theme et les pages qui seront générées par Hugo.
+Le resultat du build Hugo sera déployé dans le repository dédié à GitHub Pages.</p></div><div class=paragraph><p>Exemple de structure du dossier dédié aux sources Hugo:</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[someone@server:Hugo] # tree -L 2
+.
+|-- archetypes
+|   `-- default.md
+|-- config.toml
+|-- content
+|   |-- authors
+|   |-- bin
+|   |-- calendar
+|   |-- images
+|   |-- post
+|   `-- project
+|-- static
+|   |-- CNAME
+|   |-- css
+|   |-- js
+|   `-- README.md
+`-- themes
+    `-- minimal
+
+13 directories, 4 files</code></pre></div></div></div><div class=sect2><h3 id=_repository_github_pages>Repository GitHub Pages</h3><div class=paragraph><p>Ce repository contiendra le contenu de votre site généré par Hugo et déployé par GitHub Actions.</p></div><div class=paragraph><p>Exemple de structure du dossier:</p></div><div class="admonitionblock warning"><table><tbody><tr><td class=icon><div class=title>Warning</div></td><td class=content>Le contenu de ce dossier est purgé à chaque déploiement.</td></tr></tbody></table></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[someone@server:someone.github.io] # tree -L 1
+.
+|-- 404.html
+|-- authors
+|-- bin
+|-- calendar
+|-- categories
+|-- CNAME
+|-- css
+|-- en
+|-- fr
+|-- images
+|-- index.html
+|-- index.xml
+|-- js
+|-- post
+|-- project
+|-- README.md
+|-- sitemap.xml
+`-- tags
+
+12 directories, 6 files</code></pre></div></div></div></div></div><div class=sect1><h2 id=_paramétrage_github_actions>Paramétrage GitHub Actions</h2><div class=sectionbody><div class=paragraph><p>Afin d’activer les</p></div></div></div><div class=sect1><h2 id=_paramétrage_dns>Paramétrage DNS</h2><div class=sectionbody></div></div><div class=sect1><h2 id=_paramétrage_de_votre_nom_de_domaine_customisé>Paramétrage de votre nom de domaine customisé</h2><div class=sectionbody><div class=sect2><h3 id=_cas_avec_fichier_cname>Cas avec fichier CNAME</h3><div class=paragraph><p>Si vous utilisez un repository pour les sources Hugo, il suffit de créer un fichier CNAME sous votre dossier "static".</p></div><div class=paragraph><p>Le fichier ne doit contenir que votre nom de domaine customisé. Exemple:</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>www.custom_domain.xy</code></pre></div></div></div><div class=sect2><h3 id=_cas_avec_linterface_dadministration_de_github_pages>Cas avec l’interface d’administration de GitHub Pages</h3><div class="admonitionblock warning"><table><tbody><tr><td class=icon><div class=title>Warning</div></td><td class=content>Ne pas utiliser car le fichier CNAME sera supprimé à chaque push après le build "hugo_deploy" provenant de GitHub Actions.</td></tr></tbody></table></div></div><div class=sect2><h3 id=_cas_avec_github_actions_et_le_paramètre_cname>Cas avec GitHub Actions et le paramètre cname</h3><div class=paragraph><p>Si vous utilisez le repo peaceiris/actions-gh-pages, vous pouvez ajouter le paramètre suivant dans fichier GitHub Actions:</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>- name: Deploy
+  uses: peaceiris/actions-gh-pages@v2
+  env:
+    ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+    EXTERNAL_REPOSITORY: username/username.github.io
+    PUBLISH_BRANCH: master
+    PUBLISH_DIR: ./public
+    cname: www.custom_domain.xy
+  with:
+    emptyCommits: false
+    commitMessage: ${{ github.event.head_commit.message }}</code></pre></div></div></div><div class=sect2><h3 id=_paramétrage_dns_dans_linterface_de_votre_provider_dns>Paramétrage DNS dans l’interface de votre provider DNS</h3><div class="admonitionblock warning"><table><tbody><tr><td class=icon><div class=title>Warning</div></td><td class=content>Les copies d’écran concernent un panel d’administration DNS chez OVH.</td></tr></tbody></table></div><div class=ulist><ul><li><p>Connectez vous à votre interface d’administration DNS</p></li><li><p>Sélectionnez votre domaine si vous en gérez plusieurs</p></li></ul></div><div class="imageblock right text-center"><div class=content><img src=../../images/Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f4820.png alt=200 width=200></div></div><div class=ulist><ul><li><p>Sélectionner "Zone DNS"</p></li></ul></div><div class="imageblock right text-center"><div class=content><img src=../../images/Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-f7562.png alt=200 width=200></div></div><div class=ulist><ul><li><p>Puis sélectionnez ajoutez une entrée, sélectionnez "CNAME"</p></li></ul></div><div class="imageblock right text-center"><div class=content><img src=../../images/Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-414c6.png alt=200 width=200></div></div><div class=ulist><ul><li><p>Ensuite remplissez le formulaire permettant de rediriger votre site vers le site GitHub pages de la forme: username.github.io</p></li></ul></div><div class="admonitionblock note"><table><tbody><tr><td class=icon><div class=title>Note</div></td><td class=content>il faudra peut-etre ajouter un "." au domaine de redirection, par exemple: username.github.io.</td></tr></tbody></table></div><div class="imageblock right text-center"><div class=content><img src=../../images/Automatisation_Build_Hugo_site_avec_GitHUb_Actions.fr-eee79.png alt=200 width=200></div></div><div class=ulist><ul><li><p>Puis validez votre entrée</p></li></ul></div><div class="admonitionblock note"><table><tbody><tr><td class=icon><div class=title>Note</div></td><td class=content>Quelques minutes voire plus peuvent être nécessaire pour répliquer votre nouvelle entrée vers les différents serveurs DNS.</td></tr></tbody></table></div></div></div></div></div><h4 class=page-header>Auteur:</h4><figure><img class=avatar src=../../../images/vincent.fr.png alt><figcaption><a href=https://www.vincent-gou.fr/authors/vincent-gourrierec/>Vincent Gourrierec</a></figcaption></figure></main><footer><p class=copyright>2023 - © All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a> theme, build with GitHub Actions <img src=https://github.com/vincent-gou/Hugo/workflows/hugo%20publish/badge.svg alt="hugo publish"> and <a href=https://www.vincent-gou.fr>Vincent Gourrierec</a></p></footer></body></html>

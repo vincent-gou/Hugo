@@ -1,0 +1,242 @@
+<!doctype html><html lang=fr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Bonnes pratiques CentOS et Red Hat</title><style>html body{font-family:raleway,sans-serif;background-color:#656565}:root{--accent:#cc9933;--border-width:5px}</style><link rel=stylesheet href=https://www.vincent-gou.fr/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Raleway"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script><script>hljs.initHighlightingOnLoad()</script><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script><script>$(document).on("click",function(){$(".collapse").collapse("hide")})</script><meta name=generator content="Hugo 0.120.4"></head><script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><body><a class=flagnoselect href=/en/post/centos-red-hat_best_practices/>en🇬🇧</a>
+<a class=flagselect href=/post/centos-red-hat_best_practices/>fr🇫🇷</a><nav class="navbar navbar-default navbar-fixed-top"><div class=container><div class=navbar-header><a class="navbar-brand visible-xs" href=#>Bonnes pratiques CentOS et Red Hat</a>
+<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span></button></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href=/>Accueil</a></li><li><a href=/project/>Projets</a></li><li><a href=/post/>Articles</a></li><li><a href=/tags/>Tags</a></li><li><a href=/calendar/>Calendrier</a></li></ul><ul class="nav navbar-nav navbar-right"><li class=navbar-icon><a href=mailto:contact@vincent-gou.fr><i class="fa fa-envelope-o"></i></a></li><li class=navbar-icon><a href=https://github.com/vincent-gou/><i class="fa fa-github"></i></a></li><li class=navbar-icon><a href=https://www.linkedin.com/in/vincent-gou/><i class="fa fa-linkedin"></i></a></li><li class=navbar-icon><a href=https://www.malt.fr/profile/vincentgourrierec/><i class="fa fa-certificate"></i></a></li></ul></div></div></nav><div class=page_info><h4 class=page_info>Traductions disponibles:</h4><a href=https://www.vincent-gou.fr/en/post/centos-red-hat_best_practices/ class=page_info><b>en</b> CentOS or Red-Hat best pratices /</a></div><h4 class=page_info>Informations sur la page:</h4><h6 class=page_info>Cet article contient 1548 mots.</br>Comptez 8 minutes de temps de lecture</h6><main><div class=item><h4><a href=/post/centos-red-hat_best_practices/>Bonnes pratiques CentOS et Red Hat</a></h4><h5>July 3, 2020</h5><a href=https://www.vincent-gou.fr/tags/centos><kbd class=item-tag>CentOS</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/red-hat><kbd class=item-tag>Red-Hat</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/best-pratices><kbd class=item-tag>best-pratices</kbd></a></div><br><div class=text-justify><div class=sect1><h2 id=_objectifs>Objectifs</h2><div class=sectionbody><div class=ulist><ul><li><p>Lister les bonnes pratiques d’installation et déploiement des systèmes d’exploitation CentOS / Red-Hat</p></li></ul></div><div class="admonitionblock note"><table><tbody><tr><td class=icon><div class=title>Note</div></td><td class=content>Ces bonnes pratiques ont étées testées sur CentOS 7 and Red-Hat 7.</td></tr></tbody></table></div></div></div><div class=sect1><h2 id=_yum>YUM</h2><div class=sectionbody><div class=sect2><h3 id=_kernels>Kernels</h3><div class=paragraph><p>Supprimer manuellement ou automatiquement les anciens kernels:
+<a href=https://linuxconfig.org/how-to-remove-old-unused-kernels-on-centos-linux class=bare>https://linuxconfig.org/how-to-remove-old-unused-kernels-on-centos-linux</a></p></div></div></div></div><div class=sect1><h2 id=_partitionnement>Partitionnement</h2><div class=sectionbody><div class=sect2><h3 id=_principes_de_partitionnement_lvm>Principes de partitionnement LVM</h3><div class=listingblock><div class=content><pre>Failed to generate image: blockdiag failed: ERROR: &#39;ImageDraw&#39; object has no attribute &#39;textsize&#39;
+
+blockdiag {
+   default_node_color = grey;
+   default_textcolor = white;
+   group physical_disk {
+     textcolor = white;
+     fontsize = 18;
+     label = &#34;Physical disk&#34;;
+     // Set group shape to &#39;line group&#39; (default is box)
+     shape = line;
+     orientation = landscape
+     DISK1[shape = flowchart.database, label = &#34;/dev/sda1 Type: 8e&#34;];
+     DISK2[shape = flowchart.database, label = &#34;/dev/sda2 Type: 8e&#34;];
+     DISK3[shape = flowchart.database, label = &#34;/dev/sdb1 Type: 8e&#34;];
+     DISK4[shape = flowchart.database, label = &#34;/dev/sdc1 Type: 8e&#34;];
+     DISK5[shape = flowchart.database, label = &#34;/dev/sdd1 Type: 8e&#34;];
+     DISK6[shape = flowchart.database, label = &#34;/dev/sdd2 Type: 8e&#34;];
+    }
+     group pv {
+     textcolor = white;
+     fontsize = 18;
+     label = &#34;Physical volume&#34;;
+     // Set group shape to &#39;line group&#39; (default is box)
+     shape = line;
+     orientation = landscape
+     PV1[shape = flowchart.database];
+     PV2[shape = flowchart.database];
+     PV3[shape = flowchart.database];
+     PV4[shape = flowchart.database];
+     PV5[shape = flowchart.database];
+     PV6[shape = flowchart.database];
+      }
+     group vg1 {
+     textcolor = white;
+     fontsize = 18;
+     label = &#34;Volume Group&#34;;
+     // Set group shape to &#39;line group&#39; (default is box)
+     shape = line;
+     orientation = landscape
+     VG1[shape = flowchart.database];
+      }
+     group vg2 {
+     textcolor = white;
+     fontsize = 18;
+     label = &#34;Volume Group&#34;;
+     // Set group shape to &#39;line group&#39; (default is box)
+     shape = line;
+     orientation = landscape
+     VG2[shape = flowchart.database];
+      }
+    group lv {
+    textcolor = white;
+    fontsize = 18;
+    label = &#34;Logical Volumes&#34;;
+    // Set group shape to &#39;line group&#39; (default is box)
+    shape = line;
+    orientation = landscape
+    LV1[shape = flowchart.database];
+    LV2[shape = flowchart.database];
+    LV3[shape = flowchart.database];
+    LV4[shape = flowchart.database];
+    LV5[shape = flowchart.database];
+    LV6[shape = flowchart.database];
+     }
+     group fs {
+     textcolor = white;
+     fontsize = 18;
+     label = &#34;File Systems&#34;;
+     // Set group shape to &#39;line group&#39; (default is box)
+     shape = line;
+     orientation = landscape
+     FS1[shape = note, label = &#34;FS1 Ext4&#34;];
+     FS2[shape = note, label = &#34;FS2 Ext4&#34;];
+     FS3[shape = note, label = &#34;FS3 XFS&#34;];
+     FS4[shape = note, label = &#34;FS4 XFS&#34;];
+     FS5[shape = note, label = &#34;FS5 XFS&#34;];
+     FS6[shape = note, label = &#34;FS6 Ext4&#34;];
+      }
+    DISK1 &lt;- PV1;
+    DISK2 &lt;- PV2;
+    DISK3 &lt;- PV3;
+    DISK4 &lt;- PV4;
+    DISK5 &lt;- PV5;
+    DISK6 &lt;- PV6;
+    PV1 -&gt; VG1;
+    PV2 -&gt; VG1;
+    PV3 -&gt; VG2;
+    PV4 -&gt; VG2;
+    PV5 -&gt; VG2;
+    PV6 -&gt; VG2;
+    VG1 -&gt; LV1;
+    VG1 -&gt; LV2;
+    VG2 -&gt; LV3;
+    VG2 -&gt; LV4;
+    VG2 -&gt; LV5;
+    VG2 -&gt; LV6;
+    LV1 -&gt; FS1;
+    LV2 -&gt; FS2;
+    LV3 -&gt; FS3;
+    LV4 -&gt; FS4;
+    LV5 -&gt; FS5;
+    LV6 -&gt; FS6;
+}</pre></div></div><div class=paragraph><p>Le partitionnement correct de votre système est dépendant de l’utilisation que vous en ferez et des spécificités des services qui y seront déployés.
+Il faut prévoir dans tous les cas le partitionnement minimum suivant:</p></div><div class=ulist><ul><li><p>/ =⇒ 2048 Mio voire moins (LVM et FS formatté en XFS ou EXT4)</p></li><li><p>/usr =⇒ 4096 Mio (LVM et FS formatté en XFS ou EXT4)</p></li><li><p>/var =⇒ 2048 à 4096 Mio (LVM et FS formatté en XFS ou EXT4)</p></li><li><p>/tmp =⇒ 512 à 2048 Mio (LVM et FS formatté en XFS ou EXT4)</p></li><li><p>/boot =⇒ 512 à 1024 Mio en (LVM et FS formatté en XFS ou EXT4)</p></li></ul></div></div></div></div><div class=sect1><h2 id=_réseau>Réseau</h2><div class=sectionbody><div class=sect2><h3 id=_serveur_de_temps_ntp>Serveur de temps NTP</h3><div class=paragraph><p>Lors de l’installation de l’OS vous avez du spécifier le fuseau horaire. S’il n’est pas correct ou si vous souhaitez connaitre la valeur actuelle, saisissez la commande suivante:</p></div><div class=sect3><h4 id=_valeur_actuelle>Valeur actuelle</h4><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] # timedatectl</code></pre></div></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] # timedatectl
+      Local time: Mon 2020-07-06 16:08:16 CEST
+  Universal time: Mon 2020-07-06 14:08:16 UTC
+        RTC time: Mon 2020-07-06 14:08:16
+       Time zone: Europe/Paris (CEST, +0200)
+     NTP enabled: yes
+NTP synchronized: yes
+ RTC in local TZ: no
+      DST active: yes
+ Last DST change: DST began at
+                  Sun 2020-03-29 01:59:59 CET
+                  Sun 2020-03-29 03:00:00 CEST
+ Next DST change: DST ends (the clock jumps one hour backwards) at
+                  Sun 2020-10-25 02:59:59 CEST
+                  Sun 2020-10-25 02:00:00 CET
+[root@test-server:] #</code></pre></div></div></div><div class=sect3><h4 id=_modification_du_fuseau_horaire>Modification du fuseau horaire</h4><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] # sudo imedatectl set-timezone Europe/Paris</code></pre></div></div><div class=paragraph><p>Vérifiez le changement de fuseau horaire</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] # timedatectl
+      Local time: Mon 2020-07-06 16:08:16 CEST
+  Universal time: Mon 2020-07-06 14:08:16 UTC
+        RTC time: Mon 2020-07-06 14:08:16
+       Time zone: Europe/Paris (CEST, +0200)
+     NTP enabled: yes
+NTP synchronized: yes
+ RTC in local TZ: no
+      DST active: yes
+ Last DST change: DST began at
+                  Sun 2020-03-29 01:59:59 CET
+                  Sun 2020-03-29 03:00:00 CEST
+ Next DST change: DST ends (the clock jumps one hour backwards) at
+                  Sun 2020-10-25 02:59:59 CEST
+                  Sun 2020-10-25 02:00:00 CET
+[root@test-server:] #</code></pre></div></div></div></div><div class=sect2><h3 id=_désactivation_ipv6>Désactivation IPV6</h3><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] echo &#34;net.ipv6.conf.all.disable_ipv6 = 1&#34; &gt; /etc/sysctl.d/01-disable_IPV6.conf
+[root@test-server:] echo &#34;net.ipv6.conf.default.disable_ipv6 = 1&#34; &gt;&gt; /etc/sysctl.d/01-disable_IPV6.conf
+[root@test-server:] sysctl -p
+[root@test-server:] echo &#34;AddressFamily inet&#34; &gt;&gt; /etc/ssh/sshd_config
+[root@test-server:] service sshd restart</code></pre></div></div></div><div class=sect2><h3 id=_désactivation_networkmanager>Désactivation NetworkManager</h3><div class=paragraph><p>Network Manager est installé et actif par défaut.
+Vous pouvez controlez la configuration réseau en gérant les fichiers de configuration sous /etc/sysconfig/network-scripts.</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] systemctl disable NetworkManager
+[root@test-server:] systemctl stop NetworkManager</code></pre></div></div></div><div class=sect2><h3 id=_corrélation_carte_réseau_et_adresse_mac>Corrélation carte réseau et adresse MAC</h3><div class=paragraph><p>Cette commande vous permettra d’afficher pour chaque carte réseau physique, son adresse MAC.</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | sed -e &#34;s/\// /g&#34; | awk &#39;{print $4}&#39; ); do MAC=$(cat /sys/class/net/$i/address);echo $i: $MAC; done</code></pre></div></div><div class=paragraph><p>Retour affiché de la commande: (Machine virtuelle avec 4 cartes réseau):</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>enp0s10: 08:00:27:34:a7:5b
+enp0s3: 08:00:27:22:1d:03
+enp0s8: 08:00:27:35:a8:74
+enp0s9: 08:00:27:66:62:47</code></pre></div></div></div><div class=sect2><h3 id=_rennomage_carte_réseau_physique_enpxsy_vers_ethx>Rennomage carte réseau physique enpXsY vers ethX</h3><div class=paragraph><p>Script tout en un:</p></div><div class="admonitionblock warning"><table><tbody><tr><td class=icon><div class=title>Warning</div></td><td class=content>Sauvegardez vos fichiers de configuration réseau.</td></tr></tbody></table></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] inc=&#34;0&#34;;for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | \
+sed -e &#34;s/\// /g&#34; | \
+awk &#39;{print $4}&#39; ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo &#34;HWADDR=$MAC&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+cat /etc/sysconfig/network-scripts/ifcfg-$i &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc; \
+sed -i &#34;s/$i/eth$inc/g&#34; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+mv /etc/sysconfig/network-scripts/ifcfg-$i /etc/sysconfig/network-scripts/ifcfg-$i.old.bkp;\
+done</code></pre></div></div></div><div class=sect2><h3 id=_script_de_création_de_team_serveurs_physique>Script de création de Team (Serveurs Physique):</h3><div class=paragraph><p>Script tout en un:</p></div><div class="admonitionblock warning"><table><tbody><tr><td class=icon><div class=title>Warning</div></td><td class=content>Sauvegardez vos fichiers de configuration réseau.</td></tr></tbody></table></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] inc=&#34;0&#34;;for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | \
+sed -e &#34;s/\// /g&#34; | \
+awk &#39;{print $4}&#39; ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo &#34;HWADDR=$MAC&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;DEVICE=eth$inc&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;NAME=eth$inc&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;DEVICETYPE=TeamPort&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;ONBOOT=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;TEAM_MASTER=team0&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;NM_CONTROLLED=no&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+done;\
+rm -f /etc/sysconfig/network-scripts/ifcfg-team0;\
+echo &#34;DEVICE=team0&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;DEVICETYPE=Team&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;ONBOOT=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;BOOTPROTO=none&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;NM_CONTROLLED=no&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;IPADDR=10.99.0.51&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;GATEWAY=10.99.2.254&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;PREFIX=16&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;TEAM_CONFIG=&#39;{\&#34;runner\&#34;: {\&#34;name\&#34;: \&#34;loadbalance\&#34;}, \&#34;link_watch\&#34;: {\&#34;name\&#34;: \&#34;ethtool\&#34;} }&#39;&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+ifup team0;</code></pre></div></div></div><div class=sect2><h3 id=_script_de_création_de_team_serveurs_virtuels>Script de création de Team (Serveurs Virtuels):</h3><div class=paragraph><p>Pour les machines virtuelles il est nécessaire de procéder à un petit hack afin de permettre un bon fonctionnement du balancing des cartes réseau dans la team.
+Par ce que le mode promiscuité n’est pas géré depuis CentOS / RedHat 7 il faudra également ajouter un service systemd pour prise en compte à chaque redémarrage.
+Pour VirtualBox par exemple, configurez tel que le screenshot ci-dessous:</p></div><div class=imageblock><div class=content><img src=../../images/Best_Pratices_CentOS-RedHat-d690f.png alt="Best Pratices CentOS RedHat d690f"></div></div><div class=paragraph><p>Script tout en un:</p></div><div class="admonitionblock warning"><table><tbody><tr><td class=icon><div class=title>Warning</div></td><td class=content>Sauvegardez vos fichiers de configuration réseau.</td></tr></tbody></table></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] inc=&#34;0&#34;;for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | \
+sed -e &#34;s/\// /g&#34; | \
+awk &#39;{print $4}&#39; ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo &#34;HWADDR=$MAC&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;DEVICE=eth$inc&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;NAME=eth$inc&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;DEVICETYPE=TeamPort&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;ONBOOT=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;PROMISC=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;TEAM_MASTER=team0&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;NM_CONTROLLED=no&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+done;\
+rm -f /etc/sysconfig/network-scripts/ifcfg-team0;\
+echo &#34;DEVICE=team0&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;DEVICETYPE=Team&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;ONBOOT=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;BOOTPROTO=none&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;NM_CONTROLLED=no&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;IPADDR=192.168.1.120&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;GATEWAY=192.168.1.254&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;PREFIX=24&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;TEAM_CONFIG=&#39;{\&#34;runner\&#34;: {\&#34;name\&#34;: \&#34;loadbalance\&#34;}, \&#34;link_watch\&#34;: {\&#34;name\&#34;: \&#34;ethtool\&#34;} }&#39;&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+ifup team0;</code></pre></div></div><div class=paragraph><p>Création du service promisc systemd</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] inc=&#34;0&#34;;echo &#34;[Unit]&#34; &gt; /etc/systemd/system/promisc.service ;\
+echo &#34;Description=Makes an interface run in promiscuous mode at boot&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;After=network.target&#34;  &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;[Service]&#34;  &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;Type=oneshot&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;TimeoutStartSec=0&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;RemainAfterExit=yes&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | \
+sed -e &#34;s/\// /g&#34; | \
+awk &#39;{print $4}&#39; ); do inc=$((inc+1));\
+echo &#34;ExecStart=/usr/sbin/ip link set dev eth$inc promisc on&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+done;\
+echo &#34;[Install]&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;WantedBy=default.target&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+systemctl daemon-reload;\
+systemctl enable promisc;\
+systemctl start promisc</code></pre></div></div><div class=paragraph><p>La configuration réseu des cartes devrait mainetanir contenir le statut "PROMISC" (même après un redémarrage du serveur):</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] # ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+3: eth2: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+4: eth3: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+5: eth4: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+6: team0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.120/24 brd 192.168.1.255 scope global team0
+       valid_lft forever preferred_lft forever</code></pre></div></div></div></div></div></div><h4 class=page-header>Auteur:</h4><figure><img class=avatar src=../../../images/vincent.fr.png alt><figcaption><a href=https://www.vincent-gou.fr/authors/vincent-gourrierec/>Vincent Gourrierec</a></figcaption></figure></main><footer><p class=copyright>2023 - © All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a> theme, build with GitHub Actions <img src=https://github.com/vincent-gou/Hugo/workflows/hugo%20publish/badge.svg alt="hugo publish"> and <a href=https://www.vincent-gou.fr>Vincent Gourrierec</a></p></footer></body></html>
