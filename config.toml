@@ -42,10 +42,6 @@ removePathAccents = true
       url = "/tags/"
       name = "Tags"
       weight = 4
-    [[languages.en.menu.main]]
-        url = "/calendar/"
-        name = "Calendar"
-        weight = 5
 
 
   [languages.fr]
@@ -77,10 +73,6 @@ removePathAccents = true
       url = "/tags/"
       name = "Tags"
       weight = 4
-    [[languages.fr.menu.main]]
-      url = "/calendar/"
-      name = "Calendrier"
-      weight = 5
     [[languages.fr.menu.icon]]
           url = "mailto:contact@vincent-gou.fr"
           name = "envelope-o"
