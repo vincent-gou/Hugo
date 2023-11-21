@@ -20,12 +20,12 @@ removePathAccents = true
   [languages.en]
     title = "vincent-gou (en)"
     weight = 1
-    description = "Welcome on my professional Web Site."
     languageName = "English"
-    languageNameShort = "en"
-    languageFlag = "🇬🇧"
     [languages.en.params]
       linkedin = "https://linkedin.com/whoever"
+      languageNameShort = "en"
+      description = "Welcome on my professional Web Site."
+      languageFlag = "🇬🇧"
     [[languages.en.menu.main]]
       url    = "/"
       name   = "Home"
@@ -54,10 +54,10 @@ removePathAccents = true
     description = "Bienvenue sur mon site professionnel."
     author = "Vincent Gourrierec"
     languageName = "Français"
-    languageNameShort = "fr"
-    languageFlag = "🇫🇷"
     [languages.fr.params]
       linkedin = "https://linkedin.com/fr/whoever"
+      languageNameShort = "fr"
+      languageFlag = "🇫🇷"
     [languages.fr.params.navigation]
       help = "Aide"
     [[languages.fr.menu.main]]
