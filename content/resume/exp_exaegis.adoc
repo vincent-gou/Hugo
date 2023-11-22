@@ -1,3 +1,4 @@
+[horizontal]
 ~Février~ 2021 ~Juin~ 2021:: **Administration Système Cloud privé**
 __Exaegis SAS, Tours, Télétravail total__
 ****

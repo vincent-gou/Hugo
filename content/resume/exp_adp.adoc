@@ -1,3 +1,4 @@
+[horizontal]
 ~Juin~ 2019 ~Juillet~ 2020:: **Migration Weblogic vers Tomcat**
 __ASTEK pour ADP, Carquefou, Télétravail partiel__
 ****

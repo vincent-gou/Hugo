@@ -1,0 +1,10 @@
+[horizontal]
+~Octobre~ 2018 ~Octobre~ 2018:: **Ingénieur Systèmes Supervision**
+__ServicePilot, Pornichet, Présentiel__
+****
+* Déploiement Logiciel de supervision
+* Intégration Supervision (SNMP/WMI/TOIP/VOIP)
+* Optimisation Linux
+[TIP]
+Linux | SNMP | Windows
+****

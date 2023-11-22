@@ -1,0 +1,14 @@
+[horizontal]
+~Décembre~ 2016 ~Octobre~ 2018:: **Responsable Equipe Ingénieur(e)s Systèmes**
+__Sopra Steria, Nantes, Télétravail Partiel__
+****
+* Gestion d'une équipe d'ingénieurs système et gestion des projets systèmes
+* Déploiement de projets à l'international
+* Intégration dans équipe DevOps et responsabilité principal des sujets : 
+** Supervision (Centreon) 
+** Documentation (Confluence) avec automoatisation et templates
+** Automatisation des outils de déploiement (Jenkins / Ant)
+* Déploiement ERP (immobilier et finance)
+[TIP]
+Centreon | DevOps | Docker | Oracle | API | Management 
+****

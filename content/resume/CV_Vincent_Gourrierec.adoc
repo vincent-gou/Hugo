@@ -15,7 +15,7 @@
 |===
 s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Tiger,100,100,float="right",align="top",pdfwidth=30%]
 | Adresse: 21 rue Pierre Curie 44600 Saint Nazaire
-| Date naissance: 14/09/1979
+| Date Naissance: 14/09/1979
 | image:cell_phone.png[15,15] +33 6 45 55 94 31
 | image:mail.png[15,15] mailto:contact@vincent-gou.fr[contact@vincent-gou.fr]
 | image:baby.png[15,15] 2 Enfants image:car.png[20,20]  Permis B
@@ -27,27 +27,35 @@ s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Tiger,100,100,float
 [#work-experience]
 === Expérience Professionnelle Freelance (Missions en cours)
 '''
-[horizontal]
 include::exp_xentara.adoc[]
-
 include::exp_ssg_immo.adoc[]
-
 include::exp_polylogis.adoc[]
 
 <<<
 === Expérience Professionnelle Freelance (Missions terminées)
 '''
-[horizontal]
 include::exp_lighton.adoc[]
 include::exp_innexa.adoc[]
 <<<
 include::exp_vecteur-plus.adoc[]
+include::exp_microdon.adoc[]
 include::exp_exaegis.adoc[]
 include::exp_adp.adoc[]
 
 <<<
+=== Expérience Professionnelle Salarié
+'''
+include::exp_salarie_service_pilot.adoc[]
+include::exp_salarie_sopra_steria.adoc[]
+include::exp_salarie_cassiopae_re.adoc[]
+include::exp_salarie_sigma.adoc[]
+include::exp_salarie_sneda.adoc[]
+include::exp_salarie_reynolds.adoc[]
+include::exp_salarie_dcs.adoc[]
+
+<<<
 [#academic-record]
-=== Academic Record
+=== Education et formations
 '''
 [horizontal]
 2009–2014:: **__University of Vienna, Bachelor of Computer Science. Vienna, Austria__** +
@@ -56,7 +64,7 @@ __Chess Club President 2012-2013__
 
 <<<
 [#it-skills]
-=== IT Skills
+=== Compétences Techniques
 '''
 [horizontal]
 Core Skills: :: 
@@ -73,15 +81,9 @@ Mac OS X, MacOS Sierra - Catalina +
 <<<
 
 [#language-skills]
-=== Language Skills
+=== Langues étrangères
 '''
 [horizontal]
-Fluent: :: English
-Advanced: :: French
-Mother Tongue: :: German
-
-<<<
-[#personal-interests]
-=== Personal Interests
-'''
-Hiking, swimming, robotics, popular science books 
+Anglais: :: Niveau C1
+Espagnol: :: Niveau B1
+Français: :: Langue maternelle

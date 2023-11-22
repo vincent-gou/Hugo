@@ -1,3 +1,4 @@
+[horizontal]
 ~Mai~ 2023 ~Novembre~ 2023:: **Consultant Linux et DevOps**
 __Open IT BZH pour INNEXA, Vannes, Télétravail partiel__
 ****

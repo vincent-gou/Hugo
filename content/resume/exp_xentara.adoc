@@ -1,3 +1,4 @@
+[horizontal]
 Depuis ~Avril~ 2022:: **Grafana designer**
 __Xentara, Munich (Allemagne), 1-2 Jours Semaine, Télétravail total__
 ****
