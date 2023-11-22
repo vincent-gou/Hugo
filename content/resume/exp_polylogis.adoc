@@ -1,0 +1,11 @@
+Depuis ~Mars~ 2019:: **Ingénieur Systèmes Linux et Web**
+__POLYLOGIS, Suresnes, 1-2 Jours par Mois, Télétravail total__
+****
+* Diverses prestations sur l'infrastructure:
+** Serveurs Linux, sécurisation (SFTP/CHROOT/Best practices..) et optimisations (teaming, firmware, paramétrage stockage (LUN/LVM...)
+** Proxy Web Nginx (règles et configuration SSL)
+** Certificats, multi-certificats et domaines avec redirection vers différents serveurs Web (Apache, IIS, NGINX)
+** Mise en place stack analyse des logs serveurs LINUX via Docker / Grafana / Loki / Promtail (connexions SSH / authentification / mise à jour système / PTY and TTY commands / erreurs systeme...) 
+[TIP]
+Linux | SSl | Sécurité | LVM | Réseau | Telegraf | Grafana | Loki | Nginx
+****

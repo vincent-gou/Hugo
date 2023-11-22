@@ -1,31 +1,28 @@
-:doctype: book
+//:doctype: book
 :imagesdir: ../images
 :iconsdir: ../icons
-:nofooter:
+//:nofooter:
 :icons: font
-:source-highlighter: pygments
-:pygments-style: fruity
-:pygments-linenums-mode: inline
-:pdf-theme: ../themes/resume_pdf_theme.yml
-:tip-caption: 💡
+:source-highlighter: highlightjs
+//:pygments-style: fruity
+//:pygments-linenums-mode: inline
+:pdf-theme: resume
+:pdf-themesdir: ../themes 
+//:tip-caption: 💡
 
-image::vincent_photo_resized.png[Tiger,150,150,float="right",align="top"]
 
-
-Vincent Gourrierec:: 21 rue Pierre Curie + 
-44600 Saint Nazaire +
-image:cell_phone.png[20,20] | +33 6 45 55 94 31 +
-image:mail.png[20,20] | mailto:contact@vincent-gou.fr[contact@vincent-gou.fr] +
-image:baby.png[20,20] 14/09/1979 | image:car.png[20,20] | Permis B +
-
-//[link=https://github.com/vincent-gou]
-//image::github.png[Github,20,20]
-//[link=https://github.com/vincent-gou]
-//image::github.png[Github,20,20]
+[frame=none, grid=none, width=100%]
+|===
+s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Tiger,100,100,float="right",align="top",pdfwidth=30%]
+| Adresse: 21 rue Pierre Curie 44600 Saint Nazaire
+| Date naissance: 14/09/1979
+| image:cell_phone.png[15,15] +33 6 45 55 94 31
+| image:mail.png[15,15] mailto:contact@vincent-gou.fr[contact@vincent-gou.fr]
+| image:baby.png[15,15] 2 Enfants image:car.png[20,20]  Permis B
+|===
 
 [.text-center]
 = Ingénieur Systèmes Linux / SysOps
-
 
 [#work-experience]
 === Expérience Professionnelle Freelance (Missions en cours)
@@ -33,15 +30,22 @@ image:baby.png[20,20] 14/09/1979 | image:car.png[20,20] | Permis B +
 [horizontal]
 include::exp_xentara.adoc[]
 
+include::exp_ssg_immo.adoc[]
+
+include::exp_polylogis.adoc[]
+
 <<<
 === Expérience Professionnelle Freelance (Missions terminées)
 '''
 [horizontal]
+include::exp_lighton.adoc[]
 include::exp_innexa.adoc[]
+<<<
 include::exp_vecteur-plus.adoc[]
+include::exp_exaegis.adoc[]
+include::exp_adp.adoc[]
 
-
-
+<<<
 [#academic-record]
 === Academic Record
 '''
@@ -50,6 +54,7 @@ include::exp_vecteur-plus.adoc[]
 __Computer Science Society Vice-President 2013-2014__ +
 __Chess Club President 2012-2013__ 
 
+<<<
 [#it-skills]
 === IT Skills
 '''
@@ -75,6 +80,7 @@ Fluent: :: English
 Advanced: :: French
 Mother Tongue: :: German
 
+<<<
 [#personal-interests]
 === Personal Interests
 '''

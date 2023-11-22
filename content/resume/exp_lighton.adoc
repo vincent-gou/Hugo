@@ -1,0 +1,26 @@
+~Janvier~ 2021 ~Décembre~ 2023:: **Ingénieur SYSOPS**
+__Fregat pour LIGHTON, Paris, Télétravail total__
+****
+* MCO infrastructure sur différents Datacenter et cloud (OVH / GCP / AWS / SCaleway)
+** Serveurs Linux (Ubuntu principalement et CentOS) 
+** Pilotage et automatisation du déploiement des serveurs par ansible et gitlab CI/CD 
+** supervision IT + GPUs via influxDB Cloud et Grafana Cloud + Graylog
+** user onboarding et offboarding
+* Projets IT:
+** automatisation création Cluster SLURM sur GCP 
+*** Build PMIX et singularity
+*** Supervision jobs / GPUS / quotas et batchs
+** Migration serveur Nextcloud + Collabora
+** Automatisation de la création des certificats SSL via traeffik et sécurisation
+** Mise en place CMDB + IPAM
+** Mise en place pipeline déploiement Gitlab vers GCP 
+*** Cloud Run
+*** Kubernetes
+*** Computes
+*** Secrets / Cloud SQL / Network / OS Variables...
+** Création stack de monitoring (Telegraf + InfluxDB + Grafana) on premise
+*** Supervision métriques applicatives (stack applicative sur GCP)
+*** Supervision métriques GCP ( computes / Kubernets / Redis / Cloud SQL / Cloud Run...)
+[TIP]
+Debian | Gitlab | Loki | GCP | GlusterFS | Grafana | Slurm | IPA | GKE | InfluxDB | Ansible | Terraform | GPU
+****

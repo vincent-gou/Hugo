@@ -1,5 +1,5 @@
-~Avril~ 2022:: **Grafana designer**
-__Xentara, Munich (Allemagne), Télétravail total__
+Depuis ~Avril~ 2022:: **Grafana designer**
+__Xentara, Munich (Allemagne), 1-2 Jours Semaine, Télétravail total__
 ****
 * Analyse de données Industrie ( PLC / COBOT )
 * Design Dashboard Grafana avec besoins  EOO / Andon 
