@@ -1,6 +1,7 @@
 //:doctype: book
 :imagesdir: ../images
 :iconsdir: ../icons
+:includedir: ./
 //:nofooter:
 :icons: font
 :source-highlighter: highlightjs
@@ -21,37 +22,37 @@ s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Tiger,100,100,float
 | image:baby.png[15,15] 2 Enfants image:car.png[20,20]  Permis B
 |===
 
-[.text-center]
-= Ingénieur Systèmes Linux / SysOps
+//[.text-center]
+== Ingénieur Systèmes Linux / SysOps
 
 [#work-experience]
 === Expérience Professionnelle Freelance (Missions en cours)
 '''
-include::exp_xentara.adoc[]
-include::exp_ssg_immo.adoc[]
-include::exp_polylogis.adoc[]
+include::{includedir}/exp_xentara.adoc[]
+include::{includedir}/exp_ssg_immo.adoc[]
+include::{includedir}/exp_polylogis.adoc[]
 
 <<<
 === Expérience Professionnelle Freelance (Missions terminées)
 '''
-include::exp_lighton.adoc[]
-include::exp_innexa.adoc[]
+include::{includedir}/exp_lighton.adoc[]
+include::{includedir}/exp_innexa.adoc[]
 <<<
-include::exp_vecteur-plus.adoc[]
-include::exp_microdon.adoc[]
-include::exp_exaegis.adoc[]
-include::exp_adp.adoc[]
+include::{includedir}/exp_vecteur-plus.adoc[]
+include::{includedir}/exp_microdon.adoc[]
+include::{includedir}/exp_exaegis.adoc[]
+include::{includedir}/exp_adp.adoc[]
 
 <<<
 === Expérience Professionnelle Salarié
 '''
-include::exp_salarie_service_pilot.adoc[]
-include::exp_salarie_sopra_steria.adoc[]
-include::exp_salarie_cassiopae_re.adoc[]
-include::exp_salarie_sigma.adoc[]
-include::exp_salarie_sneda.adoc[]
-include::exp_salarie_reynolds.adoc[]
-include::exp_salarie_dcs.adoc[]
+include::{includedir}/exp_salarie_service_pilot.adoc[]
+include::{includedir}/exp_salarie_sopra_steria.adoc[]
+include::{includedir}/exp_salarie_cassiopae_re.adoc[]
+include::{includedir}/exp_salarie_sigma.adoc[]
+include::{includedir}/exp_salarie_sneda.adoc[]
+include::{includedir}/exp_salarie_reynolds.adoc[]
+include::{includedir}/exp_salarie_dcs.adoc[]
 
 <<<
 [#academic-record]
