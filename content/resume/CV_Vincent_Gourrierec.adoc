@@ -1,7 +1,7 @@
 //:doctype: book
 :imagesdir: ../images
 :iconsdir: ../icons
-:includedir: ./
+:includedir: resume
 //:nofooter:
 :icons: font
 :source-highlighter: highlightjs
