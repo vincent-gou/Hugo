@@ -6,6 +6,7 @@ __MICRODON, Paris, Télétravail total__
 * Déploiement loki sur infra GKE
 * Développement et deploiement requetes spécifiques pour statistiques métiers (PostegreSQL et exporter )
 * Création de dashboard Grafana et alertes métiers sur les logs (Loki) et métriques (Prometheus)
+
 [TIP]
 Prometheus | Loki | GCP | Grafana | GKE | SQL
 ****

@@ -1,6 +1,6 @@
 [horizontal]
 ~Novembre~ 2022 ~Octobre~ 2023:: **Ingénieur Linux**
-__ASTEK pour Vecteur-Plus, Bouguenais, Télétravail partiel__
+__ASTEK pour Vecteur-Plus, Bouguenais, Télétravail partiel (90%)__
 ****
 * Administration et maintien en conditions opérationnels de + 50 serveurs Linux en support à l'administrateur sur place.
 * Mise en place de centralisation de logs LOKI + Grafana
@@ -9,6 +9,7 @@ __ASTEK pour Vecteur-Plus, Bouguenais, Télétravail partiel__
 * Amélioration de la sécurité des clés SSH 
 * Versionning et centralisation des outils d'administrations sous GIT
 * Gestion des versions OS et upgrade
+
 [TIP]
 Debian | Gitlab | Loki | SSH | GlusterFS | Grafana
 ****

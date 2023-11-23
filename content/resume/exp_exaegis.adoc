@@ -8,6 +8,7 @@ __Exaegis SAS, Tours, Télétravail total__
 ** Extraction des applications métiers
 ** Extraction des informations de sécurité (Clés SSH, sudo updates, reboot...)
 ** Export CSV des informations pour être actualisées quotidiennement
+
 [TIP]
 Debian | Gitlab | SSH | Bash | AWS | OVH | OBS
 ****

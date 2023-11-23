@@ -7,6 +7,7 @@ __POLYLOGIS, Suresnes, 1-2 Jours par Mois, Télétravail total__
 ** Proxy Web Nginx (règles et configuration SSL)
 ** Certificats, multi-certificats et domaines avec redirection vers différents serveurs Web (Apache, IIS, NGINX)
 ** Mise en place stack analyse des logs serveurs LINUX via Docker / Grafana / Loki / Promtail (connexions SSH / authentification / mise à jour système / PTY and TTY commands / erreurs systeme...) 
+
 [TIP]
 Linux | SSl | Sécurité | LVM | Réseau | Telegraf | Grafana | Loki | Nginx
 ****

@@ -1,6 +1,6 @@
 [horizontal]
 ~Janvier~ 2021 ~Décembre~ 2023:: **Ingénieur SYSOPS**
-__Fregat pour LIGHTON, Paris, Télétravail total__
+__Fregat pour LIGHTON, Paris, Télétravail total et quelques intervention sur site__
 ****
 * MCO infrastructure sur différents Datacenter et cloud (OVH / GCP / AWS / SCaleway)
 ** Serveurs Linux (Ubuntu principalement et CentOS) 
@@ -22,6 +22,7 @@ __Fregat pour LIGHTON, Paris, Télétravail total__
 ** Création stack de monitoring (Telegraf + InfluxDB + Grafana) on premise
 *** Supervision métriques applicatives (stack applicative sur GCP)
 *** Supervision métriques GCP ( computes / Kubernets / Redis / Cloud SQL / Cloud Run...)
+
 [TIP]
 Debian | Gitlab | Loki | GCP | GlusterFS | Grafana | Slurm | IPA | GKE | InfluxDB | Ansible | Terraform | GPU
 ****

@@ -1,0 +1,12 @@
+[horizontal]
+~Mars~ 2010 ~Novembre~ 2010:: **Ingénieur Systèmes Unix**
+__Sigma, Nantes, Télétravail Partiel (20%)__
+****
+* Administration/Exploitation des systèmes Unix et Linux, 
+* Administration /Exploitation des bases de données Oracle, Progress et PostgreSQL.
+* Mise en place de scripts de supervision Nagios.
+* Administration et optimisation plateforme Progress Sonic (Flux ESB)
+
+[TIP]
+Unix | Linux | Sonic ESB | Nagios | Oracle
+****

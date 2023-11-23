@@ -1,0 +1,13 @@
+[horizontal]
+~Février~ 2004 ~Décembre~ 2006:: **Installateur Technique**
+__Reynold’s and Reynold’s, Saint Nazaire, Présentiel__
+****
+* Suivi, préparation et mise en production d’un projet de sécurisation des communications entre le constructeur et son réseau de concessionnaire (Iptables et VPN).
+* Support Technique niveau II sur Aix, Red Hat et le réseau, niveau II Progress OpenEdge.
+* Tests, mise en conformité, documentation du logiciel sous Red Hat 8.0 puis sous Red Hat ES 3 et mise en production.
+* Conception, installation et suivi de projets réseau multi sites auprès de France Télécom et Cegetel.
+* Formation de techniciens aux systèmes AIX et Linux, et à la gestion d'un parc informatique.
+
+[TIP]
+AIX | OpenEdge | Red Hat | Windows | Cisco | VPN | Iptables 
+****

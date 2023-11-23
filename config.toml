@@ -42,7 +42,10 @@ removePathAccents = true
       url = "/tags/"
       name = "Tags"
       weight = 4
-
+    [[languages.en.menu.main]]
+      url = "/resume/"
+      name = "Resume"
+      weight = 5
 
   [languages.fr]
     title = "vincent-gou (fr)"
@@ -73,6 +76,10 @@ removePathAccents = true
       url = "/tags/"
       name = "Tags"
       weight = 4
+    [[languages.fr.menu.main]]
+      url = "/resume/"
+      name = "C.V."
+      weight = 5
     [[languages.fr.menu.icon]]
           url = "mailto:contact@vincent-gou.fr"
           name = "envelope-o"
@@ -125,6 +132,11 @@ removePathAccents = true
     url = "/tags/"
     name = "Tags"
     weight = 4
+
+[[menu.main]]
+    url = "/resume/"
+    name = "Resume"
+    weight = 5
 
 [[menu.icon]]
     url = "mailto:contact@vincent-gou.fr"

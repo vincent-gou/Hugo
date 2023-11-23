@@ -1,0 +1,12 @@
+[horizontal]
+~Décembre~ 2006 ~Mars~ 2010:: **Ingénieur Systèmes**
+__Sneda, Nantes, Télétravail Partiel (25%)__
+****
+* Préparation, installation et suivi des installations techniques informatiques du parc client attribué.
+* Installation des produits édités par la société en mode client-serveur ou n-tiers (apache, tomcat, Java, Oracle et Progress).
+* Migration des serveurs et des bases de données (AIX, Red Hat, Windows 2003, Oracle 10G et OpenEdge 10, Citrix…).
+* Audit et conseils système et réseau du parc client, mise en place d’outils de supervision et de gestion (OCSInventory/GLPI, Nagios/Centreon). 
+
+[TIP]
+Tomcat | OpenEdge | Oracle | Windows | Citrix | Centreon | GLPI 
+****

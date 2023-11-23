@@ -15,6 +15,9 @@ sidebar:
 admonition:
   font-size: 8
   text-transform: uppercase
+  icon:
+    tip:
+      size: 10
 header:
   border-color: dddddd
   background-color: #cc9933
@@ -29,3 +32,5 @@ thematic-break:
   border-color: #cc9933
   //background-color: #cc9933
   border-width: 0.8
+description-list:
+  term-font-size: 4

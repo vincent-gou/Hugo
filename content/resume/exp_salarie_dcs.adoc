@@ -1,0 +1,20 @@
+[horizontal]
+~Avril~ 2003 ~Février~ 2004:: **Technicien de maintenance**
+__DCS Automotive, Saint Nazaire, Présentiel__
+****
+* Prise en charge des appels techniques, support niveau I et II, sur Windows, Aix et Linux
+* Administration du parc informatique interne (50 postes, 10 serveurs).
+
+[TIP]
+AIX | OpenEdge | Red Hat | Unix SCO | Cisco 
+****
+
+[horizontal]
+~Mars~ 2003 ~Avril~ 2003:: **Stage**
+__DCS Automotive, Saint Nazaire, Présentiel__
+****
+* Stage de fin de formation Technicien Micro et Web
+
+[TIP]
+AIX | OpenEdge | Cisco 
+****

@@ -14,7 +14,7 @@
 [frame=none, grid=none, width=100%]
 |===
 s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Tiger,100,100,float="right",align="top",pdfwidth=30%]
-| Adresse: 21 rue Pierre Curie 44600 Saint Nazaire
+| 21 rue Pierre Curie 44600 Saint Nazaire
 | Date Naissance: 14/09/1979
 | image:cell_phone.png[15,15] +33 6 45 55 94 31
 | image:mail.png[15,15] mailto:contact@vincent-gou.fr[contact@vincent-gou.fr]
@@ -58,30 +58,83 @@ include::exp_salarie_dcs.adoc[]
 === Education et formations
 '''
 [horizontal]
-2009–2014:: **__University of Vienna, Bachelor of Computer Science. Vienna, Austria__** +
-__Computer Science Society Vice-President 2013-2014__ +
-__Chess Club President 2012-2013__ 
+Février 2023:: **__Intermediate Flux and other skills. InfluxData, Online.__** +
+__https://www.credly.com/badges/e9b368ac-c02c-41f1-b6be-41debba33728/public_url__
+__https://www.credly.com/users/vincent-gourrierec/badges__
+Décembre 2022:: **__DevOps Foundation Certification. DevOps Institute, Online__** +
+__https://devopsinstitute.com/certifications/devops-foundation/__
+Février 2016:: **__Formation Administration Oracle 12G. Nantes__** 
+Septembre 2015:: **__Formation Administration Tomcat 8. Nantes__** 
+Janvier 2015:: **__Formation Administration Weblogic 10GR2. Nantes__** 
+Janvier 2012:: **__Certification Windows 2008 (MCITP et MCTS).AIS, Nantes__** 
+Septembre 2011:: **__Configuration Active Directory sous Windows 2008.AIS, Nantes__** 
+Mai 2011:: **__Configuration et dépannage Infrastructure réseau Windows 2008.AIS, Nantes__** 
+Juin 2008:: **__Formation à la gestion de projet.ORSYS, Nantes__** 
+Mai 2007:: **__Formation administration Oracle 10g.Nantes__** 
+Avril 2007:: **__Formation Citrix Presentation Server 4.Nantes__** 
+Avril 2004:: **__Formation Linux Red Hat.Nantes__** 
+Décembre 2003:: **__Formation IBM Aix 5.2. IBM, Paris__** 
+Octobre 2002 à Avril 2003:: **__Formation Technicien Micro et Web. ENI, Nantes__** +
+__Logiciels: Office, Dreamweaver, Flash, Photoshop__ +
+__Langages: Visual Basic, SQL, Html, JavaScript__
+Juin 1998::	**__Baccalauréat Série ES. Lycée Aristide Briand, Saint Nazaire	__** +
+ __Option Anglais__
+
 
 <<<
 [#it-skills]
 === Compétences Techniques
 '''
 [horizontal]
-Core Skills: :: 
-Software Development:::
-Programming languages: Rust, Golang, Python, C++, Haskell +
+Linux::: Très bonne connaissance des environnements Linux Red Hat(4 à 8), CentOS, Debian 9 à 11 et Ubuntu.
+*	Installation, maintenance, sécurisation et optimisation des systèmes. 
+*	Installation réseau et automatisée des systèmes (kickstart, bootp)
+UNIX::: Très bonne connaissance des environnements Aix 4.3 à 7.1.
+* Installation, maintenance et optimisation des systèmes.
+Windows::: Très bonne connaissance de Windows 2008, 2012 et 2016.
+* Administration, maintenance et mise à niveau des systèmes.
+* Administration Active Directory, DNS.
+Virtualisation:::
+* Très bonne connaissance VMware VSphere 4 à 6.
+* Très bonnes Connaissances de Docker, Docker Swarm, ProxMox.
+* Connaissances de Kubernetes et GKE (Google Kubernetes Engine)
 
-Operating Systems: :: 
-Linux:::
-CentOS 7, Debian 9, Arch Linux +
-Others:::
-Microsoft Windows 98 - 10 +
-Mac OS X, MacOS Sierra - Catalina +
+Plateformes Cloud::: Très bonne connaissance de GCP et OVH. Bonne connaissance d'AWS et Scaleway.
+
+Iptables:::	Très bonne connaissance des règles de Pare Feu Iptables, ainsi que la journalisation des connexions (ULOGD). 
+SSH::: Très bonne connaissance SSH, gestion des clés et configuration cebtralisée dans IPA.
+SSL::: Bonne connaissance des certificats, chiffrement, conversion et gestion.  
+
+Réseau:::	
+* Très bonne connaissance des protocoles TCP/IP, de l’analyse du trafic réseau et de la supervision.
+* Bonne connaissance des routeurs et switchs Cisco, paramétrage et sécurisation.
+* Bonne connaissance des VPN et des liaisons inter sites ou nomades, OpenVpn, wireguard.
+
+Base de données:::
+* Administrateur de bases de données Progress OpenEdge V9, V10 et V11.
+* Administrateur de bases de données Oracle 10G, 11G et 12G.
+* Connaissance des bases de données MySQL et PostgreSql.
+* Administrateur InfluxDB (TSDB)
+
+Langages:::
+* Très bonne connaissance des scripts shells (ksh, bash) et Batch Windows.
+* Bonne connaissance du langage html, création d’interface d’administration des serveurs en PHP, bonnes connaissances du PHP et du SQL.
+* Très bonne connaissance de Ant (langage de développement de déploiement automatisé).
+* Très bonne connaissance du YAML pour Ansible / Docker / Terraform
+* Très bonne connaissance du JSON pour gestion API, administration Infra, supervision.
+* InfluxDB Flux pour tableau de bord Grafana et Analyse de données de type Time Serie (TSDB)
+
+Autres compétences:::
+* Bonne connaissance VDI et domotique.
+* Bonne qualité rédactionnelle de documentation technique et des processus de maintenance technique des systèmes (Plans de reprise, certifications constructeurs..).
+* Très bonne connaissance des outils Open Source de collaboration et documentation (Mediawiki, Publican,DocBook,Xwiki, AsciiDoc, AsciiDoctor et Hugo)
+* Designer Dashboard Grafana (requetes, UI et automatisation)
+* Très bonne connaissance de GIT (GitLab / GitHub) et pipelines de CI/CD et ordonnancement.
 
 <<<
 
 [#language-skills]
-=== Langues étrangères
+=== Langues
 '''
 [horizontal]
 Anglais: :: Niveau C1
