@@ -1,5 +1,5 @@
 //:doctype: book
-:imagesdir: ./images
+:imagesdir: images
 //:iconsdir: ../icons
 :includedir: .
 //:nofooter:
@@ -8,13 +8,13 @@
 //:pygments-style: fruity
 //:pygments-linenums-mode: inline
 :pdf-theme: resume
-:pdf-themesdir: ./themes 
+:pdf-themesdir: themes 
 //:tip-caption: 💡
 
 
 [frame=none, grid=none, width=100%]
 |===
-s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Tiger,100,100,float="right",align="top",pdfwidth=30%]
+s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Vincent,100,100,float="right",align="top",pdfwidth=30%]
 | 21 rue Pierre Curie 44600 Saint Nazaire
 | Date Naissance: 14/09/1979
 | image:cell_phone.png[15,15] +33 6 45 55 94 31
