@@ -1,3 +1,23 @@
+---
+title: "CV_Vincent_Gourrierec"
+authors:
+  - Vincent Gourrierec
+date: 2023-11-24
+tags: ["CentOS","Red-Hat","best-pratices"]
+categories: ["resume"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- linux
+- centOS
+- red-hat
+- best-pratice
+- kernel
+- ipv6
+---
+
 //:doctype: book
 :imagesdir: ./images
 //:iconsdir: ../icons
