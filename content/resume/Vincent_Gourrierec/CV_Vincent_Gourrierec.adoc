@@ -1,21 +1,14 @@
----
-title: "CV_Vincent_Gourrierec"
-date: 2023-11-24
-categories: ["resume"]
-draft: false
----
-
 //:doctype: book
-:imagesdir: ./images
+:imagesdir: images
 //:iconsdir: ../icons
-:includedir: .
+//:includedir: .
 //:nofooter:
 :icons: font
 :source-highlighter: highlightjs
 //:pygments-style: fruity
 //:pygments-linenums-mode: inline
 :pdf-theme: resume
-:pdf-themesdir: ./themes 
+:pdf-themesdir: themes 
 //:tip-caption: 💡
 
 
@@ -35,31 +28,31 @@ s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Vincent,100,100,flo
 [#work-experience]
 === Expérience Professionnelle Freelance (Missions en cours)
 '''
-include::{includedir}/exp_xentara.adoc[]
-include::{includedir}/exp_ssg_immo.adoc[]
-include::{includedir}/exp_polylogis.adoc[]
+include::exp_xentara.adoc[]
+include::exp_ssg_immo.adoc[]
+include::exp_polylogis.adoc[]
 
 <<<
 === Expérience Professionnelle Freelance (Missions terminées)
 '''
-include::{includedir}/exp_lighton.adoc[]
-include::{includedir}/exp_innexa.adoc[]
+include::exp_lighton.adoc[]
+include::exp_innexa.adoc[]
 <<<
-include::{includedir}/exp_vecteur-plus.adoc[]
-include::{includedir}/exp_microdon.adoc[]
-include::{includedir}/exp_exaegis.adoc[]
-include::{includedir}/exp_adp.adoc[]
+include::exp_vecteur-plus.adoc[]
+include::exp_microdon.adoc[]
+include::exp_exaegis.adoc[]
+include::exp_adp.adoc[]
 
 <<<
 === Expérience Professionnelle Salarié
 '''
-include::{includedir}/exp_salarie_service_pilot.adoc[]
-include::{includedir}/exp_salarie_sopra_steria.adoc[]
-include::{includedir}/exp_salarie_cassiopae_re.adoc[]
-include::{includedir}/exp_salarie_sigma.adoc[]
-include::{includedir}/exp_salarie_sneda.adoc[]
-include::{includedir}/exp_salarie_reynolds.adoc[]
-include::{includedir}/exp_salarie_dcs.adoc[]
+include::exp_salarie_service_pilot.adoc[]
+include::exp_salarie_sopra_steria.adoc[]
+include::exp_salarie_cassiopae_re.adoc[]
+include::exp_salarie_sigma.adoc[]
+include::exp_salarie_sneda.adoc[]
+include::exp_salarie_reynolds.adoc[]
+include::exp_salarie_dcs.adoc[]
 
 <<<
 [#academic-record]
