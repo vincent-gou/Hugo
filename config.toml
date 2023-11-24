@@ -15,6 +15,7 @@ removePathAccents = true
     extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
     ##extensions = ["asciidoctor-diagram"]
     safeMode = "unsafe"
+    workingFolderCurrent = true
 
 [languages]
   [languages.en]
