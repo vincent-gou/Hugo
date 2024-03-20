@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Asciidoctor on vincent-gou (fr)</title><link>https://www.vincent-gou.fr/tags/asciidoctor/</link><description>Recent content in Asciidoctor on vincent-gou (fr)</description><generator>Hugo -- gohugo.io</generator><language>fr</language><copyright>Tous droits reserves: Vincent Gourrierec</copyright><lastBuildDate>Thu, 26 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vincent-gou.fr/tags/asciidoctor/index.xml" rel="self" type="application/rss+xml"/><item><title>Automatisation deploiement Hugo avec GitHub Actions et GitHub Pages</title><link>https://www.vincent-gou.fr/post/automatisation_build_hugo_site_avec_github_actions/</link><pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/post/automatisation_build_hugo_site_avec_github_actions/</guid><description>Objectifs Déployer automatiquement un site avec Hugo, le backend Asciidoctor et GitHub Actions
+Customiser certaines fonctionnalités asciidoctor non intégrées par Hugo
+Utiliser un nom de domaine personnel pour son site sous GitHub Pages
+Pré-requis Git repository pour votre site Hugo
+Git repository pour les fichiers générés par Hugo
+Un nom de domaine personnel</description></item><item><title>Test Asciidoctor</title><link>https://www.vincent-gou.fr/post/test/</link><pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/post/test/</guid><description>Sample This is a sample from https://github.com/asciidoctor/docker-asciidoctor/issues/44#issue-265179207
+Important Thanks to https://github.com/ryosms!
+Additional Diagrams Below some examples of working additional diagrams.
+BlockDiagrams http://blockdiag.com/en/index.html
+Example nwdiag You can find a lot of examples here http://blockdiag.com/en/nwdiag/nwdiag-examples.html
+Failed to generate image: Could not find the &amp;#39;nwdiag&amp;#39;, &amp;#39;nwdiag3&amp;#39; executable in PATH; add it to the PATH or specify its location using the &amp;#39;nwdiag&amp;#39; document attribute nwdiag { network dmz { address = &amp;#34;210.</description></item></channel></rss>

@@ -1,0 +1,342 @@
+<!doctype html><html lang=fr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>CentOS or Red-Hat best pratices</title>
+<style>html body{font-family:raleway,sans-serif;background-color:#656565}:root{--accent:#cc9933;--border-width:5px}</style>
+<link rel=stylesheet href=https://www.vincent-gou.fr/css/main.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script>$(document).on('click',function(){$('.collapse').collapse('hide')})</script>
+<meta name=generator content="Hugo 0.92.2">
+</head>
+<script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<body>
+<a class=flagselect href=/en/post/centos-red-hat_best_practices/>en🇬🇧</a>
+<a class=flagnoselect href=/post/centos-red-hat_best_practices/>fr🇫🇷</a>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class=container>
+<div class=navbar-header>
+<a class="navbar-brand visible-xs" href=#>CentOS or Red-Hat best pratices</a>
+<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li><a href=/>Home</a></li>
+<li><a href=/project/>Projects</a></li>
+<li><a href=/post/>Articles</a></li>
+<li><a href=/tags/>Tags</a></li>
+<li><a href=/resume/>Resume</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class=page_info>
+<h4 class=page_info>Translation available:</h4>
+<a href=https://www.vincent-gou.fr/post/centos-red-hat_best_practices/ class=page_info><b>fr</b> Bonnes pratiques CentOS et Red Hat / </a>
+</div>
+<h4 class=page_info></h4>
+<h6 class=page_info> </br> 4 minutes read time</h6>
+<main>
+<div class=item>
+<h4><a href=/en/post/centos-red-hat_best_practices/>CentOS or Red-Hat best pratices</a></h4>
+<h5>July 3, 2020</h5>
+<a href=https://www.vincent-gou.fr/tags/centos><kbd class=item-tag>CentOS</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/red-hat><kbd class=item-tag>Red-Hat</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/best-pratices><kbd class=item-tag>best-pratices</kbd></a>
+</div>
+<br> <div class=text-justify><div class=sect1>
+<h2 id=_objectifs>Objectifs</h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p>List CentOS / Red-Hat OS installation and deployment best practices</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class=icon>
+<div class=title>Note</div>
+</td>
+<td class=content>
+Those best practices were tested on CentOS 7 and Red-Hat 7.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_yum>YUM</h2>
+<div class=sectionbody>
+<div class=sect2>
+<h3 id=_kernels>Kernels</h3>
+<div class=paragraph>
+<p>Remove manually or automatically old kernels:
+<a href=https://linuxconfig.org/how-to-remove-old-unused-kernels-on-centos-linux class=bare>https://linuxconfig.org/how-to-remove-old-unused-kernels-on-centos-linux</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_network>Network</h2>
+<div class=sectionbody>
+<div class=sect2>
+<h3 id=_disable_ipv6>Disable IPV6</h3>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] echo &#34;net.ipv6.conf.all.disable_ipv6 = 1&#34; &gt; /etc/sysctl.d/01-disable_IPV6.conf
+[root@test-server:] echo &#34;net.ipv6.conf.default.disable_ipv6 = 1&#34; &gt;&gt; /etc/sysctl.d/01-disable_IPV6.conf
+[root@test-server:] sysctl -p
+[root@test-server:] echo &#34;AddressFamily inet&#34; &gt;&gt; /etc/ssh/sshd_config
+[root@test-server:] service sshd restart</code></pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_disable_networkmanager>Disable NetworkManager</h3>
+<div class=paragraph>
+<p>Network Manager is installed by default and activated by default.
+You can manage directly network config by editing /etc/sysconfig/network-scripts files.</p>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] systemctl disable NetworkManager
+[root@test-server:] systemctl stop NetworkManager</code></pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_network_card_mac_address>Network card MAC address</h3>
+<div class=paragraph>
+<p>This command will display MAC address for each physical network card on the system.</p>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | sed -e &#34;s/\// /g&#34; | awk &#39;{print $4}&#39; ); do MAC=$(cat /sys/class/net/$i/address);echo $i: $MAC; done</code></pre>
+</div>
+</div>
+<div class=paragraph>
+<p>This command may result in (Virtual Machine with four network cards):</p>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>enp0s10: 08:00:27:34:a7:5b
+enp0s3: 08:00:27:22:1d:03
+enp0s8: 08:00:27:35:a8:74
+enp0s9: 08:00:27:66:62:47</code></pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_rename_default_physical_enpxsy_interface_name_to_ethx>Rename default physical enpXsY Interface Name to ethX</h3>
+<div class=paragraph>
+<p>All in one script:</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class=icon>
+<div class=title>Warning</div>
+</td>
+<td class=content>
+Backup your config files before.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] inc=&#34;0&#34;;for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | \
+sed -e &#34;s/\// /g&#34; | \
+awk &#39;{print $4}&#39; ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo &#34;HWADDR=$MAC&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+cat /etc/sysconfig/network-scripts/ifcfg-$i &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc; \
+sed -i &#34;s/$i/eth$inc/g&#34; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+mv /etc/sysconfig/network-scripts/ifcfg-$i /etc/sysconfig/network-scripts/ifcfg-$i.old.bkp;\
+done</code></pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_team_creation_script_physical_servers>Team creation script (Physical Servers):</h3>
+<div class=paragraph>
+<p>All in one script:</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class=icon>
+<div class=title>Warning</div>
+</td>
+<td class=content>
+Backup your config files before.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] inc=&#34;0&#34;;for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | \
+sed -e &#34;s/\// /g&#34; | \
+awk &#39;{print $4}&#39; ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo &#34;HWADDR=$MAC&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;DEVICE=eth$inc&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;NAME=eth$inc&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;DEVICETYPE=TeamPort&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;ONBOOT=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;TEAM_MASTER=team0&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;NM_CONTROLLED=no&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+done;\
+rm -f /etc/sysconfig/network-scripts/ifcfg-team0;\
+echo &#34;DEVICE=team0&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;DEVICETYPE=Team&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;ONBOOT=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;BOOTPROTO=none&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;NM_CONTROLLED=no&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;IPADDR=192.168.1.120&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;GATEWAY=192.168.1.254&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;PREFIX=24&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;TEAM_CONFIG=&#39;{\&#34;runner\&#34;: {\&#34;name\&#34;: \&#34;loadbalance\&#34;}, \&#34;link_watch\&#34;: {\&#34;name\&#34;: \&#34;ethtool\&#34;} }&#39;&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+ifup team0;</code></pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_team_creation_script_vm_servers>Team creation script (VM Servers):</h3>
+<div class=paragraph>
+<p>For Vms there is a little hack to add in order to permit correct network card balancing in team, you must add extra parameters and add an extra systemd service.
+Since promiscuous mode is not correctly handled since CentOS / Red-Hat 7 we must add a promisc service to activate it after reboot.</p>
+</div>
+<div class=paragraph>
+<p>For example, Virtualbox has to be setup like below screenshot:
+image::Best_Pratices_CentOS-RedHat-d690f.png[]</p>
+</div>
+<div class=paragraph>
+<p>All in one script:</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class=icon>
+<div class=title>Warning</div>
+</td>
+<td class=content>
+Backup your config files before.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] inc=&#34;0&#34;;for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | \
+sed -e &#34;s/\// /g&#34; | \
+awk &#39;{print $4}&#39; ); do inc=$((inc+1));\
+MAC=$(cat /sys/class/net/$i/address) ; \
+rm -f /etc/sysconfig/network-scripts/ifcfg-eth$inc;\
+echo &#34;HWADDR=$MAC&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;DEVICE=eth$inc&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;NAME=eth$inc&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;DEVICETYPE=TeamPort&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;ONBOOT=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;PROMISC=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;TEAM_MASTER=team0&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+echo &#34;NM_CONTROLLED=no&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth$inc ;\
+done;\
+rm -f /etc/sysconfig/network-scripts/ifcfg-team0;\
+echo &#34;DEVICE=team0&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;DEVICETYPE=Team&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;ONBOOT=yes&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;BOOTPROTO=none&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;NM_CONTROLLED=no&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;IPADDR=192.168.1.120&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;GATEWAY=192.168.1.254&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;PREFIX=24&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+echo &#34;TEAM_CONFIG=&#39;{\&#34;runner\&#34;: {\&#34;name\&#34;: \&#34;loadbalance\&#34;}, \&#34;link_watch\&#34;: {\&#34;name\&#34;: \&#34;ethtool\&#34;} }&#39;&#34; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-team0 ;\
+ifup team0;</code></pre>
+</div>
+</div>
+<div class=paragraph>
+<p>Generate Promisc systemd script</p>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] inc=&#34;0&#34;;
+echo &#34;[Unit]&#34; &gt; /etc/systemd/system/promisc.service ;\
+echo &#34;Description=Makes an interface run in promiscuous mode at boot&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;After=network.target&#34;  &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;[Service]&#34;  &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;Type=oneshot&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;TimeoutStartSec=0&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;RemainAfterExit=yes&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+for i in $(find /sys/class/net/* -not -lname &#34;*virtual*&#34; | \
+sed -e &#34;s/\// /g&#34; | \
+awk &#39;{print $4}&#39; ); do inc=$((inc+1));\
+echo &#34;ExecStart=/usr/sbin/ip link set dev eth$inc promisc on&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+done;\
+echo &#34;[Install]&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+echo &#34;WantedBy=default.target&#34; &gt;&gt; /etc/systemd/system/promisc.service ;\
+systemctl daemon-reload;\
+systemctl enable promisc;\
+systemctl start promisc</code></pre>
+</div>
+</div>
+<div class=paragraph>
+<p>Network Card config should contains PROMISC info (even after a reboot):</p>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@test-server:] ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth1: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+3: eth2: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+4: eth3: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+5: eth4: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast master team0 state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+6: team0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 08:00:27:22:1d:03 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.120/24 brd 192.168.1.255 scope global team0
+       valid_lft forever preferred_lft forever</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h4 class=page-header>Author:</h4>
+<figure>
+<img class=avatar src=../../../images/vincent_photo_resized.png alt>
+<figcaption>
+<a href=https://www.vincent-gou.fr/en/authors/vincent-gourrierec/>Vincent Gourrierec</a>
+</figcaption>
+</figure>
+</main>
+<footer>
+<p class=copyright>2023 - © All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a> theme, build with GitHub Actions <img src=https://github.com/vincent-gou/Hugo/workflows/hugo%20publish/badge.svg alt="hugo publish"> and <a href=https://www.vincent-gou.fr>Vincent Gourrierec</a></p>
+</footer>
+</body>
+</html>

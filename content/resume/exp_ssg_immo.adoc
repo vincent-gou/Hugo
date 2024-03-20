@@ -1,0 +1,15 @@
+[horizontal]
+Depuis ~Janvier~ 2019:: **Ingénieur Systèmes**
+__SopraSteria Division Immobilière, Nantes, 1-2 Jours Semaine, Télétravail total__
+****
+* Prestations d'intégration de modules complémentaires WEB et mobile à l'ERP.
+* Prestations d'expertise en performances et sécurité sur l'ERP édité par la société.
+* Études et préconisations architectures sécurisés et performantes sur infrastructure hétérogène (IAAS, on Premise, Mixed)
+* Optimisations de Workflow divers (Archivage, Impression, déploiement).
+* Déploiement architecture observabilité (Stack TIK+GL) Telegraf / InfluxDB / Kapacitor + Grafana / Loki
+* Gestion de la configuration via node-red (Node.js)
+* Analyse, développement et déploiement dans Centreon de scripts de supervision des ERP pour le service d'hébergement interne.
+
+[TIP]
+OpenEdge | Tomcat | Windows | Telegraf | Grafana | SSL | Nginx | InfluxDB | Centreon
+****

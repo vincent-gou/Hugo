@@ -1,0 +1,171 @@
+<!doctype html><html lang=fr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Affichage des logs LOKI dans une annotation GRAFANA</title>
+<style>html body{font-family:raleway,sans-serif;background-color:#656565}:root{--accent:#cc9933;--border-width:5px}</style>
+<link rel=stylesheet href=https://www.vincent-gou.fr/css/main.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script>$(document).on('click',function(){$('.collapse').collapse('hide')})</script>
+<meta name=generator content="Hugo 0.92.2">
+</head>
+<script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<body>
+<a class=flagselect href=/post/grana_loki_annotations/>fr🇫🇷</a>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class=container>
+<div class=navbar-header>
+<a class="navbar-brand visible-xs" href=#>Affichage des logs LOKI dans une annotation GRAFANA</a>
+<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li><a href=/>Accueil</a></li>
+<li><a href=/project/>Projets</a></li>
+<li><a href=/post/>Articles</a></li>
+<li><a href=/tags/>Tags</a></li>
+<li><a href=/resume/>C.V.</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li class=navbar-icon><a href=mailto:contact@vincent-gou.fr><i class="fa fa-envelope-o"></i></a></li>
+<li class=navbar-icon><a href=https://github.com/vincent-gou/><i class="fa fa-github"></i></a></li>
+<li class=navbar-icon><a href=https://www.linkedin.com/in/vincent-gou/><i class="fa fa-linkedin"></i></a></li>
+<li class=navbar-icon><a href=https://www.malt.fr/profile/vincentgourrierec/><i class="fa fa-certificate"></i></a></li>
+</ul>
+</div>
+</div>
+</nav>
+<h4 class=page_info>Informations sur la page: </h4>
+<h6 class=page_info> Cet article contient 159 mots. </br> Comptez une minute de temps de lecture</h6>
+<main>
+<div class=item>
+<h4><a href=/post/grana_loki_annotations/>Affichage des logs LOKI dans une annotation GRAFANA</a></h4>
+<h5>December 11, 2020</h5>
+<a href=https://www.vincent-gou.fr/tags/grafana><kbd class=item-tag>grafana</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/influxdb><kbd class=item-tag>influxdb</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/loki><kbd class=item-tag>loki</kbd></a>
+</div>
+<br> <div class=text-justify>
+<div class=paragraph>
+<p>Il est possible d’afficher certaines logs provenant de LOKI en tant qu’annotations dans Grafana.</p>
+</div>
+<div class=sect1>
+<h2 id=_objectifs>1. Objectifs</h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p>Permettre d’afficher les logs LOKI en tant qu’annotations dans un dashboard Grafana.</p>
+</li>
+</ul>
+</div>
+<div class=paragraph>
+<p>Exemple d’un bouton permettant d’afficher les erreurs d’authentification détectées dans les fichiers de logs et tracés dans LOKI, en tant qu’annotations dans les graphiques.</p>
+</div>
+<div class="imageblock right text-center">
+<div class=content>
+<img src=../../images/GRANA_LOKI_Annotations.fr-b10dd.png alt=700 width=500>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_pré_requis>2. Pré-requis</h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p>Disposer d’une datasource LOKI configurée dans GRAFANA</p>
+</li>
+<li>
+<p>Possibilité d’utiliser une variable du dashboard pour effectuer la recherche des entrées dans LOKI.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_création_du_bouton_daffichage_des_annotations>3. Création du bouton d’affichage des annotations</h2>
+<div class=sectionbody>
+<div class=paragraph>
+<p>Dans le menu "Dashboard settings" / Annotations, créez une nouvelle annotation.</p>
+</div>
+<div class="imageblock right text-center">
+<div class=content>
+<img src=../../images/GRANA_LOKI_Annotations.fr-ebf80.png alt=700 width=500>
+</div>
+</div>
+<div class=paragraph>
+<p>Ensuite renseignez les différentes options tel que:</p>
+</div>
+<div class="imageblock right text-center">
+<div class=content>
+<img src=../../images/GRANA_LOKI_Annotations.fr-b63ef.png alt=700 width=500>
+</div>
+</div>
+<div class=paragraph>
+<p>Puis ajoutez l’annotation et sauvegardez le dashboard.</p>
+</div>
+<div class=paragraph>
+<p>Ici la requete LOKI est la suivante:</p>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>{client=&#34;$Client&#34;} |= &#34;ERROR&#34; |= &#34;Authentication&#34;</code></pre>
+</div>
+</div>
+<div class=ulist>
+<ul>
+<li>
+<p>{client="$Client"}: recherche dans toutes les logs avec la valeur du label client correspondant à la variable sélectionnée dans le dashboard.</p>
+</li>
+<li>
+<p>|= "ERROR": doit contenir la valeur "ERROR"</p>
+</li>
+<li>
+<p>|= "Authentication": doit contenir la valeur "Authentication" en plus de la valeur "ERROR"</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<h4 class=page-header>Voir aussi:</h4>
+<div class=item>
+<h4><a href=/post/grafana_annotation_variables/>Variablisation des annotations dans Grafana</a></h4>
+<h5>December 9, 2020</h5>
+<a href=https://www.vincent-gou.fr/tags/grafana><kbd class=item-tag>grafana</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/influxdb><kbd class=item-tag>influxdb</kbd></a>
+</div>
+<div class=item>
+<h4><a href=/post/promtail_windows_service/>Paramétrage PROMTAIl en tant que service Windows</a></h4>
+<h5>July 2, 2020</h5>
+<a href=https://www.vincent-gou.fr/tags/grafana><kbd class=item-tag>grafana</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/promtail><kbd class=item-tag>promtail</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/loki><kbd class=item-tag>loki</kbd></a>
+</div>
+<h4 class=page-header>Auteur:</h4>
+<figure>
+<img class=avatar src=../../../images/vincent_photo_resized.png alt>
+<figcaption>
+<a href=https://www.vincent-gou.fr/authors/vincent-gourrierec/>Vincent Gourrierec</a>
+</figcaption>
+</figure>
+</main>
+<footer>
+<p class=copyright>2023 - © All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a> theme, build with GitHub Actions <img src=https://github.com/vincent-gou/Hugo/workflows/hugo%20publish/badge.svg alt="hugo publish"> and <a href=https://www.vincent-gou.fr>Vincent Gourrierec</a></p>
+</footer>
+</body>
+</html>

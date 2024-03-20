@@ -1,0 +1,258 @@
+<!doctype html><html lang=fr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Upgrade manuel de Nextcloud après une mise à jour de l'instance Nextcloud sous Docker</title>
+<style>html body{font-family:raleway,sans-serif;background-color:#656565}:root{--accent:#cc9933;--border-width:5px}</style>
+<link rel=stylesheet href=https://www.vincent-gou.fr/css/main.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script>$(document).on('click',function(){$('.collapse').collapse('hide')})</script>
+<meta name=generator content="Hugo 0.92.2">
+</head>
+<script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<body>
+<a class=flagnoselect href=/en/post/nextcloud_manual_upgrade_after_docker_update/>en🇬🇧</a>
+<a class=flagselect href=/post/nextcloud_manual_upgrade_after_docker_update/>fr🇫🇷</a>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class=container>
+<div class=navbar-header>
+<a class="navbar-brand visible-xs" href=#>Upgrade manuel de Nextcloud après une mise à jour de l'instance Nextcloud sous Docker</a>
+<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li><a href=/>Accueil</a></li>
+<li><a href=/project/>Projets</a></li>
+<li><a href=/post/>Articles</a></li>
+<li><a href=/tags/>Tags</a></li>
+<li><a href=/resume/>C.V.</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li class=navbar-icon><a href=mailto:contact@vincent-gou.fr><i class="fa fa-envelope-o"></i></a></li>
+<li class=navbar-icon><a href=https://github.com/vincent-gou/><i class="fa fa-github"></i></a></li>
+<li class=navbar-icon><a href=https://www.linkedin.com/in/vincent-gou/><i class="fa fa-linkedin"></i></a></li>
+<li class=navbar-icon><a href=https://www.malt.fr/profile/vincentgourrierec/><i class="fa fa-certificate"></i></a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class=page_info>
+<h4 class=page_info>Traductions disponibles: </h4>
+<a href=https://www.vincent-gou.fr/en/post/nextcloud_manual_upgrade_after_docker_update/ class=page_info><b>en</b> Manual Nextcloud Upgrade after Nextcloud Docker instance Update / </a>
+</div>
+<h4 class=page_info>Informations sur la page: </h4>
+<h6 class=page_info> Cet article contient 737 mots. </br> Comptez 4 minutes de temps de lecture</h6>
+<main>
+<div class=item>
+<h4><a href=/post/nextcloud_manual_upgrade_after_docker_update/>Upgrade manuel de Nextcloud après une mise à jour de l'instance Nextcloud sous Docker</a></h4>
+<h5>March 18, 2019</h5>
+<a href=https://www.vincent-gou.fr/tags/nextcloud><kbd class=item-tag>nextcloud</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/docker><kbd class=item-tag>docker</kbd></a>
+</div>
+<br> <div class=text-justify><div class=sect1>
+<h2 id=_etapes_de_mise_à_jour_de_nextcloud_après_un_upgrade_de_linstance_docker_nextcloud>Etapes de mise à jour de Nextcloud après un upgrade de l’instance Docker Nextcloud</h2>
+<div class=sectionbody>
+<div class=paragraph>
+<p>Ce document doit être utilisé après un upgrade de l’instance Docker Nextcloud.</p>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_pré_requis>Pré-requis</h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p>Docker</p>
+</li>
+<li>
+<p>Instance Nextcloud</p>
+</li>
+<li>
+<p>Serveur Linux</p>
+</li>
+<li>
+<p>Les données et fichiers de configuration Nextcloud doivent être stockés dans stockage externe à Docker.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_etapes_de_mise_à_jour>Etapes de mise à jour</h2>
+<div class=sectionbody>
+<div class=sect2>
+<h3 id=_connect_nextcloud_docker_container>Connect Nextcloud docker container</h3>
+<div class=literalblock>
+<div class=content>
+<pre>[root@nas docker]# docker exec --user www-data -it nextcloud bash</pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_control_nextcloud_version>Control Nextcloud version</h3>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code>www-data@e73fd289077c:~/html$ php occ status
+Nextcloud or one of the apps require upgrade - only a limited number of commands are available
+You may use your browser or the occ upgrade command to do the upgrade
+  - installed: true
+  - version: 15.0.5.3
+  - versionstring: 15.0.5
+  - edition:
+www-data@e73fd289077c:~/html$</code></pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_update_nextcloud>Update Nextcloud</h3>
+<div class=literalblock>
+<div class=content>
+<pre>www-data@e73fd289077c:~/html$ php occ upgrade</pre>
+</div>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code>Nextcloud or one of the apps require upgrade - only a limited number of commands are available
+You may use your browser or the occ upgrade command to do the upgrade
+Set log level to debug
+Updating database schema
+Updated database
+Checking for update of app accessibility in appstore
+Checked for update of app &#34;accessibility&#34; in appstore
+Checking for update of app activity in appstore
+Checked for update of app &#34;activity&#34; in appstore
+Checking for update of app cloud_federation_api in appstore
+Checked for update of app &#34;cloud_federation_api&#34; in appstore
+Checking for update of app comments in appstore
+Checked for update of app &#34;comments&#34; in appstore
+Checking for update of app dav in appstore
+Checked for update of app &#34;dav&#34; in appstore
+Checking for update of app federatedfilesharing in appstore
+Checked for update of app &#34;federatedfilesharing&#34; in appstore
+Checking for update of app federation in appstore
+Checked for update of app &#34;federation&#34; in appstore
+Checking for update of app files in appstore
+Checked for update of app &#34;files&#34; in appstore
+Checking for update of app files_pdfviewer in appstore
+Checked for update of app &#34;files_pdfviewer&#34; in appstore
+Checking for update of app files_sharing in appstore
+Checked for update of app &#34;files_sharing&#34; in appstore
+Checking for update of app files_texteditor in appstore
+Checked for update of app &#34;files_texteditor&#34; in appstore
+Checking for update of app files_trashbin in appstore
+Checked for update of app &#34;files_trashbin&#34; in appstore
+Checking for update of app files_versions in appstore
+Checked for update of app &#34;files_versions&#34; in appstore
+Checking for update of app files_videoplayer in appstore
+Checked for update of app &#34;files_videoplayer&#34; in appstore
+Checking for update of app firstrunwizard in appstore
+Checked for update of app &#34;firstrunwizard&#34; in appstore
+Checking for update of app gallery in appstore
+Checked for update of app &#34;gallery&#34; in appstore
+Checking for update of app logreader in appstore
+Checked for update of app &#34;logreader&#34; in appstore
+Checking for update of app lookup_server_connector in appstore
+Checked for update of app &#34;lookup_server_connector&#34; in appstore
+Checking for update of app nextcloud_announcements in appstore
+Checked for update of app &#34;nextcloud_announcements&#34; in appstore
+Checking for update of app notifications in appstore
+Checked for update of app &#34;notifications&#34; in appstore
+Checking for update of app oauth2 in appstore
+Checked for update of app &#34;oauth2&#34; in appstore
+Checking for update of app password_policy in appstore
+Checked for update of app &#34;password_policy&#34; in appstore
+Checking for update of app provisioning_api in appstore
+Checked for update of app &#34;provisioning_api&#34; in appstore
+Checking for update of app serverinfo in appstore
+Checked for update of app &#34;serverinfo&#34; in appstore
+Checking for update of app sharebymail in appstore
+Checked for update of app &#34;sharebymail&#34; in appstore
+Checking for update of app support in appstore
+Checked for update of app &#34;support&#34; in appstore
+Checking for update of app survey_client in appstore
+Checked for update of app &#34;survey_client&#34; in appstore
+Checking for update of app systemtags in appstore
+Checked for update of app &#34;systemtags&#34; in appstore
+Checking for update of app theming in appstore
+Checked for update of app &#34;theming&#34; in appstore
+Checking for update of app twofactor_backupcodes in appstore
+Checked for update of app &#34;twofactor_backupcodes&#34; in appstore
+Checking for update of app updatenotification in appstore
+Checked for update of app &#34;updatenotification&#34; in appstore
+Checking for update of app workflowengine in appstore
+Checked for update of app &#34;workflowengine&#34; in appstore
+Starting code integrity check...
+Finished code integrity check
+Update successful
+Maintenance mode is kept active
+Reset log level</code></pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_deactivate_maintenance_mode>Deactivate maintenance mode</h3>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code>www-data@e73fd289077c:~/html$ php occ maintenance:mode --off
+Maintenance mode disabled
+www-data@e73fd289077c:~/html$ exit</code></pre>
+</div>
+</div>
+</div>
+<div class=sect2>
+<h3 id=_final_setup>Final setup</h3>
+<div class=paragraph>
+<p>Once update is finished, connect Nextcloud and check plugin app updates manually.</p>
+</div>
+<div class=paragraph>
+<p>Some apps may have been disabled during update process.</p>
+</div>
+<div class=paragraph>
+<p>You will have to activate them manually.</p>
+</div>
+<div class=paragraph>
+<p>Enjoy !</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h4 class=page-header>Voir aussi:</h4>
+<div class=item>
+<h4><a href=/post/test/>Test Asciidoctor</a></h4>
+<h5>June 3, 2019</h5>
+<a href=https://www.vincent-gou.fr/tags/docker><kbd class=item-tag>docker</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/asciidoctor><kbd class=item-tag>asciidoctor</kbd></a>
+</div>
+<div class=item>
+<h4><a href=/post/nextcloud_update_nextcloud_docker_instance/>Update Nextcloud Docker instance</a></h4>
+<h5>March 18, 2019</h5>
+<a href=https://www.vincent-gou.fr/tags/nextcloud><kbd class=item-tag>nextcloud</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/docker><kbd class=item-tag>docker</kbd></a>
+</div>
+<h4 class=page-header>Auteur:</h4>
+<figure>
+<img class=avatar src=../../../images/vincent_photo_resized.png alt>
+<figcaption>
+<a href=https://www.vincent-gou.fr/authors/vincent-gourrierec/>Vincent Gourrierec</a>
+</figcaption>
+</figure>
+</main>
+<footer>
+<p class=copyright>2023 - © All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a> theme, build with GitHub Actions <img src=https://github.com/vincent-gou/Hugo/workflows/hugo%20publish/badge.svg alt="hugo publish"> and <a href=https://www.vincent-gou.fr>Vincent Gourrierec</a></p>
+</footer>
+</body>
+</html>

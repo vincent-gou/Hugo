@@ -1,0 +1,406 @@
+<!doctype html><html lang=fr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Paramétrage SFTP sécurisé complet</title>
+<style>html body{font-family:raleway,sans-serif;background-color:#656565}:root{--accent:#cc9933;--border-width:5px}</style>
+<link rel=stylesheet href=https://www.vincent-gou.fr/css/main.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script>$(document).on('click',function(){$('.collapse').collapse('hide')})</script>
+<meta name=generator content="Hugo 0.92.2">
+</head>
+<script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<body>
+<a class=flagnoselect href=/en/post/security_sftp_and_chroot_config/>en🇬🇧</a>
+<a class=flagselect href=/post/security_sftp_and_chroot_config/>fr🇫🇷</a>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class=container>
+<div class=navbar-header>
+<a class="navbar-brand visible-xs" href=#>Paramétrage SFTP sécurisé complet</a>
+<button class=navbar-toggle data-target=.navbar-collapse data-toggle=collapse>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li><a href=/>Accueil</a></li>
+<li><a href=/project/>Projets</a></li>
+<li><a href=/post/>Articles</a></li>
+<li><a href=/tags/>Tags</a></li>
+<li><a href=/resume/>C.V.</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li class=navbar-icon><a href=mailto:contact@vincent-gou.fr><i class="fa fa-envelope-o"></i></a></li>
+<li class=navbar-icon><a href=https://github.com/vincent-gou/><i class="fa fa-github"></i></a></li>
+<li class=navbar-icon><a href=https://www.linkedin.com/in/vincent-gou/><i class="fa fa-linkedin"></i></a></li>
+<li class=navbar-icon><a href=https://www.malt.fr/profile/vincentgourrierec/><i class="fa fa-certificate"></i></a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class=page_info>
+<h4 class=page_info>Traductions disponibles: </h4>
+<a href=https://www.vincent-gou.fr/en/post/security_sftp_and_chroot_config/ class=page_info><b>en</b> Secured SFTP setup / </a>
+</div>
+<h4 class=page_info>Informations sur la page: </h4>
+<h6 class=page_info> Cet article contient 983 mots. </br> Comptez 5 minutes de temps de lecture</h6>
+<main>
+<div class=item>
+<h4><a href=/post/security_sftp_and_chroot_config/>Paramétrage SFTP sécurisé complet</a></h4>
+<h5>June 11, 2019</h5>
+<a href=https://www.vincent-gou.fr/tags/sftp><kbd class=item-tag>sftp</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/linux><kbd class=item-tag>linux</kbd></a>
+<a href=https://www.vincent-gou.fr/tags/securite><kbd class=item-tag>securite</kbd></a>
+</div>
+<br> <div class=text-justify><div class=sect1>
+<h2 id=_objectifs>Objectifs</h2>
+<div class=sectionbody>
+<div class=ulist>
+<ul>
+<li>
+<p>Fournir un accès sécurisé à des ressources sur un serveur Linux via SFTP.</p>
+</li>
+<li>
+<p>Les comptes SFTP n’auront accès qu’à la ressources autorisées.</p>
+</li>
+<li>
+<p>Un compte d’administration pourra gérer les ressources des autres comptes.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_mode_de_fonctionnement_cible_utilisateur>Mode de fonctionnement cible utilisateur</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre>Failed to generate image: Could not find the &#39;blockdiag&#39;, &#39;blockdiag3&#39; executable in PATH; add it to the PATH or specify its location using the &#39;blockdiag&#39; document attribute
+blockdiag {
+  default_shape = roundedbox;
+
+   // Set labels to nodes.
+   A1 [shape = actor,label = &#34;USER1&#34;, numbered = 1];
+   B [label = &#34;SSHD&#34;, numbered = 2];
+   C [label = &#34;SSHD_CONFIG&#34;, numbered = 3];
+   D [label = &#34;/data/sftp/USER1&#34; , numbered = 4];
+   E [label = &#34;UMASK 0007&#34; , numbered = 5];
+   F [label = &#34;Dossier chroot par défaut: /upload&#34;, numbered = 6];
+
+   // Set labels to edges. (short text only)
+   A1 -&gt; B [label = &#34;SFTP&#34;];
+   B &lt;- C [label = &#34;read&#34;];
+   B -&gt; D [label = &#34;chroot&#34;];
+   B -&gt; E [label = &#34;set&#34;];
+   B -&gt; F [label = &#34;move&#34;];
+   group {
+     label = &#34;SSHD Match Group&#34;;
+     orientation = portrait
+     D -&gt; E -&gt; F;
+    }
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_mode_de_fonctionnement_cible_administrateur>Mode de fonctionnement cible administrateur</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre>Failed to generate image: no implicit conversion of nil into String
+blockdiag {
+  default_shape = roundedbox;
+
+   // Set labels to nodes.
+   A1 [shape = actor,label = &#34;USER1&#34;, numbered = 1];
+   A2 [shape = actor,label = &#34;USER2&#34;, numbered = 1];
+   B [label = &#34;SSHD&#34;, numbered = 2];
+   C [label = &#34;SSHD_CONFIG&#34;, numbered = 3];
+   D [label = &#34;/data/sftp/%u&#34; , numbered = 4];
+   E [label = &#34;UMASK 0007&#34; , numbered = 5];
+   F [label = &#34;Dossier chroot par défaut: /upload&#34;, numbered = 6];
+
+   // Set labels to edges. (short text only)
+   A1 -&gt; B [label = &#34;SFTP&#34;];
+   A2 -&gt; B [label = &#34;SFTP&#34;];
+   B &lt;- C [label = &#34;read&#34;];
+   B -&gt; D [label = &#34;chroot&#34;];
+   B -&gt; E [label = &#34;set&#34;];
+   B -&gt; F [label = &#34;move&#34;];
+   group {
+     label = &#34;SSHD Match Group&#34;;
+     orientation = portrait
+     D -&gt; E -&gt; F;
+    }
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_contrôles>Contrôles</h2>
+<div class=sectionbody>
+<div class=sect2>
+<h3 id=_contrôle_activation_sftp_dans_sshd>Contrôle activation SFTP dans SSHD</h3>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@server /]# cat /etc/ssh/sshd_config
+....
+# override default of no subsystems
+Subsystem      sftp    /usr/libexec/openssh/sftp-server</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_création_de_larborescence>Création de l’arborescence</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>mkdir -p /directory
+chmod 700 /directory</code></pre>
+</div>
+</div>
+<div class=paragraph>
+<p>Example:</p>
+</div>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@server /]# mkdir -p /data/sftp
+[root@server /]# chmod 700 /data</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_création_du_groupe_et_des_users_sftp>Création du groupe et des users SFTP</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>groupadd sftp_users // <b class=conum>(1)</b>
+useradd -g sftp_users -d / -s /sbin/nologin USER1 // <b class=conum>(2)</b>
+useradd -g sftp_users -d / -s /sbin/nologin USER2 // <b class=conum>(3)</b>
+useradd -g sftp_users -d / -s /sbin/nologin USER3 // <b class=conum>(4)</b>
+useradd -g sftp_users -d / -s /sbin/nologin USER4 // <b class=conum>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Nom du groupe auquel appartiendront tous les utilisateurs SFTP crées.</p>
+</li>
+<li>
+<p>-g : Groupe d’appartenance du compte USER1 / -d Chemin du profil / -s shell de connxion ⇒ aucun</p>
+</li>
+<li>
+<p>-g : Groupe d’appartenance du compte USER2 / -d Chemin du profil / -s shell de connxion ⇒ aucun</p>
+</li>
+<li>
+<p>-g : Groupe d’appartenance du compte USER3 / -d Chemin du profil / -s shell de connxion ⇒ aucun</p>
+</li>
+<li>
+<p>-g : Groupe d’appartenance du compte USER4 / -d Chemin du profil / -s shell de connxion ⇒ aucun</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_paramétrage_du_mot_de_passe_des_utilisateurs_crées>Paramétrage du mot de passe des utilisateurs crées</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>passwd USER1
+passwd USER2
+passwd USER3
+passwd USER4</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_controle_du_fichier_contenant_les_utilisateurs_sftp>Controle du fichier contenant les utilisateurs SFTP</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>cat /etc/passwd
+....
+USER1:x:1002:1002::/:/sbin/nologin
+USER2:x:1003:1002::/:/sbin/nologin
+USER3:x:1004:1002::/:/sbin/nologin
+USER4:x:1005:1002::/:/sbin/nologin</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_création_de_larborescence_de_stockage_des_flux>Création de l’arborescence de stockage des Flux</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>mkdir -p /data/sftp/USER2/upload // <b class=conum>(1)</b>
+chown -R root:root /data/sftp/USER2 // <b class=conum>(2)</b>
+chown -R USER2:sftp_users /data/sftp/USER2/upload // <b class=conum>(3)</b>
+chmod 770 /data/sftp/USER2/upload // <b class=conum>(4)</b>
+
+mkdir -p /data/sftp/USER1/upload // <b class=conum>(1)</b>
+chown -R root:root /data/sftp/USER1 // <b class=conum>(2)</b>
+chown -R USER1:sftp_users /data/sftp/USER1/upload // <b class=conum>(3)</b>
+chmod 770 /data/sftp/USER1/upload // <b class=conum>(4)</b>
+
+mkdir -p /data/sftp/USER3/upload // <b class=conum>(1)</b>
+chown -R root:root /data/sftp/USER3 // <b class=conum>(2)</b>
+chown -R USER3:sftp_users /data/sftp/USER3/upload // <b class=conum>(3)</b>
+chmod 770 /data/sftp/USER3/upload // <b class=conum>(4)</b>
+
+mkdir -p /data/sftp/USER4/upload // <b class=conum>(1)</b>
+chown -R root:root /data/sftp/USER4 // <b class=conum>(2)</b>
+chown -R USER4:sftp_users /data/sftp/USER4/upload // <b class=conum>(3)</b>
+chmod 770 /data/sftp/USER4/upload // <b class=conum>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Création du répertoire personnel de l’utilisateur associé à la société, accessible en R/W pour l’utilisateur.</p>
+</li>
+<li>
+<p>Affectation des droits à <strong><em>root:root</em></strong> au répertoire dans lequel sera chrooté de l’utilisateur associé à la société.</p>
+</li>
+<li>
+<p>Affectation des droits à <strong><em>$COMPTE$:sftp_users</em></strong> au répertoire dans lequel l’utilisateur associé à la société pourra lire et écrire.</p>
+</li>
+<li>
+<p>Affectation des droits au répertoire à l’utilisateur et au groupe d’appartenance dans lequel l’utilisateur associé à la société pourra lire et écrire.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_paramétrage_compte_sftp_adm>Paramétrage compte SFTP ADM</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@server sftp]# useradd -g sftp_users -d / -s /sbin/nologin SFTP_ADM // <b class=conum>(1)</b>
+[root@server sftp]# cat /etc/passwd
+...
+SFTP_ADM:x:1006:1002::/:/sbin/nologin</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>-g : Groupe d’appartenance du compte SFTP_ADM / -d Chemin du profil / -s shell de connxion ⇒ aucun</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_paramétrage_sshd>Paramétrage SSHD</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>[root@server sftp]# cp -p /etc/ssh/sshd_config /etc/ssh/sshd_config.sav
+[root@server sftp]# vi /etc/ssh/sshd_config
+# override default of no subsystems
+#Subsystem      sftp    /usr/libexec/openssh/sftp-server // <b class=conum>(1)</b>
+## Add umask to U+G none to Others
+Subsystem sftp internal-sftp -u 0007 // <b class=conum>(2)</b>
+IgnoreRhosts yes
+IgnoreUserKnownHosts no
+PrintMotd yes
+StrictModes yes
+PubkeyAuthentication yes
+#RSAAuthentication yes
+PermitRootLogin no
+PermitEmptyPasswords no
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#       X11Forwarding no
+#       AllowTcpForwarding no
+#       PermitTTY no
+#       ForceCommand cvs server
+
+# A placer avant le test sur le groupe si le user appartient au groupe sftp_users
+# SSHD lit la config dans l&#39;ordre d apparition....
+Match User SFTP_ADM // <b class=conum>(3)</b>
+ChrootDirectory /data/sftp // <b class=conum>(4)</b>
+## Add umask to U+G none to Others
+ForceCommand internal-sftp -u 0007 // <b class=conum>(5)</b>
+
+Match Group sftp_users // <b class=conum>(6)</b>
+ChrootDirectory /data/sftp/%u // <b class=conum>(7)</b>
+## Add umask to U+G none to Others
+ForceCommand internal-sftp -u 0007 -d /upload // <b class=conum>(8)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Désactivation server SFTP par défaut</p>
+</li>
+<li>
+<p>Activation serveur SFTP intégré à sshd</p>
+</li>
+<li>
+<p>Bloc concernant le compte SFTP_ADM</p>
+</li>
+<li>
+<p>Chroot du compte <strong><em>SFTP_ADM</em></strong> vers /data/sftp</p>
+</li>
+<li>
+<p>Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770)</p>
+</li>
+<li>
+<p>Bloc concernant les membres du groupe <strong><em>sftp_users</em></strong></p>
+</li>
+<li>
+<p>Chroot des membres du groupe <strong><em>sftp_users</em></strong> vers /data/sftp/%u (%u est une variable pour le nom d’utilisateur)</p>
+</li>
+<li>
+<p>Obligation du SFTP uniquement et changement du UMASK vers 0007 (correspond à 770) et déplacement automatique dans le répertoire upload</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class=sect1>
+<h2 id=_redémarrage_sshd_et_controles>Redémarrage SSHD et controles</h2>
+<div class=sectionbody>
+<div class=listingblock>
+<div class=content>
+<pre class=highlight><code class=language-bash data-lang=bash>systemctl restart sshd
+systemctl status sshd</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h4 class=page-header>Auteur:</h4>
+<figure>
+<img class=avatar src=../../../images/vincent_photo_resized.png alt>
+<figcaption>
+<a href=https://www.vincent-gou.fr/authors/vincent-gourrierec/>Vincent Gourrierec</a>
+</figcaption>
+</figure>
+</main>
+<footer>
+<p class=copyright>2023 - © All rights reserved. Powered by <a href=https://gohugo.io>Hugo</a> and <a href=https://github.com/calintat/minimal>Minimal</a> theme, build with GitHub Actions <img src=https://github.com/vincent-gou/Hugo/workflows/hugo%20publish/badge.svg alt="hugo publish"> and <a href=https://www.vincent-gou.fr>Vincent Gourrierec</a></p>
+</footer>
+</body>
+</html>

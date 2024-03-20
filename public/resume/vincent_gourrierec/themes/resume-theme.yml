@@ -1,0 +1,36 @@
+extends: default
+base:
+  font-size: 8
+title-page:
+  font-color: #868686
+  font-size: 10
+heading:
+  h1-font-size: 14
+  h1-font-color: #cc9933
+  h2-font-size: 14
+  h3-font-size: 10
+  h2-font-color: #cf012b
+sidebar:
+  font-size: 7
+admonition:
+  font-size: 8
+  text-transform: uppercase
+  icon:
+    tip:
+      size: 10
+header:
+  border-color: dddddd
+  background-color: #cc9933
+  font-color: 0d1120
+  #border-width: 0.25
+footer:
+  border-color: dddddd
+  background-color: #cc9933
+  font-color: 0d1120
+  #border-width: 0.25
+thematic-break:
+  border-color: #cc9933
+  //background-color: #cc9933
+  border-width: 0.8
+description-list:
+  term-font-size: 4
