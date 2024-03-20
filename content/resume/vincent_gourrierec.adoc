@@ -8,7 +8,7 @@
 //:pygments-style: fruity
 //:pygments-linenums-mode: inline
 :pdf-theme: resume
-:pdf-themesdir: ../themes 
+:pdf-themesdir: ./themes 
 //:tip-caption: 💡
 
 
