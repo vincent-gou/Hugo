@@ -1,3 +1,4 @@
+ifeval::["{backend}" == "html5"]
 ---
 title: "CV Vincent Gourrierec"
 authors:
@@ -16,18 +17,7 @@ keywords:
 - devops
 - build
 ---
-//:doctype: book
-:imagesdir: ../images
-//:iconsdir: ../icons
-//:includedir: .
-//:nofooter:
-:icons: font
-:source-highlighter: highlightjs
-//:pygments-style: fruity
-//:pygments-linenums-mode: inline
-:pdf-theme: resume
-:pdf-themesdir: ../themes 
-//:tip-caption: 💡
+endif::[]
 
 
 [frame=none, grid=none, width=100%]
