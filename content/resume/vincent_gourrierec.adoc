@@ -1,3 +1,21 @@
+---
+##title: "Automatisation deploiement Hugo avec GitHub Actions et GitHub Pages"
+authors:
+  - Vincent Gourrierec
+date: 2024-03-19
+tags: ["resume","cv"]
+categories: ["resume"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- github
+- hugo
+- asciidoctor
+- devops
+- build
+---
 //:doctype: book
 :imagesdir: ../images
 //:iconsdir: ../icons
@@ -8,7 +26,7 @@
 //:pygments-style: fruity
 //:pygments-linenums-mode: inline
 :pdf-theme: resume
-:pdf-themesdir: ./themes 
+:pdf-themesdir: ../themes 
 //:tip-caption: 💡
 
 

@@ -1,76 +1,76 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Resumes on vincent-gou (fr)</title><link>https://www.vincent-gou.fr/resume/</link><description>Recent content in Resumes on vincent-gou (fr)</description><generator>Hugo -- gohugo.io</generator><language>fr</language><copyright>Tous droits reserves: Vincent Gourrierec</copyright><atom:link href="https://www.vincent-gou.fr/resume/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_adp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_adp/</guid><description>Juin 2019 Juillet 2020 Migration Weblogic vers Tomcat ASTEK pour ADP, Carquefou, Télétravail partiel (50%)
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Resumes on vincent-gou (fr)</title><link>https://www.vincent-gou.fr/resume/</link><description>Recent content in Resumes on vincent-gou (fr)</description><generator>Hugo -- gohugo.io</generator><language>fr</language><copyright>Tous droits reserves: Vincent Gourrierec</copyright><lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vincent-gou.fr/resume/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/</link><pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/</guid><description>Vincent Gourrierec
+21 rue Pierre Curie 44600 Saint Nazaire
+Date de naissance: 14/09/1979
++33 6 45 55 94 31
+contact@vincent-gou.fr
+2 Enfants Permis B
+Ingénieur Systèmes Linux / SysOps Expérience Professionnelle Freelance (Missions en cours) Depuis Avril 2022 Grafana designer Xentara, Munich (Allemagne), 1-2 Jours Semaine, Télétravail total</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_adp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_adp/</guid><description>Juin 2019 Juillet 2020 Migration Weblogic vers Tomcat ASTEK pour ADP, Carquefou, Télétravail partiel (50%)
 Analyse et pilotage du projet de migration applications Weblogic vers Tomcat (suivi technique)
 Migration serveur d’application J2EE vers Tomcat (non J2EE)
 Migration et déploiement outillage de supervision, administration Tomcat
 Suivi et pilotage plan de tests et de performances
-Pilotage des développements de certaines fonctionnalités (JMS, JDBC, JTA) et tests</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_exaegis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_exaegis/</guid><description>Février 2021 Juin 2021 Administration Système Cloud privé Exaegis SAS, Tours, Télétravail total
+Pilotage des développements de certaines fonctionnalités (JMS, JDBC, JTA) et tests</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_exaegis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_exaegis/</guid><description>Février 2021 Juin 2021 Administration Système Cloud privé Exaegis SAS, Tours, Télétravail total
 Inventaire architecture technique multi-cloud (AWS / OVH / OBS)
 Création d’outils d’extraction et d’inventaire de la configuration des serveurs
 Extraction de la config réseau
 Extraction des applications métiers
 Extraction des informations de sécurité (Clés SSH, sudo updates, reboot…​)
-Export CSV des informations pour être actualisées quotidiennement</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_innexa/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_innexa/</guid><description>Mai 2023 Novembre 2023 Consultant Linux et DevOps Open IT BZH pour INNEXA, Vannes, Télétravail partiel (90%)
+Export CSV des informations pour être actualisées quotidiennement</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_innexa/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_innexa/</guid><description>Mai 2023 Novembre 2023 Consultant Linux et DevOps Open IT BZH pour INNEXA, Vannes, Télétravail partiel (90%)
 Participation aux réunions de lancement, en tant que référent technique (INFRA / Systèmes / CI/CD)
 Sécurisation Infra de dev sous ProxMox (Proxy SSH / Firewall / Fail2ban / Nginx )
 Containerisation et sécurisation stack de dev Axelor
-Controle et tests deploiement Infra Axelor via pipeline Gitlab</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_lighton/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_lighton/</guid><description>Janvier 2021 Décembre 2023 Ingénieur SYSOPS Fregat pour LIGHTON, Paris, Télétravail total et quelques intervention sur site
+Controle et tests deploiement Infra Axelor via pipeline Gitlab</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_lighton/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_lighton/</guid><description>Janvier 2021 Décembre 2023 Ingénieur SYSOPS Fregat pour LIGHTON, Paris, Télétravail total et quelques intervention sur site
 MCO infrastructure sur différents Datacenter et cloud (OVH / GCP / AWS / SCaleway)
 Serveurs Linux (Ubuntu principalement et CentOS)
 Pilotage et automatisation du déploiement des serveurs par ansible et gitlab CI/CD
-supervision IT + GPUs via influxDB Cloud et Grafana Cloud + Graylog</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_microdon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_microdon/</guid><description>Mai 2022 Juillet 2022 Expert Grafana / Loki MICRODON, Paris, Télétravail total
+supervision IT + GPUs via influxDB Cloud et Grafana Cloud + Graylog</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_microdon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_microdon/</guid><description>Mai 2022 Juillet 2022 Expert Grafana / Loki MICRODON, Paris, Télétravail total
 Analyse supervision existante sur infra GKE ( Grafana / Prometheus / Git / Terraform / PostgreSQL)
 Déploiement loki sur infra GKE
 Développement et deploiement requetes spécifiques pour statistiques métiers (PostegreSQL et exporter )
-Création de dashboard Grafana et alertes métiers sur les logs (Loki) et métriques (Prometheus)</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_polylogis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_polylogis/</guid><description>Depuis Mars 2019 Ingénieur Systèmes Linux et Web POLYLOGIS, Suresnes, 1-2 Jours par Mois, Télétravail total
+Création de dashboard Grafana et alertes métiers sur les logs (Loki) et métriques (Prometheus)</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_polylogis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_polylogis/</guid><description>Depuis Mars 2019 Ingénieur Systèmes Linux et Web POLYLOGIS, Suresnes, 1-2 Jours par Mois, Télétravail total
 Diverses prestations sur l’infrastructure:
 Serveurs Linux, sécurisation (SFTP/CHROOT/Best practices..) et optimisations (teaming, firmware, paramétrage stockage (LUN/LVM…​)
 Proxy Web Nginx (règles et configuration SSL)
 Certificats, multi-certificats et domaines avec redirection vers différents serveurs Web (Apache, IIS, NGINX)
-Mise en place stack analyse des logs serveurs LINUX via Docker / Grafana / Loki / Promtail (connexions SSH / authentification / mise à jour système / PTY and TTY commands / erreurs systeme…​)</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_cassiopae_re/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_cassiopae_re/</guid><description>Novembre 2010 Novembre 2016 Ingénieur Systèmes CassiopaeRE, Nantes, Télétravail Partiel (25%)
+Mise en place stack analyse des logs serveurs LINUX via Docker / Grafana / Loki / Promtail (connexions SSH / authentification / mise à jour système / PTY and TTY commands / erreurs systeme…​)</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_salarie_cassiopae_re/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_salarie_cassiopae_re/</guid><description>Novembre 2010 Novembre 2016 Ingénieur Systèmes CassiopaeRE, Nantes, Télétravail Partiel (25%)
 Gestion de projets Systèmes, étude, analyse du déploiement de nos solutions et documentation.
 Installation des produits édités par la société (Technologies Tomcat, Weblogic, Java, Oracle et Progress).
-Migration des serveurs et des bases de données (principalement vers Red Hat, Windows 2008 et virtualisation de serveurs via VmWare).</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_dcs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_dcs/</guid><description>Avril 2003 Février 2004 Technicien de maintenance DCS Automotive, Saint Nazaire, Présentiel
+Migration des serveurs et des bases de données (principalement vers Red Hat, Windows 2008 et virtualisation de serveurs via VmWare).</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_salarie_dcs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_salarie_dcs/</guid><description>Avril 2003 Février 2004 Technicien de maintenance DCS Automotive, Saint Nazaire, Présentiel
 Prise en charge des appels techniques, support niveau I et II, sur Windows, Aix et Linux
 Administration du parc informatique interne (50 postes, 10 serveurs).
-Tip AIX | OpenEdge | Red Hat | Unix SCO | Cisco Mars 2003 Avril 2003 Stage DCS Automotive, Saint Nazaire, Présentiel</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_reynolds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_reynolds/</guid><description>Février 2004 Décembre 2006 Installateur Technique Reynold’s and Reynold’s, Saint Nazaire, Présentiel
+Tip AIX | OpenEdge | Red Hat | Unix SCO | Cisco Mars 2003 Avril 2003 Stage DCS Automotive, Saint Nazaire, Présentiel</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_salarie_reynolds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_salarie_reynolds/</guid><description>Février 2004 Décembre 2006 Installateur Technique Reynold’s and Reynold’s, Saint Nazaire, Présentiel
 Suivi, préparation et mise en production d’un projet de sécurisation des communications entre le constructeur et son réseau de concessionnaire (Iptables et VPN).
 Support Technique niveau II sur Aix, Red Hat et le réseau, niveau II Progress OpenEdge.
-Tests, mise en conformité, documentation du logiciel sous Red Hat 8.</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_service_pilot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_service_pilot/</guid><description> Octobre 2018 Ingénieur Systèmes Supervision ServicePilot, Pornichet, Présentiel
+Tests, mise en conformité, documentation du logiciel sous Red Hat 8.</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_salarie_service_pilot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_salarie_service_pilot/</guid><description> Octobre 2018 Ingénieur Systèmes Supervision ServicePilot, Pornichet, Présentiel
 Déploiement Logiciel de supervision
 Intégration Supervision (SNMP/WMI/TOIP/VOIP)
 Optimisation Linux
-Tip Linux | SNMP | Windows</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_sigma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_sigma/</guid><description> Mars 2010 Novembre 2010 Ingénieur Systèmes Unix Sigma, Nantes, Télétravail Partiel (20%)
+Tip Linux | SNMP | Windows</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_salarie_sigma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_salarie_sigma/</guid><description> Mars 2010 Novembre 2010 Ingénieur Systèmes Unix Sigma, Nantes, Télétravail Partiel (20%)
 Administration/Exploitation des systèmes Unix et Linux,
 Administration /Exploitation des bases de données Oracle, Progress et PostgreSQL.
 Mise en place de scripts de supervision Nagios.
 Administration et optimisation plateforme Progress Sonic (Flux ESB)
-Tip Unix | Linux | Sonic ESB | Nagios | Oracle</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_sneda/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_sneda/</guid><description>Décembre 2006 Mars 2010 Ingénieur Systèmes Sneda, Nantes, Télétravail Partiel (25%)
+Tip Unix | Linux | Sonic ESB | Nagios | Oracle</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_salarie_sneda/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_salarie_sneda/</guid><description>Décembre 2006 Mars 2010 Ingénieur Systèmes Sneda, Nantes, Télétravail Partiel (25%)
 Préparation, installation et suivi des installations techniques informatiques du parc client attribué.
 Installation des produits édités par la société en mode client-serveur ou n-tiers (apache, tomcat, Java, Oracle et Progress).
-Migration des serveurs et des bases de données (AIX, Red Hat, Windows 2003, Oracle 10G et OpenEdge 10, Citrix…).</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_sopra_steria/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_salarie_sopra_steria/</guid><description>Décembre 2016 Octobre 2018 Responsable Equipe Ingénieur(e)s Systèmes Sopra Steria, Nantes, Télétravail Partiel (50%)
+Migration des serveurs et des bases de données (AIX, Red Hat, Windows 2003, Oracle 10G et OpenEdge 10, Citrix…).</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_salarie_sopra_steria/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_salarie_sopra_steria/</guid><description>Décembre 2016 Octobre 2018 Responsable Equipe Ingénieur(e)s Systèmes Sopra Steria, Nantes, Télétravail Partiel (50%)
 Gestion d’une équipe d’ingénieurs système et gestion des projets systèmes
 Déploiement de projets à l’international
 Intégration dans équipe DevOps et responsabilité principal des sujets :
 Supervision (Centreon)
 Documentation (Confluence) avec automoatisation et templates
-Automatisation des outils de déploiement (Jenkins / Ant)</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_ssg_immo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_ssg_immo/</guid><description>Depuis Janvier 2019 Ingénieur Systèmes SopraSteria Division Immobilière, Nantes, 1-2 Jours Semaine, Télétravail total
+Automatisation des outils de déploiement (Jenkins / Ant)</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_ssg_immo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_ssg_immo/</guid><description>Depuis Janvier 2019 Ingénieur Systèmes SopraSteria Division Immobilière, Nantes, 1-2 Jours Semaine, Télétravail total
 Prestations d’intégration de modules complémentaires WEB et mobile à l’ERP.
 Prestations d’expertise en performances et sécurité sur l’ERP édité par la société.
 Études et préconisations architectures sécurisés et performantes sur infrastructure hétérogène (IAAS, on Premise, Mixed)
-Optimisations de Workflow divers (Archivage, Impression, déploiement).</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_vecteur-plus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_vecteur-plus/</guid><description>Novembre 2022 Octobre 2023 Ingénieur Linux ASTEK pour Vecteur-Plus, Bouguenais, Télétravail partiel (90%)
+Optimisations de Workflow divers (Archivage, Impression, déploiement).</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_vecteur-plus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_vecteur-plus/</guid><description>Novembre 2022 Octobre 2023 Ingénieur Linux ASTEK pour Vecteur-Plus, Bouguenais, Télétravail partiel (90%)
 Administration et maintien en conditions opérationnels de + 50 serveurs Linux en support à l’administrateur sur place.
 Mise en place de centralisation de logs LOKI + Grafana
 Mise en place Cluster GlusterFS
 Gestion de la configuration centralisée via ansible
-Amélioration de la sécurité des clés SSH</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_xentara/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/exp_xentara/</guid><description> Depuis Avril 2022 Grafana designer Xentara, Munich (Allemagne), 1-2 Jours Semaine, Télétravail total
+Amélioration de la sécurité des clés SSH</description></item><item><title/><link>https://www.vincent-gou.fr/resume/exp_xentara/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/exp_xentara/</guid><description> Depuis Avril 2022 Grafana designer Xentara, Munich (Allemagne), 1-2 Jours Semaine, Télétravail total
 Analyse de données Industrie ( PLC / COBOT )
 Design Dashboard Grafana avec besoins OEE / Andon
 Développement requêtes InfluxDB Flux
 Gestion dashops dashboard multi clients / machine / template et variablisation
-Tip InfluxDB | Grafana | InfluxDB Flux | DashOps | Design</description></item><item><title/><link>https://www.vincent-gou.fr/resume/vincent_gourrierec/vincent_gourrierec/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.vincent-gou.fr/resume/vincent_gourrierec/vincent_gourrierec/</guid><description>Vincent Gourrierec
-21 rue Pierre Curie 44600 Saint Nazaire
-Date Naissance: 14/09/1979
-+33 6 45 55 94 31
-contact@vincent-gou.fr
-2 Enfants Permis B
-Ingénieur Systèmes Linux / SysOps Expérience Professionnelle Freelance (Missions en cours) Depuis Avril 2022 Grafana designer Xentara, Munich (Allemagne), 1-2 Jours Semaine, Télétravail total</description></item></channel></rss>
+Tip InfluxDB | Grafana | InfluxDB Flux | DashOps | Design</description></item></channel></rss>
