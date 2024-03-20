@@ -1,5 +1,5 @@
 ---
-##title: "Automatisation deploiement Hugo avec GitHub Actions et GitHub Pages"
+#title: "CV Vincent Gourrierec"
 authors:
   - Vincent Gourrierec
 date: 2024-03-19
