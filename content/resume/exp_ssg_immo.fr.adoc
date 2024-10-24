@@ -11,5 +11,6 @@ __SopraSteria Division Immobilière, Nantes, 1-2 Jours Semaine, Télétravail to
 * Analyse, développement et déploiement dans Centreon de scripts de supervision des ERP pour le service d'hébergement interne.
 
 [TIP]
-OpenEdge | Tomcat | Windows | Telegraf | Grafana | SSL | Nginx | InfluxDB | Centreon
+OPENEDGE | TOMCAT | WINDOWS | TELEGRAF | GRAFANA | SSL | NGINX | INFLUXDB | CENTREON
+
 ****

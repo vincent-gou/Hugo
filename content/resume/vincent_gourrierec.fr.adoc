@@ -1,22 +1,28 @@
-// ---
-// title: "CV Vincent Gourrierec"
-// authors:
-//   - Vincent Gourrierec
-// date: 2024-03-19
-// tags: ["resume","cv"]
-// categories: ["resume"]
-// draft: false
-// keywords:
-// - vincent-gou.fr
-// - vincent gourrierec
-// - saint nazaire
-// - github
-// - hugo
-// - asciidoctor
-// - devops
-// - build
-// ---
-
+---
+title: "Vincent Gourrierec"
+authors:
+  - Vincent Gourrierec
+date: 2024-03-19
+tags: ["resume","cv"]
+categories: ["resume"]
+draft: false
+keywords:
+- vincent-gou.fr
+- vincent gourrierec
+- saint nazaire
+- github
+- hugo
+- asciidoctor
+- devops
+- build
+---
+:imagesdir: ../../images
+:toc2:
+:numbered:
+:pdf-theme: resume
+:pdf-themesdir: ../../themes
+:icons: font
+:icon-set: fas
 
 [frame=none, grid=none, width=100%]
 |===
@@ -28,40 +34,41 @@ s| Vincent Gourrierec  .6+a|image::vincent_photo_resized.png[Vincent,100,100,flo
 | image:baby.png[15,15] 2 Enfants image:car.png[20,20]  Permis B
 |===
 
+PDF: link:../vincent_gourrierec_fr.pdf[Télécharger le PDF]
+
 //[.text-center]
 == Ingénieur Systèmes Linux / SysOps
 
 [#work-experience]
 === Expérience Professionnelle Freelance (Missions en cours)
 '''
-
-include::exp_ssg_immo.adoc[]
-include::exp_polylogis.adoc[]
+include::exp_ssg_immo.fr.adoc[]
+include::exp_polylogis.fr.adoc[]
 
 <<<
 === Expérience Professionnelle Freelance (Missions terminées)
 '''
-include::exp_datalab.adoc[]
-include::exp_lighton.adoc[]
+include::exp_datalab.fr.adoc[]
+include::exp_lighton.fr.adoc[]
 <<<
-include::exp_innexa.adoc[]
-include::exp_xentara.adoc[]
-include::exp_vecteur-plus.adoc[]
+include::exp_innexa.fr.adoc[]
+include::exp_xentara.fr.adoc[]
+include::exp_vecteur-plus.fr.adoc[]
 <<<
-include::exp_microdon.adoc[]
-include::exp_exaegis.adoc[]
-include::exp_adp.adoc[]
+include::exp_microdon.fr.adoc[]
+include::exp_exaegis.fr.adoc[]
+include::exp_adp.fr.adoc[]
 
 <<<
 === Expérience Professionnelle Salarié
 '''
-include::exp_salarie_service_pilot.adoc[]
-include::exp_salarie_sopra_steria.adoc[]
-include::exp_salarie_cassiopae_re.adoc[]
-include::exp_salarie_sigma.adoc[]
-include::exp_salarie_sneda.adoc[]
-include::exp_salarie_reynolds.adoc[]
-include::exp_salarie_dcs.adoc[]
+include::exp_salarie_service_pilot.fr.adoc[]
+include::exp_salarie_sopra_steria.fr.adoc[]
+include::exp_salarie_cassiopae_re.fr.adoc[]
+include::exp_salarie_sigma.fr.adoc[]
+include::exp_salarie_sneda.fr.adoc[]
+include::exp_salarie_reynolds.fr.adoc[]
+include::exp_salarie_dcs.fr.adoc[]
 
 <<<
 [#academic-record]
