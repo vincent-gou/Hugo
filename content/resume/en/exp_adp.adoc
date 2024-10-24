@@ -1,0 +1,14 @@
+[horizontal]
+~June~ 2019 to ~Jully~ 2020:: **Weblogic to Tomcat Migration project**
+__ASTEK for ADP, Carquefou, Partial remote (50%)__
+****
+* Analysis and management of the Weblogic applications migration project to Tomcat (technical monitoring)
+** J2EE application server migration to Tomcat (non-J2EE)
+** Migration and deployment of supervision tools, Tomcat administration
+** Monitoring and management of test and performance plans
+** Management of the development of certain functionalities (JMS, JDBC, JTA) and tests
+** Synchronization and communication between different client teams (Devs, CDP, management)
+
+[TIP]
+Weblogic | Tomcat | Linux | Performances | Bash | Java
+****

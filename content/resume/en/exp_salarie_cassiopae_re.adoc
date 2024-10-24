@@ -1,0 +1,14 @@
+[horizontal]
+~November~ 2010 to ~November~ 2016:: **Systems Ingeener**
+__CassiopaeRE, Nantes, Partial remote (25%)__
+****
+* Systems project management, study, analysis of the deployment of our solutions and documentation.
+* Installation of products published by the company (Tomcat, Weblogic, Java, Oracle and Progress technologies).
+* Migration of servers and databases (mainly to Red Hat, Windows 2008 and server virtualization via VmWare).
+* Study and implementation of performance and load scaling tools (Neoload) for Tomcat / Weblogic / Oracle ADF / WebServices application servers.
+* Implementation of supervision tool (Centreon / Nagios)
+* Technical documentation and documentation platform administration (Mediawiki / Confluence / Sphinx)
+
+[TIP]
+Tomcat | OpenEdge | Oracle | Weblogic | API | Centreon | Confluence 
+****

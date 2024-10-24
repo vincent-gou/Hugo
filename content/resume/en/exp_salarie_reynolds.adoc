@@ -1,0 +1,13 @@
+[horizontal]
+~February~ 2004 to ~December~ 2006:: **Technical Installer**
+__Reynold’s and Reynold’s, Saint Nazaire, On premise__
+****
+* Monitoring, preparation and production of a project to secure communications between the manufacturer and its dealer network (IPtables and VPN).
+* Level II Technical Support on Aix, Red Hat and the network, level II Progress OpenEdge.
+* Testing, compliance, documentation of the software under Red Hat 8.0 then under Red Hat ES 3 and production.
+* Design, installation and monitoring of multi-site network projects with France Télécom and Cegetel.
+* Training of technicians in AIX and Linux systems, and in the management of computer equipment.
+
+[TIP]
+AIX | OpenEdge | Red Hat | Windows | Cisco | VPN | Iptables 
+****

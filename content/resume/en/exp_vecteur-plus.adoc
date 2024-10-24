@@ -1,0 +1,15 @@
+[horizontal]
+~November~ 2022 to ~October~ 2023:: **Linux Ingeener**
+__ASTEK for Vecteur-Plus, Bouguenais, Partial remote (90%)__
+****
+* Administration and maintenance in operational conditions of + 50 Linux servers in support of the administrator on site.
+* Implementation of LOKI + Grafana log centralization
+* GlusterFS Cluster implementation
+* Centralized configuration management via ansible
+* Improved SSH key security 
+* Versioning and centralization of administration tools under GIT
+* Management of OS versions and upgrades
+
+[TIP]
+Debian | Gitlab | Loki | SSH | GlusterFS | Grafana | Docker Swarm
+****

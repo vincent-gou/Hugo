@@ -1,0 +1,20 @@
+[horizontal]
+~April~ 2003 to ~February~ 2004:: **Maintenance Technician**
+__DCS Automotive, Saint Nazaire, On premise__
+****
+* Support for technical calls, level I and II support, on Windows, Aix and Linux
+* Administration of the internal IT equipment (50 stations, 10 servers).
+
+[TIP]
+AIX | OpenEdge | Red Hat | Unix SCO | Cisco 
+****
+
+[horizontal]
+~March~ 2003 to ~April~ 2003:: **Internship**
+__DCS Automotive, Saint Nazaire, On premise__
+****
+* End of Micro and Web Technician training course
+
+[TIP]
+AIX | OpenEdge | Cisco 
+****

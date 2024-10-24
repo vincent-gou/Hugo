@@ -1,0 +1,12 @@
+[horizontal]
+~March~ 2010 to ~November~ 2010:: **UNIX Systems Ingeener**
+__Sigma, Nantes, Partial remote (20%)__
+****
+* Administration/Operation of Unix and Linux systems, 
+* Administration/Operation of Oracle, Progress and PostgreSQL databases.
+* Implementation of Nagios supervision scripts.
+* Progress Sonic platform administration and optimization (ESB Flow)
+
+[TIP]
+Unix | Linux | Sonic ESB | Nagios | Oracle
+****

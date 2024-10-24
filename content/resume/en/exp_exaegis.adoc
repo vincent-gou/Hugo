@@ -1,0 +1,14 @@
+[horizontal]
+~February~ 2021 to ~June~ 2021:: **Private Cloud System Administration**
+__Exaegis SAS, Tours, Full remote__
+****
+* Multi-cloud technical architecture inventory (AWS / OVH / OBS)
+** Creation of server configuration extraction and inventory tools
+**Extracting the network config
+** Extraction of business applications
+** Extraction of security information (SSH keys, sudo updates, reboot...)
+** CSV export of information to be updated daily
+
+[TIP]
+Debian | Gitlab | SSH | Bash | AWS | OVH | OBS
+****

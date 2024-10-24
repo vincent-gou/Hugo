@@ -1,0 +1,11 @@
+[horizontal]
+~October~ 2018:: **Monitoring System Ingeener**
+__ServicePilot, Pornichet, On premise__
+****
+* Deployment of supervision software
+* Supervision integration (SNMP/WMI/TOIP/VOIP)
+*Linux optimization
+
+[TIP]
+Linux | SNMP | Windows
+****

@@ -1,0 +1,12 @@
+[horizontal]
+~April~ 2022 to ~February~ 2024 :: **Grafana designer**
+__Xentara, Munich (Germany), 1-2 days by week, Full remote__
+****
+* Industry data analysis (PLC / COBOT)
+* Grafana Dashboard design with OEE / Andon needs 
+* Development of InfluxDB Flux queries
+* Management of dashops dashboard multi clients / machine / template and variabilization
+
+[TIP]
+InfluxDB | Grafana | InfluxDB Flux | DashOps | Design
+****

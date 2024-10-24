@@ -6,7 +6,8 @@ __Open IT BZH pour INNEXA, Vannes, Télétravail partiel (90%)__
 * Sécurisation Infra de dev sous ProxMox (Proxy SSH / Firewall / Fail2ban / Nginx ) +
 * Containerisation et sécurisation stack de dev Axelor +
 * Controle et tests deploiement Infra Axelor via pipeline Gitlab 
+* Mise en place de sondes de supervision Zabbix 
 
 [TIP]
-Proxmox | Gitlab | Nginx | Ssh Tunnels | Linux
+Proxmox | Gitlab | Nginx | Ssh Tunnels | Linux | Zabbix
 ****

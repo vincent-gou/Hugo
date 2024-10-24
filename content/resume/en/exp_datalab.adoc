@@ -1,0 +1,22 @@
+[horizontal]
+~Jully~ 2024 to ~September~ 2024:: **SYSOPS Ingeener**
+__Datalab, Paris, 2 days by week, Full remote and a few days on premise__
+****
+* Infrastructure MCO on different Datacenters (OUTSCALE)
+** Linux servers (Ubuntu) 
+** Management and automation of server deployment using ansible and gitlab CI/CD 
+** IT monitoring + GPUs via influxDB and Grafana + LOKI
+** user onboarding and offboarding
+* IT projects:
+** Stack VLLM creation automation (Models / API / Auth...) 
+*** Job supervision / GPUS / quotas and batches
+** Automation of the creation of SSL certificates via traeffik and security
+** Implementation of Gitlab deployment pipeline to Computes on OUTSCALE
+*** Computes
+** Creation of monitoring stack (Telegraf + InfluxDB + Grafana) on premise
+*** Application metrics monitoring ( LLM application stack )
+*** VMS OUTSCALE metrics monitoring (computes / Redis / PostgreSQL)
+
+[TIP]
+Debian | Gitlab | Loki | OUTSCALE | GlusterFS | Grafana | InfluxDB | Ansible | Terraform | GPU
+****

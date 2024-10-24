@@ -9,7 +9,8 @@ __ASTEK pour Vecteur-Plus, Bouguenais, Télétravail partiel (90%)__
 * Amélioration de la sécurité des clés SSH 
 * Versionning et centralisation des outils d'administrations sous GIT
 * Gestion des versions OS et upgrade
+* Administration supervision Zabbix
 
 [TIP]
-Debian | Gitlab | Loki | SSH | GlusterFS | Grafana
+Debian | Gitlab | Loki | SSH | GlusterFS | Grafana | Zabbix
 ****

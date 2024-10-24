@@ -1,0 +1,12 @@
+[horizontal]
+~December~ 2006 to ~March~ 2010:: **Systems Ingeener**
+__Sneda, Nantes, Partial remote (25%)__
+****
+* Preparation, installation and monitoring of IT technical installations for the assigned customer base.
+* Installation of products published by the company in client-server or third-party mode (apache, tomcat, Java, Oracle and Progress).
+* Migration of servers and databases (AIX, Red Hat, Windows 2003, Oracle 10G and OpenEdge 10, Citrix, etc.).
+* System and network audit and advice for customer base, implementation of supervision and management tools (OCSInventory/GLPI, Nagios/Centreon).
+
+[TIP]
+Tomcat | OpenEdge | Oracle | Windows | Citrix | Centreon | GLPI 
+****

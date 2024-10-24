@@ -1,0 +1,15 @@
+[horizontal]
+Since ~January~ 2019:: **Systems Ingeener**
+__SopraSteria Division Immobilière, Nantes, 1-2 days by week, Full remote__
+****
+* Integration services for WEB and mobile add-on modules to the ERP.
+* Expertise services in performance and security on the ERP published by the company.
+* Studies and recommendations for secure and efficient architectures on heterogeneous infrastructure (IAAS, on Premise, Mixed)
+* Various workflow optimizations (Archiving, Printing, deployment).
+* Observability architecture deployment (TIK+GL stack) Telegraf / InfluxDB / Kapacitor + Grafana / Loki
+* Configuration management via node-red (Node.js)
+* Analysis, development and deployment in Centreon of ERP supervision scripts for the internal hosting service.
+
+[TIP]
+OpenEdge | Tomcat | Windows | Telegraf | Grafana | SSL | Nginx | InfluxDB | Centreon
+****

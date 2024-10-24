@@ -1,0 +1,12 @@
+[horizontal]
+~May~ 2022 to ~Jully~ 2022:: **Grafana / Loki expert**
+__MICRODON, Paris, Full remote__
+****
+* Existing supervision analysis on GKE infrastructure (Grafana / Prometheus / Git / Terraform / PostgreSQL)
+* Loki deployment on GKE infra
+* Development and deployment of specific queries for business statistics (PostegreSQL and export)
+* Creation of Grafana dashboard and business alerts on logs (Loki) and metrics (Prometheus)
+
+[TIP]
+Prometheus | Loki | GCP | Grafana | GKE | SQL
+****

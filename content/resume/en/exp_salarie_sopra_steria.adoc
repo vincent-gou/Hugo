@@ -1,0 +1,15 @@
+[horizontal]
+~December~ 2016 to ~October~ 2018:: **Systems Engineer Team Manager**
+__Sopra Steria, Nantes, Partial remote (50%)__
+****
+* Management of a team of systems engineers and management of systems projects
+* Deployment of international projects
+* Integration into DevOps team and main responsibility for subjects: 
+** Supervision (Centreon) 
+** Documentation (Confluence) with automation and templates
+** Automation of deployment tools (Jenkins / Ant)
+* ERP deployment (real estate and finance)
+
+[TIP]
+Centreon | DevOps | Docker | Oracle | API | Management 
+****

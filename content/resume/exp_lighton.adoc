@@ -1,5 +1,5 @@
 [horizontal]
-~Janvier~ 2021 ~Décembre~ 2023:: **Ingénieur SYSOPS**
+~Janvier~ 2021 ~Juin~ 2024:: **Ingénieur SYSOPS**
 __Fregat pour LIGHTON, Paris, Télétravail total et quelques intervention sur site__
 ****
 * MCO infrastructure sur différents Datacenter et cloud (OVH / GCP / AWS / SCaleway)

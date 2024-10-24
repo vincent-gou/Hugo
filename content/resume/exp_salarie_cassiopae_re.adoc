@@ -6,9 +6,9 @@ __CassiopaeRE, Nantes, Télétravail Partiel (25%)__
 * Installation des produits édités par la société (Technologies Tomcat, Weblogic, Java, Oracle et Progress).
 * Migration des serveurs et des bases de données (principalement vers Red Hat, Windows 2008 et virtualisation de serveurs via VmWare).
 * Étude et mise en place d'outils de performances et montée en charge (Neoload) pour les serveurs d'applications Tomcat / Weblogic / Oracle ADF / WebServices.
-* Mise en place d'outil de supervision (Centreon / Nagios )
+* Mise en place d'outil de supervision (Centreon / Zabbix / Nagios )
 * Documentation technique et administration plate-forme de documentation (Mediawiki / Confluence / Sphinx)
 
 [TIP]
-Tomcat | OpenEdge | Oracle | Weblogic | API | Centreon | Confluence 
+Tomcat | OpenEdge | Oracle | Weblogic | API | Centreon | Confluence | Zabbix
 ****

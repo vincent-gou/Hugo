@@ -1,0 +1,12 @@
+[horizontal]
+~May~ 2023 to ~November~ 2023:: **Linux and DevOps Consultant**
+__Open IT BZH for INNEXA, Vannes, Partial remote (90%)__
+****
+* Participation in launch meetings, as technical referent (INFRA / Systems / CI/CD) +
+* Infra dev security under ProxMox (SSH Proxy / Firewall / Fail2ban / Nginx) +
+* Containerization and security of Axelor dev stack +
+* Control and testing of Infra Axelor deployment via Gitlab pipeline
+
+[TIP]
+Proxmox | Gitlab | Nginx | Ssh Tunnels | Linux
+****

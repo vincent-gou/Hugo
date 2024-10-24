@@ -1,0 +1,28 @@
+[horizontal]
+~January~ 2021 to ~June~ 2024:: **SYSOPS Ingeener**
+__Fregat for LIGHTON, Paris, Full remote and a few days on premise__
+****
+* MCO infrastructure on different Datacenters and clouds (OVH / GCP / AWS / SCaleway)
+** Linux servers (mainly Ubuntu and CentOS) 
+** Management and automation of server deployment using ansible and gitlab CI/CD 
+** IT supervision + GPUs via influxDB Cloud and Grafana Cloud + Graylog
+** user onboarding and offboarding
+* IT projects:
+** automation of Cluster SLURM creation on GCP 
+*** Build PMIX and singularity
+*** Job supervision / GPUS / quotas and batches
+** Nextcloud + Collabora server migration
+** Automation of the creation of SSL certificates via traeffik and security
+** CMDB + IPAM implementation
+** Setting up Gitlab deployment pipeline to GCP 
+***Cloud Run
+***Kubernetes
+*** Computing
+*** Secrets / Cloud SQL / Network / OS Variables...
+** Creation of monitoring stack (Telegraf + InfluxDB + Grafana) on premise
+*** Application metrics monitoring (application stack on GCP)
+*** GCP metrics monitoring (computes / Kubernets / Redis / Cloud SQL / Cloud Run...)
+
+[TIP]
+Debian | Gitlab | Loki | GCP | GlusterFS | Grafana | Slurm | IPA | GKE | InfluxDB | Ansible | Terraform | GPU
+****

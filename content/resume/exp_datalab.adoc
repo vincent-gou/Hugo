@@ -1,0 +1,22 @@
+[horizontal]
+~Juillet~ 2024 ~Septembre~ 2024:: **Ingénieur SYSOPS**
+__Datalab, Paris, 2 Jours Semaine, Télétravail total et quelques intervention sur site__
+****
+* MCO infrastructure sur différents Datacenter (OUTSCALE)
+** Serveurs Linux (Ubuntu) 
+** Pilotage et automatisation du déploiement des serveurs par ansible et gitlab CI/CD 
+** Supervision IT + GPUs via influxDB et Grafana + LOKI
+** user onboarding et offboarding
+* Projets IT:
+** automatisation création Stack VLLM (Models / API / Auth...) 
+*** Supervision jobs / GPUS / quotas et batchs
+** Automatisation de la création des certificats SSL via traeffik et sécurisation
+** Mise en place pipeline déploiement Gitlab vers Computes sur OUTSCALE 
+*** Computes
+** Création stack de monitoring (Telegraf + InfluxDB + Grafana) on premise
+*** Supervision métriques applicatives (stack applicative LLM)
+*** Supervision métriques VMS OUTSCALE ( computes / Redis / PostgreSQL )
+
+[TIP]
+Debian | Gitlab | Loki | OUTSCALE | GlusterFS | Grafana | InfluxDB | Ansible | Terraform | GPU
+****

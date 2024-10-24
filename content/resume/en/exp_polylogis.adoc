@@ -1,0 +1,13 @@
+[horizontal]
+Since ~March~ 2019:: **Linx and Web system Ingeener**
+__POLYLOGIS, Suresnes, 1-2 days by months, Full remote__
+****
+* Various infrastructure services:
+** Linux servers, security (SFTP/CHROOT/Best practices, etc.) and optimizations (teaming, firmware, storage settings (LUN/LVM, etc.)
+** Nginx Web Proxy (SSL rules and configuration)
+** Certificates, multi-certificates and domains with redirection to different web servers (Apache, IIS, NGINX)
+** Implementation stack analysis of LINUX server logs via Docker / Grafana / Loki / Promtail (SSH connections / authentication / system update / PTY and TTY commands / system errors...)
+
+[TIP]
+Linux | SSl | Security | LVM | Network | Telegraf | Grafana | Loki | Nginx
+****
